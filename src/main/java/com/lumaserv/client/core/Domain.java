@@ -2,6 +2,7 @@ package com.lumaserv.client.core;
 
 import lombok.*;
 import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
+import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Domain {
@@ -20,6 +21,6 @@ public class Domain {
     @MapperOptions(name = "zone_handle_code")
     private String zoneHandleCode;
     @MapperOptions(name = "labels")
-    private Object labels;
+    private AbstractObject labels;
 }
 

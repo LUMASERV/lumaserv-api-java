@@ -2,6 +2,7 @@ package com.lumaserv.client.core;
 
 import lombok.*;
 import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
+import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerNetwork {
@@ -22,6 +23,6 @@ public class ServerNetwork {
     @MapperOptions(name = "host_id")
     private String hostId;
     @MapperOptions(name = "labels")
-    private Object labels;
+    private AbstractObject labels;
 }
 

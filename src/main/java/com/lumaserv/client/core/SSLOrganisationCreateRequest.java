@@ -2,6 +2,7 @@ package com.lumaserv.client.core;
 
 import lombok.*;
 import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
+import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class SSLOrganisationCreateRequest {
@@ -14,7 +15,7 @@ public class SSLOrganisationCreateRequest {
     @MapperOptions(name = "registration_number")
     private String registrationNumber;
     @MapperOptions(name = "labels")
-    private Object labels;
+    private AbstractObject labels;
     @MapperOptions(name = "division")
     private String division;
     @MapperOptions(name = "country_code")

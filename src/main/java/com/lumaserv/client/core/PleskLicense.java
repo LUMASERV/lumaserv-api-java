@@ -2,6 +2,7 @@ package com.lumaserv.client.core;
 
 import lombok.*;
 import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
+import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class PleskLicense {
@@ -16,6 +17,6 @@ public class PleskLicense {
     @MapperOptions(name = "key")
     private String key;
     @MapperOptions(name = "labels")
-    private Object labels;
+    private AbstractObject labels;
 }
 

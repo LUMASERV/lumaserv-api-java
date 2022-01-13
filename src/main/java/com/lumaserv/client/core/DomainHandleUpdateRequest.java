@@ -2,6 +2,7 @@ package com.lumaserv.client.core;
 
 import lombok.*;
 import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
+import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class DomainHandleUpdateRequest {
@@ -22,7 +23,7 @@ public class DomainHandleUpdateRequest {
     @MapperOptions(name = "id_card_issue_date")
     private String idCardIssueDate;
     @MapperOptions(name = "labels")
-    private Object labels;
+    private AbstractObject labels;
     @MapperOptions(name = "birth_country_code")
     private String birthCountryCode;
     @MapperOptions(name = "country_code")
