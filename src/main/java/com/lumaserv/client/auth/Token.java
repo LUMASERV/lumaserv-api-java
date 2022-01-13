@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Token {
     @MapperOptions(name = "user_id")
-    private int userId;
+    private String userId;
     @MapperOptions(name = "scope")
     private TokenScope scope;
     @MapperOptions(name = "validUntil")
