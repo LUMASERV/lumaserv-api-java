@@ -5,21 +5,21 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Network {
-	@MapperOptions(name = "zone_id")
-	private String zoneId;
-	@MapperOptions(name = "project_id")
-	private String projectId;
-	@MapperOptions(name = "created_at")
-	private String createdAt;
-	@MapperOptions(name = "id")
-	private String id;
-	@MapperOptions(name = "tag")
-	private int tag;
-	@MapperOptions(name = "title")
-	private String title;
-	@MapperOptions(name = "type")
-	private NetworkType type;
-	@MapperOptions(name = "labels")
-	private Object labels;
+    @MapperOptions(name = "zone_id")
+    private String zoneId;
+    @MapperOptions(name = "project_id")
+    private String projectId;
+    @MapperOptions(name = "created_at")
+    private String createdAt;
+    @MapperOptions(name = "id")
+    private String id;
+    @MapperOptions(name = "tag")
+    private int tag;
+    @MapperOptions(name = "title")
+    private String title;
+    @MapperOptions(name = "type")
+    private NetworkType type;
+    @MapperOptions(name = "labels")
+    private Object labels;
 }
 

@@ -5,15 +5,15 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Subnet {
-	@MapperOptions(name = "network_id")
-	private String networkId;
-	@MapperOptions(name = "address")
-	private String address;
-	@MapperOptions(name = "prefix")
-	private int prefix;
-	@MapperOptions(name = "created_at")
-	private String createdAt;
-	@MapperOptions(name = "id")
-	private String id;
+    @MapperOptions(name = "network_id")
+    private String networkId;
+    @MapperOptions(name = "address")
+    private String address;
+    @MapperOptions(name = "prefix")
+    private int prefix;
+    @MapperOptions(name = "created_at")
+    private String createdAt;
+    @MapperOptions(name = "id")
+    private String id;
 }
 

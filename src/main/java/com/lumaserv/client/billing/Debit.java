@@ -5,13 +5,13 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Debit {
-	@MapperOptions(name = "date")
-	private String date;
-	@MapperOptions(name = "due_date")
-	private String dueDate;
-	@MapperOptions(name = "id")
-	private String id;
-	@MapperOptions(name = "title")
-	private String title;
+    @MapperOptions(name = "date")
+    private String date;
+    @MapperOptions(name = "due_date")
+    private String dueDate;
+    @MapperOptions(name = "id")
+    private String id;
+    @MapperOptions(name = "title")
+    private String title;
 }
 

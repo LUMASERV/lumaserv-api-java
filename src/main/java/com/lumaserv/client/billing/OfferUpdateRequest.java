@@ -5,13 +5,13 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class OfferUpdateRequest {
-	@MapperOptions(name = "amount")
-	private float amount;
-	@MapperOptions(name = "net_amount")
-	private float netAmount;
-	@MapperOptions(name = "state")
-	private OfferState state;
-	@MapperOptions(name = "customer_id")
-	private int customerId;
+    @MapperOptions(name = "amount")
+    private float amount;
+    @MapperOptions(name = "net_amount")
+    private float netAmount;
+    @MapperOptions(name = "state")
+    private OfferState state;
+    @MapperOptions(name = "customer_id")
+    private int customerId;
 }
 

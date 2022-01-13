@@ -5,17 +5,17 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class OnlinePayment {
-	@MapperOptions(name = "amount")
-	private float amount;
-	@MapperOptions(name = "provider")
-	private String provider;
-	@MapperOptions(name = "external_id")
-	private String externalId;
-	@MapperOptions(name = "id")
-	private String id;
-	@MapperOptions(name = "state")
-	private String state;
-	@MapperOptions(name = "customer_id")
-	private int customerId;
+    @MapperOptions(name = "amount")
+    private float amount;
+    @MapperOptions(name = "provider")
+    private String provider;
+    @MapperOptions(name = "external_id")
+    private String externalId;
+    @MapperOptions(name = "id")
+    private String id;
+    @MapperOptions(name = "state")
+    private String state;
+    @MapperOptions(name = "customer_id")
+    private int customerId;
 }
 

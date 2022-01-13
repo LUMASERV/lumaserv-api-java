@@ -5,11 +5,11 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerVNC {
-	@MapperOptions(name = "password")
-	private String password;
-	@MapperOptions(name = "port")
-	private int port;
-	@MapperOptions(name = "host")
-	private String host;
+    @MapperOptions(name = "password")
+    private String password;
+    @MapperOptions(name = "port")
+    private int port;
+    @MapperOptions(name = "host")
+    private String host;
 }
 
