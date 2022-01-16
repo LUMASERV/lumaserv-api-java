@@ -20,8 +20,8 @@ public class CoreClient extends HttpClient {
         return get("/ssh-keys").object(SSHKeyListResponse.class);
     }
 
-    public SSHKeyListResponse getSSHKeys(String filter[projectId], int page, int pageSize, String search, String filter[labels][:name], boolean withLabels) {
-        return get("/ssh-keys").query("filter[project_id]", filter[projectId]).query("page", page).query("page_size", pageSize).query("search", search).query("filter[labels][:name]", filter[labels][:name]).query("with_labels", withLabels).object(SSHKeyListResponse.class);
+    public SSHKeyListResponse getSSHKeys(String filter[projectId], int page, int pageSize, String search, String filter[labels][:name], boolean withLabels, String filter[title]) {
+        return get("/ssh-keys").query("filter[project_id]", filter[projectId]).query("page", page).query("page_size", pageSize).query("search", search).query("filter[labels][:name]", filter[labels][:name]).query("with_labels", withLabels).query("filter[title]", filter[title]).object(SSHKeyListResponse.class);
     }
 
     public EmptyResponse startServer(String id) {
@@ -36,8 +36,8 @@ public class CoreClient extends HttpClient {
         return get("/availability-zones").object(AvailabilityZoneListResponse.class);
     }
 
-    public AvailabilityZoneListResponse getAvailabilityZones(int page, int pageSize, String search) {
-        return get("/availability-zones").query("page", page).query("page_size", pageSize).query("search", search).object(AvailabilityZoneListResponse.class);
+    public AvailabilityZoneListResponse getAvailabilityZones(int page, int pageSize, String search, String filter[title]) {
+        return get("/availability-zones").query("page", page).query("page_size", pageSize).query("search", search).query("filter[title]", filter[title]).object(AvailabilityZoneListResponse.class);
     }
 
     public ServerTemplateSingleResponse getServerTemplate(String id) {
@@ -124,8 +124,8 @@ public class CoreClient extends HttpClient {
         return get("/servers").object(ServerListResponse.class);
     }
 
-    public ServerListResponse getServers(String filter[projectId], int page, int pageSize, String search, String filter[labels][:name], boolean withLabels) {
-        return get("/servers").query("filter[project_id]", filter[projectId]).query("page", page).query("page_size", pageSize).query("search", search).query("filter[labels][:name]", filter[labels][:name]).query("with_labels", withLabels).object(ServerListResponse.class);
+    public ServerListResponse getServers(String filter[projectId], int page, int pageSize, String search, String filter[labels][:name], boolean withLabels, String filter[name]) {
+        return get("/servers").query("filter[project_id]", filter[projectId]).query("page", page).query("page_size", pageSize).query("search", search).query("filter[labels][:name]", filter[labels][:name]).query("with_labels", withLabels).query("filter[name]", filter[name]).object(ServerListResponse.class);
     }
 
     public EmptyResponse deleteServerNetwork(String id, String network_id) {
@@ -292,8 +292,8 @@ public class CoreClient extends HttpClient {
         return get("/server-templates").object(ServerTemplateListResponse.class);
     }
 
-    public ServerTemplateListResponse getServerTemplates(int page, int pageSize, String search) {
-        return get("/server-templates").query("page", page).query("page_size", pageSize).query("search", search).object(ServerTemplateListResponse.class);
+    public ServerTemplateListResponse getServerTemplates(int page, int pageSize, String search, String filter[title]) {
+        return get("/server-templates").query("page", page).query("page_size", pageSize).query("search", search).query("filter[title]", filter[title]).object(ServerTemplateListResponse.class);
     }
 
     public ServerHostSingleResponse getServerHost(String id) {
@@ -348,8 +348,8 @@ public class CoreClient extends HttpClient {
         return get("/server-variants").object(ServerVariantListResponse.class);
     }
 
-    public ServerVariantListResponse getServerVariants(int page, int pageSize, String search) {
-        return get("/server-variants").query("page", page).query("page_size", pageSize).query("search", search).object(ServerVariantListResponse.class);
+    public ServerVariantListResponse getServerVariants(int page, int pageSize, String search, String filter[title]) {
+        return get("/server-variants").query("page", page).query("page_size", pageSize).query("search", search).query("filter[title]", filter[title]).object(ServerVariantListResponse.class);
     }
 
     public ServerStorageSingleResponse getServerStorage(String id) {
@@ -384,8 +384,8 @@ public class CoreClient extends HttpClient {
         return get("/server-medias").object(ServerMediaListResponse.class);
     }
 
-    public ServerMediaListResponse getServerMedias(String filter[projectId], int page, int pageSize, String search, String filter[labels][:name], boolean withLabels) {
-        return get("/server-medias").query("filter[project_id]", filter[projectId]).query("page", page).query("page_size", pageSize).query("search", search).query("filter[labels][:name]", filter[labels][:name]).query("with_labels", withLabels).object(ServerMediaListResponse.class);
+    public ServerMediaListResponse getServerMedias(String filter[projectId], int page, int pageSize, String search, String filter[labels][:name], boolean withLabels, String filter[title]) {
+        return get("/server-medias").query("filter[project_id]", filter[projectId]).query("page", page).query("page_size", pageSize).query("search", search).query("filter[labels][:name]", filter[labels][:name]).query("with_labels", withLabels).query("filter[title]", filter[title]).object(ServerMediaListResponse.class);
     }
 
     public SubnetSingleResponse getSubnet(String id) {
@@ -492,8 +492,8 @@ public class CoreClient extends HttpClient {
         return get("/networks").object(NetworkListResponse.class);
     }
 
-    public NetworkListResponse getNetworks(String filter[projectId], int page, int pageSize, String search, String filter[labels][:name], boolean withLabels) {
-        return get("/networks").query("filter[project_id]", filter[projectId]).query("page", page).query("page_size", pageSize).query("search", search).query("filter[labels][:name]", filter[labels][:name]).query("with_labels", withLabels).object(NetworkListResponse.class);
+    public NetworkListResponse getNetworks(String filter[projectId], int page, int pageSize, String search, String filter[labels][:name], boolean withLabels, String filter[title]) {
+        return get("/networks").query("filter[project_id]", filter[projectId]).query("page", page).query("page_size", pageSize).query("search", search).query("filter[labels][:name]", filter[labels][:name]).query("with_labels", withLabels).query("filter[title]", filter[title]).object(NetworkListResponse.class);
     }
 
     public DomainAuthinfoResponse getDomainAuthinfo(String name) {
