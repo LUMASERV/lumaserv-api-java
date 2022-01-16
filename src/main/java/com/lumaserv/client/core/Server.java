@@ -20,6 +20,8 @@ public class Server {
     private String templateId;
     @MapperOptions(name = "id")
     private String id;
+    @MapperOptions(name = "state")
+    private String state;
     @MapperOptions(name = "labels")
     private AbstractObject labels;
 }
