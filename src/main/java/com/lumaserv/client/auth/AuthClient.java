@@ -44,6 +44,10 @@ public class AuthClient extends HttpClient {
         return post("/login", body).object(LoginResponse.class);
     }
 
+    public UserSingleResponse createUser() {
+        return post("/users").object(UserSingleResponse.class);
+    }
+
     public UserListResponse getUsers() {
         return get("/users").object(UserListResponse.class);
     }

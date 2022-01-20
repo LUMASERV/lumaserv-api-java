@@ -5,17 +5,15 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
-public class User {
+public class UserCreateRequest {
+    @MapperOptions(name = "password")
+    private String password;
     @MapperOptions(name = "gender")
     private Gender gender;
     @MapperOptions(name = "last_name")
     private String lastName;
-    @MapperOptions(name = "id")
-    private String id;
-    @MapperOptions(name = "state")
-    private UserState state;
-    @MapperOptions(name = "customer_id")
-    private int customerId;
+    @MapperOptions(name = "company")
+    private String company;
     @MapperOptions(name = "type")
     private UserType type;
     @MapperOptions(name = "first_name")

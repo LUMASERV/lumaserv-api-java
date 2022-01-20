@@ -18,6 +18,8 @@ public class ServerCreateRequest {
     private String name;
     @MapperOptions(name = "template_id")
     private String templateId;
+    @MapperOptions(name = "networks")
+    private ServerCreateRequestNetwork[] networks;
     @MapperOptions(name = "labels")
     private AbstractObject labels;
 }
