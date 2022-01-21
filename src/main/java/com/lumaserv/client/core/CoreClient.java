@@ -60,6 +60,10 @@ public class CoreClient extends HttpClient {
         return delete("/servers/"+id).object(EmptyResponse.class);
     }
 
+    public ServerSingleResponse updateServer(String id, ServerUpdateRequest body) {
+        return put("/servers/"+id, body).object(ServerSingleResponse.class);
+    }
+
     public ServerStorageClassSingleResponse getServerStorageClass(String id) {
         return get("/server-storage-classes/"+id).object(ServerStorageClassSingleResponse.class);
     }

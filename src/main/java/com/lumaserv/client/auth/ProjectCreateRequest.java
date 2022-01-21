@@ -6,8 +6,6 @@ import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ProjectCreateRequest {
-    @MapperOptions(name = "customer_reference")
-    private String customerReference;
     @MapperOptions(name = "title")
     private String title;
 }
