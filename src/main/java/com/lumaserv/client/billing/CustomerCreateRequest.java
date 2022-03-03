@@ -8,6 +8,8 @@ import org.javawebstack.abstractdata.AbstractObject;
 public class CustomerCreateRequest {
     @MapperOptions(name = "additional_address")
     private String additionalAddress;
+    @MapperOptions(name = "gender")
+    private String gender;
     @MapperOptions(name = "city")
     private String city;
     @MapperOptions(name = "last_name")
@@ -26,8 +28,12 @@ public class CustomerCreateRequest {
     private String userId;
     @MapperOptions(name = "street")
     private String street;
+    @MapperOptions(name = "tax_number")
+    private String taxNumber;
     @MapperOptions(name = "company_name")
     private String companyName;
+    @MapperOptions(name = "auto_finalize")
+    private boolean autoFinalize;
     @MapperOptions(name = "street_number")
     private String streetNumber;
     @MapperOptions(name = "credit_limit")

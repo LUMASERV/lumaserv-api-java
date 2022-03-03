@@ -2,7 +2,7 @@ package com.lumaserv.client.billing;
 
 import org.javawebstack.httpclient.HTTPClient;
 
-public class BillingClient extends HttpClient {
+public class BillingClient extends HTTPClient {
     public BillingClient(String apiKey, String baseUrl) {
         bearer(apiKey);
         setBaseUrl(baseUrl);
@@ -14,6 +14,18 @@ public class BillingClient extends HttpClient {
 
     public FileSingleResponse getInvoiceFile(String id) {
         return get("/invoices/"+id+"/file").object(FileSingleResponse.class);
+    }
+
+    public InvoicePositionSingleResponse createInvoicePosition(String id, InvoicePositionCreateRequest body) {
+        return post("/invoices/"+id+"/positions", body).object(InvoicePositionSingleResponse.class);
+    }
+
+    public InvoicePositionListResponse getInvoicePositions(String id) {
+        return get("/invoices/"+id+"/positions").object(InvoicePositionListResponse.class);
+    }
+
+    public InvoicePositionListResponse getInvoicePositions(String id, int page, int pageSize, String search) {
+        return get("/invoices/"+id+"/positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(InvoicePositionListResponse.class);
     }
 
     public BillingPositionSingleResponse getBillingPosition(String id) {
@@ -28,18 +40,6 @@ public class BillingClient extends HttpClient {
         return put("/billing-positions/"+id, body).object(BillingPositionSingleResponse.class);
     }
 
-    public BankAccountSingleResponse createBankAccount(BankAccountCreateRequest body) {
-        return post("/bank-accounts", body).object(BankAccountSingleResponse.class);
-    }
-
-    public BankAccountListResponse getBankAccounts() {
-        return get("/bank-accounts").object(BankAccountListResponse.class);
-    }
-
-    public BankAccountListResponse getBankAccounts(int page, int pageSize, String search) {
-        return get("/bank-accounts").query("page", page).query("page_size", pageSize).query("search", search).object(BankAccountListResponse.class);
-    }
-
     public ServiceContractPositionSingleResponse createServiceContractPosition(ServiceContractPositionCreateRequest body) {
         return post("/service-contract-positions", body).object(ServiceContractPositionSingleResponse.class);
     }
@@ -49,7 +49,7 @@ public class BillingClient extends HttpClient {
     }
 
     public ServiceContractPositionListResponse getServiceContractPositions(int page, int pageSize, String search) {
-        return get("/service-contract-positions").query("page", page).query("page_size", pageSize).query("search", search).object(ServiceContractPositionListResponse.class);
+        return get("/service-contract-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServiceContractPositionListResponse.class);
     }
 
     public BillingPositionSingleResponse createBillingPosition(BillingPositionCreateRequest body) {
@@ -61,7 +61,7 @@ public class BillingClient extends HttpClient {
     }
 
     public BillingPositionListResponse getBillingPositions(int page, int pageSize, String search) {
-        return get("/billing-positions").query("page", page).query("page_size", pageSize).query("search", search).object(BillingPositionListResponse.class);
+        return get("/billing-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(BillingPositionListResponse.class);
     }
 
     public CustomerSingleResponse createCustomer(CustomerCreateRequest body) {
@@ -73,19 +73,7 @@ public class BillingClient extends HttpClient {
     }
 
     public CustomerListResponse getCustomers(int page, int pageSize, String search) {
-        return get("/customers").query("page", page).query("page_size", pageSize).query("search", search).object(CustomerListResponse.class);
-    }
-
-    public InvoicePositionSingleResponse getInvoicePosition(String id) {
-        return get("/invoice-positions/"+id).object(InvoicePositionSingleResponse.class);
-    }
-
-    public EmptyResponse deleteInvoicePosition(String id) {
-        return delete("/invoice-positions/"+id).object(EmptyResponse.class);
-    }
-
-    public InvoicePositionSingleResponse updateInvoicePosition(String id, InvoicePositionUpdateRequest body) {
-        return put("/invoice-positions/"+id, body).object(InvoicePositionSingleResponse.class);
+        return get("/customers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(CustomerListResponse.class);
     }
 
     public DebitListResponse getDebits() {
@@ -93,7 +81,7 @@ public class BillingClient extends HttpClient {
     }
 
     public DebitListResponse getDebits(int page, int pageSize, String search) {
-        return get("/debits").query("page", page).query("page_size", pageSize).query("search", search).object(DebitListResponse.class);
+        return get("/debits").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(DebitListResponse.class);
     }
 
     public CustomerSingleResponse getCustomer(int id) {
@@ -109,11 +97,7 @@ public class BillingClient extends HttpClient {
     }
 
     public OnlinePaymentListResponse getOnlinePayments(int page, int pageSize, String search) {
-        return get("/online-payments").query("page", page).query("page_size", pageSize).query("search", search).object(OnlinePaymentListResponse.class);
-    }
-
-    public FileDownloadResponse getFileDownload(String id) {
-        return get("/files/"+id+"/download").object(FileDownloadResponse.class);
+        return get("/online-payments").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(OnlinePaymentListResponse.class);
     }
 
     public InvoiceSingleResponse createInvoice(InvoiceCreateRequest body) {
@@ -125,7 +109,7 @@ public class BillingClient extends HttpClient {
     }
 
     public InvoiceListResponse getInvoices(int page, int pageSize, String search) {
-        return get("/invoices").query("page", page).query("page_size", pageSize).query("search", search).object(InvoiceListResponse.class);
+        return get("/invoices").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(InvoiceListResponse.class);
     }
 
     public OfferPositionSingleResponse getOfferPosition(String id) {
@@ -138,10 +122,6 @@ public class BillingClient extends HttpClient {
 
     public OfferPositionSingleResponse updateOfferPosition(String id, OfferPositionUpdateRequest body) {
         return put("/offer-positions/"+id, body).object(OfferPositionSingleResponse.class);
-    }
-
-    public FileSingleResponse getFile(String id) {
-        return get("/files/"+id).object(FileSingleResponse.class);
     }
 
     public ServiceContractPositionSingleResponse getServiceContractPosition(String id) {
@@ -173,7 +153,7 @@ public class BillingClient extends HttpClient {
     }
 
     public DebitMandateListResponse getDebitMandates(int page, int pageSize, String search) {
-        return get("/debit-mandates").query("page", page).query("page_size", pageSize).query("search", search).object(DebitMandateListResponse.class);
+        return get("/debit-mandates").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(DebitMandateListResponse.class);
     }
 
     public BankTransactionListResponse getBankTransactions() {
@@ -181,23 +161,11 @@ public class BillingClient extends HttpClient {
     }
 
     public BankTransactionListResponse getBankTransactions(int page, int pageSize, String search) {
-        return get("/bank-transactions").query("page", page).query("page_size", pageSize).query("search", search).object(BankTransactionListResponse.class);
+        return get("/bank-transactions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(BankTransactionListResponse.class);
     }
 
     public DebitMandateSingleResponse getDebitMandate(String id) {
         return get("/debit-mandates/"+id).object(DebitMandateSingleResponse.class);
-    }
-
-    public BankAccountSingleResponse getBankAccount(String id) {
-        return get("/bank-accounts/"+id).object(BankAccountSingleResponse.class);
-    }
-
-    public EmptyResponse deleteBankAccount(String id) {
-        return delete("/bank-accounts/"+id).object(EmptyResponse.class);
-    }
-
-    public BankAccountSingleResponse updateBankAccount(String id, BankAccountUpdateRequest body) {
-        return put("/bank-accounts/"+id, body).object(BankAccountSingleResponse.class);
     }
 
     public BankTransactionSingleResponse getBankTransaction(String id) {
@@ -212,12 +180,16 @@ public class BillingClient extends HttpClient {
         return put("/offers/"+id, body).object(OfferSingleResponse.class);
     }
 
-    public FileListResponse getFiles() {
-        return get("/files").object(FileListResponse.class);
+    public InvoicePositionSingleResponse getInvoicePosition(String invoice_id, String id) {
+        return get("/invoices/"+invoice_id+"/positions/"+id).object(InvoicePositionSingleResponse.class);
     }
 
-    public FileListResponse getFiles(int page, int pageSize, String search) {
-        return get("/files").query("page", page).query("page_size", pageSize).query("search", search).object(FileListResponse.class);
+    public EmptyResponse deleteInvoicePosition(String invoice_id, String id) {
+        return delete("/invoices/"+invoice_id+"/positions/"+id).object(EmptyResponse.class);
+    }
+
+    public InvoicePositionSingleResponse updateInvoicePosition(String invoice_id, String id, InvoicePositionUpdateRequest body) {
+        return put("/invoices/"+invoice_id+"/positions/"+id, body).object(InvoicePositionSingleResponse.class);
     }
 
     public ServiceContractSingleResponse createServiceContract(ServiceContractCreateRequest body) {
@@ -229,11 +201,15 @@ public class BillingClient extends HttpClient {
     }
 
     public ServiceContractListResponse getServiceContracts(int page, int pageSize, String search) {
-        return get("/service-contracts").query("page", page).query("page_size", pageSize).query("search", search).object(ServiceContractListResponse.class);
+        return get("/service-contracts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServiceContractListResponse.class);
     }
 
     public InvoiceSingleResponse getInvoice(String id) {
         return get("/invoices/"+id).object(InvoiceSingleResponse.class);
+    }
+
+    public EmptyResponse deleteInvoice(String id) {
+        return delete("/invoices/"+id).object(EmptyResponse.class);
     }
 
     public InvoiceSingleResponse updateInvoice(String id, InvoiceUpdateRequest body) {
@@ -242,22 +218,6 @@ public class BillingClient extends HttpClient {
 
     public OnlinePaymentSingleResponse getOnlinePayment(String id) {
         return get("/online-payments/"+id).object(OnlinePaymentSingleResponse.class);
-    }
-
-    public CustomerTransactionSingleResponse getCustomerTransaction(String id) {
-        return get("/customer-transactions/"+id).object(CustomerTransactionSingleResponse.class);
-    }
-
-    public InvoicePositionSingleResponse createInvoicePosition(InvoicePositionCreateRequest body) {
-        return post("/invoice-positions", body).object(InvoicePositionSingleResponse.class);
-    }
-
-    public InvoicePositionListResponse getInvoicePositions() {
-        return get("/invoice-positions").object(InvoicePositionListResponse.class);
-    }
-
-    public InvoicePositionListResponse getInvoicePositions(int page, int pageSize, String search) {
-        return get("/invoice-positions").query("page", page).query("page_size", pageSize).query("search", search).object(InvoicePositionListResponse.class);
     }
 
     public DebitSingleResponse getDebit(String id) {
@@ -273,7 +233,7 @@ public class BillingClient extends HttpClient {
     }
 
     public OfferListResponse getOffers(int page, int pageSize, String search) {
-        return get("/offers").query("page", page).query("page_size", pageSize).query("search", search).object(OfferListResponse.class);
+        return get("/offers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(OfferListResponse.class);
     }
 
     public ServiceContractSingleResponse getServiceContract(String id) {
@@ -288,14 +248,6 @@ public class BillingClient extends HttpClient {
         return put("/service-contracts/"+id, body).object(ServiceContractSingleResponse.class);
     }
 
-    public CustomerTransactionListResponse getCustomerTransactions() {
-        return get("/customer-transactions").object(CustomerTransactionListResponse.class);
-    }
-
-    public CustomerTransactionListResponse getCustomerTransactions(int page, int pageSize, String search) {
-        return get("/customer-transactions").query("page", page).query("page_size", pageSize).query("search", search).object(CustomerTransactionListResponse.class);
-    }
-
     public OfferPositionSingleResponse createOfferPosition(OfferPositionCreateRequest body) {
         return post("/offer-positions", body).object(OfferPositionSingleResponse.class);
     }
@@ -305,7 +257,7 @@ public class BillingClient extends HttpClient {
     }
 
     public OfferPositionListResponse getOfferPositions(int page, int pageSize, String search) {
-        return get("/offer-positions").query("page", page).query("page_size", pageSize).query("search", search).object(OfferPositionListResponse.class);
+        return get("/offer-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(OfferPositionListResponse.class);
     }
 
     public PaymentReminderSingleResponse createPaymentReminder(PaymentReminderCreateRequest body) {
@@ -317,7 +269,7 @@ public class BillingClient extends HttpClient {
     }
 
     public PaymentReminderListResponse getPaymentReminders(int page, int pageSize, String search) {
-        return get("/payment-reminders").query("page", page).query("page_size", pageSize).query("search", search).object(PaymentReminderListResponse.class);
+        return get("/payment-reminders").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(PaymentReminderListResponse.class);
     }
 
 

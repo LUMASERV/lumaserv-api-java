@@ -9,7 +9,7 @@ public class CustomerSingleResponse {
     @MapperOptions(name = "metadata")
     private ResponseMetadata metadata;
     @MapperOptions(name = "data")
-    private Customer data;
+    private CustomerDetailed data;
     @MapperOptions(name = "success")
     private boolean success;
     @MapperOptions(name = "messages")

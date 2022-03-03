@@ -6,8 +6,12 @@ import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Server {
+    @MapperOptions(name = "zone_id")
+    private String zoneId;
+    @MapperOptions(name = "addresses")
+    private Address[] addresses;
     @MapperOptions(name = "variant_id")
-    private int variantId;
+    private String variantId;
     @MapperOptions(name = "project_id")
     private String projectId;
     @MapperOptions(name = "name")
@@ -16,12 +20,12 @@ public class Server {
     private String mediaId;
     @MapperOptions(name = "created_at")
     private String createdAt;
-    @MapperOptions(name = "legacy_id")
-    private int legacyId;
     @MapperOptions(name = "template_id")
     private String templateId;
     @MapperOptions(name = "id")
     private String id;
+    @MapperOptions(name = "state")
+    private String state;
     @MapperOptions(name = "labels")
     private AbstractObject labels;
 }

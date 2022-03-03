@@ -2,7 +2,7 @@ package com.lumaserv.client.auth;
 
 import org.javawebstack.httpclient.HTTPClient;
 
-public class AuthClient extends HttpClient {
+public class AuthClient extends HTTPClient {
     public AuthClient(String apiKey, String baseUrl) {
         bearer(apiKey);
         setBaseUrl(baseUrl);
@@ -21,7 +21,7 @@ public class AuthClient extends HttpClient {
     }
 
     public ProjectListResponse getProjects(int page, int pageSize, String search, boolean detail) {
-        return get("/projects").query("page", page).query("page_size", pageSize).query("search", search).query("detail", detail).object(ProjectListResponse.class);
+        return get("/projects").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("detail", String.valueOf(detail)).object(ProjectListResponse.class);
     }
 
     public ProjectSingleResponse getProject(String id) {
@@ -29,7 +29,7 @@ public class AuthClient extends HttpClient {
     }
 
     public ProjectSingleResponse getProject(String id, boolean detail) {
-        return get("/projects/"+id).query("detail", detail).object(ProjectSingleResponse.class);
+        return get("/projects/"+id).query("detail", String.valueOf(detail)).object(ProjectSingleResponse.class);
     }
 
     public EmptyResponse deleteProject(String id) {
@@ -44,16 +44,24 @@ public class AuthClient extends HttpClient {
         return post("/login", body).object(LoginResponse.class);
     }
 
+    public UserSingleResponse createUser(UserCreateRequest body) {
+        return post("/users", body).object(UserSingleResponse.class);
+    }
+
     public UserListResponse getUsers() {
         return get("/users").object(UserListResponse.class);
     }
 
     public UserListResponse getUsers(int page, int pageSize, String search) {
-        return get("/users").query("page", page).query("page_size", pageSize).query("search", search).object(UserListResponse.class);
+        return get("/users").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(UserListResponse.class);
     }
 
     public UserSingleResponse getUser(String id) {
         return get("/users/"+id).object(UserSingleResponse.class);
+    }
+
+    public UserSingleResponse updateUser(String id, UserUpdateRequest body) {
+        return put("/users/"+id, body).object(UserSingleResponse.class);
     }
 
     public EmptyResponse requestPasswordReset(RequestPasswordResetRequest body) {
@@ -64,12 +72,24 @@ public class AuthClient extends HttpClient {
         return put("/password-reset", body).object(EmptyResponse.class);
     }
 
+    public AuditLogResponse searchAuditLog(AuditLogRequest body) {
+        return post("/audit-log", body).object(AuditLogResponse.class);
+    }
+
     public TokenSingleResponse createToken(TokenCreateRequest body) {
         return post("/tokens", body).object(TokenSingleResponse.class);
     }
 
     public TokenListResponse getTokens() {
         return get("/tokens").object(TokenListResponse.class);
+    }
+
+    public TokenListResponse getTokens(String search, int page, int pageSize) {
+        return get("/tokens").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(TokenListResponse.class);
+    }
+
+    public CountrySingleResponse getCountry(String code) {
+        return get("/countries/"+code).object(CountrySingleResponse.class);
     }
 
     public TokenSingleResponse getToken(String id) {
@@ -89,7 +109,7 @@ public class AuthClient extends HttpClient {
     }
 
     public ProjectMemberListResponse getProjectMembers(String id, int page, int pageSize, String search) {
-        return get("/projects/"+id+"/members").query("page", page).query("page_size", pageSize).query("search", search).object(ProjectMemberListResponse.class);
+        return get("/projects/"+id+"/members").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ProjectMemberListResponse.class);
     }
 
     public TokenValidationResponse validateSelf() {
@@ -102,6 +122,14 @@ public class AuthClient extends HttpClient {
 
     public ProjectMemberListResponse getUserProjectMemberships(String id) {
         return get("/users/"+id+"/project_memberships").object(ProjectMemberListResponse.class);
+    }
+
+    public CountryListResponse getCountries() {
+        return get("/countries").object(CountryListResponse.class);
+    }
+
+    public CountryListResponse getCountries(String search, int page, int pageSize) {
+        return get("/countries").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(CountryListResponse.class);
     }
 
 

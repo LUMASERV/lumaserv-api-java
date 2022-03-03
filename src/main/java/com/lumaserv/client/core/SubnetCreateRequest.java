@@ -11,7 +11,7 @@ public class SubnetCreateRequest {
     @MapperOptions(name = "address")
     private String address;
     @MapperOptions(name = "public")
-    private boolean public;
+    private boolean isPublic;
     @MapperOptions(name = "project_id")
     private String projectId;
     @MapperOptions(name = "prefix")

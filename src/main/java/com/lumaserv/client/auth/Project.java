@@ -8,8 +8,6 @@ import org.javawebstack.abstractdata.AbstractObject;
 public class Project {
     @MapperOptions(name = "id")
     private String id;
-    @MapperOptions(name = "detail")
-    private AbstractObject detail;
     @MapperOptions(name = "title")
     private String title;
 }

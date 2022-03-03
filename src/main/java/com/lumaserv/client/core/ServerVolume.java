@@ -6,10 +6,14 @@ import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerVolume {
+    @MapperOptions(name = "zone_id")
+    private String zoneId;
     @MapperOptions(name = "size")
     private int size;
     @MapperOptions(name = "project_id")
     private String projectId;
+    @MapperOptions(name = "storage_id")
+    private String storageId;
     @MapperOptions(name = "class_id")
     private String classId;
     @MapperOptions(name = "root")

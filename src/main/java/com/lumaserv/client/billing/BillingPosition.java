@@ -9,21 +9,21 @@ public class BillingPosition {
     @MapperOptions(name = "invoice_position_id")
     private String invoicePositionId;
     @MapperOptions(name = "amount")
-    private String amount;
+    private float amount;
     @MapperOptions(name = "price")
-    private String price;
+    private float price;
     @MapperOptions(name = "description")
     private String description;
     @MapperOptions(name = "id")
     private String id;
     @MapperOptions(name = "customer_id")
-    private String customerId;
+    private int customerId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "available_at")
     private String availableAt;
     @MapperOptions(name = "vat_rate")
-    private String vatRate;
+    private float vatRate;
     @MapperOptions(name = "group_key")
     private String groupKey;
 }

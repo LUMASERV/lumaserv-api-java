@@ -9,7 +9,7 @@ public class InvoiceSingleResponse {
     @MapperOptions(name = "metadata")
     private ResponseMetadata metadata;
     @MapperOptions(name = "data")
-    private Invoice data;
+    private InvoiceDetailed data;
     @MapperOptions(name = "success")
     private boolean success;
     @MapperOptions(name = "messages")

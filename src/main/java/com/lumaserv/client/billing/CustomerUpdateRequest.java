@@ -18,14 +18,16 @@ public class CustomerUpdateRequest {
     private float customVatRate;
     @MapperOptions(name = "country_code")
     private String countryCode;
-    @MapperOptions(name = "invoice_shipping_type")
-    private InvoiceShippingType invoiceShippingType;
     @MapperOptions(name = "balance")
     private float balance;
     @MapperOptions(name = "street")
     private String street;
+    @MapperOptions(name = "tax_number")
+    private String taxNumber;
     @MapperOptions(name = "company_name")
     private String companyName;
+    @MapperOptions(name = "auto_finalize")
+    private boolean autoFinalize;
     @MapperOptions(name = "street_number")
     private String streetNumber;
     @MapperOptions(name = "credit_limit")
