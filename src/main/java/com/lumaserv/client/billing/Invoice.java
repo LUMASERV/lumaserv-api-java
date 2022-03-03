@@ -8,18 +8,14 @@ import org.javawebstack.abstractdata.AbstractObject;
 public class Invoice {
     @MapperOptions(name = "paid_at")
     private String paidAt;
-    @MapperOptions(name = "cancelled_at")
-    private String cancelledAt;
-    @MapperOptions(name = "number")
-    private String number;
+    @MapperOptions(name = "created_at")
+    private String createdAt;
     @MapperOptions(name = "due_at")
     private String dueAt;
     @MapperOptions(name = "id")
     private String id;
     @MapperOptions(name = "state")
     private InvoiceState state;
-    @MapperOptions(name = "net_amount")
-    private float netAmount;
     @MapperOptions(name = "customer_id")
     private int customerId;
 }

@@ -10,18 +10,18 @@ public class InvoicePosition {
     private float amount;
     @MapperOptions(name = "unit")
     private String unit;
+    @MapperOptions(name = "updated_at")
+    private String updatedAt;
     @MapperOptions(name = "price")
     private float price;
-    @MapperOptions(name = "invoice_id")
-    private String invoiceId;
+    @MapperOptions(name = "name")
+    private String name;
     @MapperOptions(name = "description")
     private String description;
-    @MapperOptions(name = "id")
-    private String id;
-    @MapperOptions(name = "customer_id")
-    private int customerId;
-    @MapperOptions(name = "title")
-    private String title;
+    @MapperOptions(name = "created_at")
+    private String createdAt;
+    @MapperOptions(name = "position")
+    private float position;
     @MapperOptions(name = "vat_rate")
     private float vatRate;
     @MapperOptions(name = "group_key")

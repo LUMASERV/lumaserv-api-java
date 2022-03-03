@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerVariantCreateRequest {
     @MapperOptions(name = "zone_ids")
-    private String zoneIds;
+    private String[] zoneIds;
     @MapperOptions(name = "disk")
     private int disk;
     @MapperOptions(name = "cores")

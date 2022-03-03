@@ -12,15 +12,13 @@ public class InvoiceCreateRequestPosition {
     private String unit;
     @MapperOptions(name = "price")
     private float price;
-    @MapperOptions(name = "invoice_id")
-    private String invoiceId;
+    @MapperOptions(name = "name")
+    private String name;
     @MapperOptions(name = "description")
     private String description;
-    @MapperOptions(name = "title")
-    private String title;
     @MapperOptions(name = "vat_rate")
     private float vatRate;
-    @MapperOptions(name = "group_key")
-    private String groupKey;
+    @MapperOptions(name = "group")
+    private String group;
 }
 

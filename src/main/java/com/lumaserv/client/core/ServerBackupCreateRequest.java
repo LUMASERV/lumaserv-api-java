@@ -5,14 +5,10 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
-public class AvailabilityZoneUpdateRequest {
-    @MapperOptions(name = "country_code")
-    private String countryCode;
-    @MapperOptions(name = "city")
-    private String city;
+public class ServerBackupCreateRequest {
+    @MapperOptions(name = "server_id")
+    private String serverId;
     @MapperOptions(name = "title")
     private String title;
-    @MapperOptions(name = "config")
-    private AbstractObject config;
 }
 

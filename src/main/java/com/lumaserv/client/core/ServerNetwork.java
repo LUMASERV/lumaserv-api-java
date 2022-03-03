@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerNetwork {
     @MapperOptions(name = "default")
-    private boolean default;
+    private boolean isDefault;
     @MapperOptions(name = "network_id")
     private String networkId;
     @MapperOptions(name = "address_v6_id")

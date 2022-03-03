@@ -44,8 +44,8 @@ public class AuthClient extends HttpClient {
         return post("/login", body).object(LoginResponse.class);
     }
 
-    public UserSingleResponse createUser() {
-        return post("/users").object(UserSingleResponse.class);
+    public UserSingleResponse createUser(UserCreateRequest body) {
+        return post("/users", body).object(UserSingleResponse.class);
     }
 
     public UserListResponse getUsers() {
@@ -60,6 +60,10 @@ public class AuthClient extends HttpClient {
         return get("/users/"+id).object(UserSingleResponse.class);
     }
 
+    public UserSingleResponse updateUser(String id, UserUpdateRequest body) {
+        return put("/users/"+id, body).object(UserSingleResponse.class);
+    }
+
     public EmptyResponse requestPasswordReset(RequestPasswordResetRequest body) {
         return post("/password-reset", body).object(EmptyResponse.class);
     }
@@ -68,12 +72,24 @@ public class AuthClient extends HttpClient {
         return put("/password-reset", body).object(EmptyResponse.class);
     }
 
+    public AuditLogResponse searchAuditLog(AuditLogRequest body) {
+        return post("/audit-log", body).object(AuditLogResponse.class);
+    }
+
     public TokenSingleResponse createToken(TokenCreateRequest body) {
         return post("/tokens", body).object(TokenSingleResponse.class);
     }
 
     public TokenListResponse getTokens() {
         return get("/tokens").object(TokenListResponse.class);
+    }
+
+    public TokenListResponse getTokens(String search, int page, int pageSize) {
+        return get("/tokens").query("search", search).query("page", page).query("page_size", pageSize).object(TokenListResponse.class);
+    }
+
+    public CountrySingleResponse getCountry(String code) {
+        return get("/countries/"+code).object(CountrySingleResponse.class);
     }
 
     public TokenSingleResponse getToken(String id) {
@@ -106,6 +122,14 @@ public class AuthClient extends HttpClient {
 
     public ProjectMemberListResponse getUserProjectMemberships(String id) {
         return get("/users/"+id+"/project_memberships").object(ProjectMemberListResponse.class);
+    }
+
+    public CountryListResponse getCountries() {
+        return get("/countries").object(CountryListResponse.class);
+    }
+
+    public CountryListResponse getCountries(String search, int page, int pageSize) {
+        return get("/countries").query("search", search).query("page", page).query("page_size", pageSize).object(CountryListResponse.class);
     }
 
 

@@ -11,9 +11,9 @@ public class ServerAction {
     @MapperOptions(name = "id")
     private String id;
     @MapperOptions(name = "state")
-    private String state;
+    private ServerActionState state;
     @MapperOptions(name = "type")
-    private String type;
+    private ServerActionType type;
     @MapperOptions(name = "cancellable")
     private boolean cancellable;
     @MapperOptions(name = "ended_at")

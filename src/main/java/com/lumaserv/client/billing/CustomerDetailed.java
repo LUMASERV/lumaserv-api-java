@@ -5,7 +5,7 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
-public class CustomerUpdateRequest {
+public class CustomerDetailed {
     @MapperOptions(name = "additional_address")
     private String additionalAddress;
     @MapperOptions(name = "city")
@@ -14,33 +14,33 @@ public class CustomerUpdateRequest {
     private String lastName;
     @MapperOptions(name = "billing_interval")
     private BillingInterval billingInterval;
-    @MapperOptions(name = "custom_vat_rate")
-    private float customVatRate;
     @MapperOptions(name = "country_code")
     private String countryCode;
     @MapperOptions(name = "balance")
     private float balance;
+    @MapperOptions(name = "user_id")
+    private String userId;
     @MapperOptions(name = "street")
     private String street;
     @MapperOptions(name = "tax_number")
     private String taxNumber;
     @MapperOptions(name = "company_name")
     private String companyName;
-    @MapperOptions(name = "auto_finalize")
-    private boolean autoFinalize;
-    @MapperOptions(name = "street_number")
-    private String streetNumber;
     @MapperOptions(name = "credit_limit")
     private float creditLimit;
-    @MapperOptions(name = "payment_period")
-    private int paymentPeriod;
+    @MapperOptions(name = "street_number")
+    private String streetNumber;
     @MapperOptions(name = "vat_id")
     private String vatId;
+    @MapperOptions(name = "id")
+    private String id;
     @MapperOptions(name = "postal_code")
     private String postalCode;
     @MapperOptions(name = "first_name")
     private String firstName;
     @MapperOptions(name = "email")
     private String email;
+    @MapperOptions(name = "next_billing_date")
+    private String nextBillingDate;
 }
 

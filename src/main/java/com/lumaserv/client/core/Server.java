@@ -6,6 +6,10 @@ import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Server {
+    @MapperOptions(name = "zone_id")
+    private String zoneId;
+    @MapperOptions(name = "addresses")
+    private Address[] addresses;
     @MapperOptions(name = "variant_id")
     private String variantId;
     @MapperOptions(name = "project_id")
