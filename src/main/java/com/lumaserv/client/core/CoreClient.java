@@ -372,7 +372,7 @@ public class CoreClient extends HttpClient {
         return get("/dns/zones/"+name+"/records").query("page", page).query("page_size", pageSize).object(DNSRecordListResponse.class);
     }
 
-    public DNSRecordListResponse updateDNSZoneRecords(String name, DNSRecordsUpdateRequest body) {
+    public DNSRecordListResponse updateDNSZoneRecords(String name, DNSRecordsUpdateRequest[] body) {
         return put("/dns/zones/"+name+"/records", body).object(DNSRecordListResponse.class);
     }
 
