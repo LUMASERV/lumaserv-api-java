@@ -21,7 +21,7 @@ public class AuthClient extends HTTPClient {
     }
 
     public ProjectListResponse getProjects(int page, int pageSize, String search, boolean detail) {
-        return get("/projects").query("page", page).query("page_size", pageSize).query("search", search).query("detail", detail).object(ProjectListResponse.class);
+        return get("/projects").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("detail", String.valueOf(detail)).object(ProjectListResponse.class);
     }
 
     public ProjectSingleResponse getProject(String id) {
@@ -29,7 +29,7 @@ public class AuthClient extends HTTPClient {
     }
 
     public ProjectSingleResponse getProject(String id, boolean detail) {
-        return get("/projects/"+id).query("detail", detail).object(ProjectSingleResponse.class);
+        return get("/projects/"+id).query("detail", String.valueOf(detail)).object(ProjectSingleResponse.class);
     }
 
     public EmptyResponse deleteProject(String id) {
@@ -53,7 +53,7 @@ public class AuthClient extends HTTPClient {
     }
 
     public UserListResponse getUsers(int page, int pageSize, String search) {
-        return get("/users").query("page", page).query("page_size", pageSize).query("search", search).object(UserListResponse.class);
+        return get("/users").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(UserListResponse.class);
     }
 
     public UserSingleResponse getUser(String id) {
@@ -85,7 +85,7 @@ public class AuthClient extends HTTPClient {
     }
 
     public TokenListResponse getTokens(String search, int page, int pageSize) {
-        return get("/tokens").query("search", search).query("page", page).query("page_size", pageSize).object(TokenListResponse.class);
+        return get("/tokens").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(TokenListResponse.class);
     }
 
     public CountrySingleResponse getCountry(String code) {
@@ -109,7 +109,7 @@ public class AuthClient extends HTTPClient {
     }
 
     public ProjectMemberListResponse getProjectMembers(String id, int page, int pageSize, String search) {
-        return get("/projects/"+id+"/members").query("page", page).query("page_size", pageSize).query("search", search).object(ProjectMemberListResponse.class);
+        return get("/projects/"+id+"/members").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ProjectMemberListResponse.class);
     }
 
     public TokenValidationResponse validateSelf() {
@@ -129,7 +129,7 @@ public class AuthClient extends HTTPClient {
     }
 
     public CountryListResponse getCountries(String search, int page, int pageSize) {
-        return get("/countries").query("search", search).query("page", page).query("page_size", pageSize).object(CountryListResponse.class);
+        return get("/countries").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(CountryListResponse.class);
     }
 
 

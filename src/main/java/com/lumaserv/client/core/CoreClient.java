@@ -21,7 +21,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public SSHKeyListResponse getSSHKeys(int page, int pageSize, String search, boolean withLabels) {
-        return get("/ssh-keys").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(SSHKeyListResponse.class);
+        return get("/ssh-keys").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SSHKeyListResponse.class);
     }
 
     public EmptyResponse startServer(String id) {
@@ -37,7 +37,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public AvailabilityZoneListResponse getAvailabilityZones(int page, int pageSize, String search) {
-        return get("/availability-zones").query("page", page).query("page_size", pageSize).query("search", search).object(AvailabilityZoneListResponse.class);
+        return get("/availability-zones").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(AvailabilityZoneListResponse.class);
     }
 
     public ServerTemplateSingleResponse getServerTemplate(String id) {
@@ -49,7 +49,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public EmptyResponse shutdownServer(String id, boolean force) {
-        return post("/servers/"+id+"/shutdown").query("force", force).object(EmptyResponse.class);
+        return post("/servers/"+id+"/shutdown").query("force", String.valueOf(force)).object(EmptyResponse.class);
     }
 
     public ServerSingleResponse getServer(String id) {
@@ -89,7 +89,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerGraphResponse getServerGraph(String id, String timeframe) {
-        return get("/servers/"+id+"/graph").query("timeframe", timeframe).object(ServerGraphResponse.class);
+        return get("/servers/"+id+"/graph").query("timeframe", String.valueOf(timeframe)).object(ServerGraphResponse.class);
     }
 
     public SSLContactSingleResponse getSSLContact(String id) {
@@ -105,7 +105,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public DNSZoneListResponse getDNSZones(int page, int pageSize, String search, boolean withLabels) {
-        return get("/dns/zones").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(DNSZoneListResponse.class);
+        return get("/dns/zones").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(DNSZoneListResponse.class);
     }
 
     public EmptyResponse recreateServer(String id) {
@@ -129,7 +129,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerHostListResponse getServerHosts(int page, int pageSize, String search) {
-        return get("/server-hosts").query("page", page).query("page_size", pageSize).query("search", search).object(ServerHostListResponse.class);
+        return get("/server-hosts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerHostListResponse.class);
     }
 
     public ServerSingleResponse createServer(ServerCreateRequest body) {
@@ -141,7 +141,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerListResponse getServers(int page, int pageSize, String search, boolean withLabels) {
-        return get("/servers").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(ServerListResponse.class);
+        return get("/servers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(ServerListResponse.class);
     }
 
     public EmptyResponse deleteServerNetwork(String id, String network_id) {
@@ -193,7 +193,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerBackupListResponse getServerBackups(int page, int pageSize, String search) {
-        return get("/server-backups").query("page", page).query("page_size", pageSize).query("search", search).object(ServerBackupListResponse.class);
+        return get("/server-backups").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerBackupListResponse.class);
     }
 
     public SubnetSingleResponse createSubnet(SubnetCreateRequest body) {
@@ -205,7 +205,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public SubnetListResponse getSubnets(int page, int pageSize, String search, boolean withLabels) {
-        return get("/subnets").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(SubnetListResponse.class);
+        return get("/subnets").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SubnetListResponse.class);
     }
 
     public ServerVolumeSingleResponse createServerVolume(ServerVolumeCreateRequest body) {
@@ -217,7 +217,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerVolumeListResponse getServerVolumes(int page, int pageSize, String search, boolean withLabels) {
-        return get("/server-volumes").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(ServerVolumeListResponse.class);
+        return get("/server-volumes").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(ServerVolumeListResponse.class);
     }
 
     public PleskLicenseTypeSingleResponse getPleskLicenseType(String id) {
@@ -233,7 +233,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerStorageClassListResponse getServerStorageClasses(int page, int pageSize, String search) {
-        return get("/server-storage-classes").query("page", page).query("page_size", pageSize).query("search", search).object(ServerStorageClassListResponse.class);
+        return get("/server-storage-classes").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerStorageClassListResponse.class);
     }
 
     public SearchResponse search() {
@@ -241,7 +241,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public SearchResponse search(boolean withLabels, String resources, String search, int limit, String projectId) {
-        return get("/search").query("with_labels", withLabels).query("resources", resources).query("search", search).query("limit", limit).query("project_id", projectId).object(SearchResponse.class);
+        return get("/search").query("with_labels", String.valueOf(withLabels)).query("resources", String.valueOf(resources)).query("search", String.valueOf(search)).query("limit", String.valueOf(limit)).query("project_id", String.valueOf(projectId)).object(SearchResponse.class);
     }
 
     public ScheduledServerActionSingleResponse getScheduledServerAction(String id, String action_id) {
@@ -261,7 +261,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public S3BucketListResponse getS3Buckets(int page, int pageSize, String search, boolean withLabels) {
-        return get("/storage/s3/buckets").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(S3BucketListResponse.class);
+        return get("/storage/s3/buckets").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(S3BucketListResponse.class);
     }
 
     public PleskLicenseTypeListResponse getPleskLicenseTypes() {
@@ -269,7 +269,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public PleskLicenseTypeListResponse getPleskLicenseTypes(int page, int pageSize, String search) {
-        return get("/licenses/plesk-types").query("page", page).query("page_size", pageSize).query("search", search).object(PleskLicenseTypeListResponse.class);
+        return get("/licenses/plesk-types").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(PleskLicenseTypeListResponse.class);
     }
 
     public ServerActionListResponse getServerActions(String id) {
@@ -277,7 +277,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerActionListResponse getServerActions(String id, int page, int pageSize, String search) {
-        return get("/servers/"+id+"/actions").query("page", page).query("page_size", pageSize).query("search", search).object(ServerActionListResponse.class);
+        return get("/servers/"+id+"/actions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerActionListResponse.class);
     }
 
     public ServerStatusResponse getServerStatus(String id) {
@@ -293,7 +293,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public SSLOrganisationListResponse getSSLOrganisations(int page, int pageSize, String search, boolean withLabels) {
-        return get("/ssl/organisations").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(SSLOrganisationListResponse.class);
+        return get("/ssl/organisations").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SSLOrganisationListResponse.class);
     }
 
     public SSLTypeSingleResponse getSSLType(String id) {
@@ -305,7 +305,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public SSLTypeListResponse getSSLTypes(int page, int pageSize, String search) {
-        return get("/ssl/types").query("page", page).query("page_size", pageSize).query("search", search).object(SSLTypeListResponse.class);
+        return get("/ssl/types").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(SSLTypeListResponse.class);
     }
 
     public EmptyResponse deleteDNSRecord(String name, String id) {
@@ -333,7 +333,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerTemplateListResponse getServerTemplates(int page, int pageSize, String search) {
-        return get("/server-templates").query("page", page).query("page_size", pageSize).query("search", search).object(ServerTemplateListResponse.class);
+        return get("/server-templates").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerTemplateListResponse.class);
     }
 
     public ServerHostSingleResponse getServerHost(String id) {
@@ -349,7 +349,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ScheduledServerActionListResponse getScheduledServerActions(String id, int page, int pageSize, String search) {
-        return get("/servers/"+id+"/scheduled-actions").query("page", page).query("page_size", pageSize).query("search", search).object(ScheduledServerActionListResponse.class);
+        return get("/servers/"+id+"/scheduled-actions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ScheduledServerActionListResponse.class);
     }
 
     public DomainSingleResponse unscheduleDomainDelete(String name) {
@@ -369,7 +369,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public DNSRecordListResponse getDNSZoneRecords(String name, int page, int pageSize) {
-        return get("/dns/zones/"+name+"/records").query("page", page).query("page_size", pageSize).object(DNSRecordListResponse.class);
+        return get("/dns/zones/"+name+"/records").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(DNSRecordListResponse.class);
     }
 
     public DNSRecordListResponse updateDNSZoneRecords(String name, DNSRecordsUpdateRequest[] body) {
@@ -389,7 +389,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerNetworkListResponse getServerNetworks(String id, int page, int pageSize, String search) {
-        return get("/servers/"+id+"/networks").query("page", page).query("page_size", pageSize).query("search", search).object(ServerNetworkListResponse.class);
+        return get("/servers/"+id+"/networks").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerNetworkListResponse.class);
     }
 
     public ServerVariantSingleResponse createServerVariant(ServerVariantCreateRequest body) {
@@ -401,7 +401,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerVariantListResponse getServerVariants(int page, int pageSize, String search) {
-        return get("/server-variants").query("page", page).query("page_size", pageSize).query("search", search).object(ServerVariantListResponse.class);
+        return get("/server-variants").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerVariantListResponse.class);
     }
 
     public ServerStorageSingleResponse getServerStorage(String id) {
@@ -421,7 +421,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public AddressListResponse getAddresses(String search, int page, int pageSize) {
-        return get("/addresses").query("search", search).query("page", page).query("page_size", pageSize).object(AddressListResponse.class);
+        return get("/addresses").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(AddressListResponse.class);
     }
 
     public ServerVariantSingleResponse getServerVariant(String id) {
@@ -445,7 +445,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public ServerMediaListResponse getServerMedias(int page, int pageSize, String search, boolean withLabels) {
-        return get("/server-medias").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(ServerMediaListResponse.class);
+        return get("/server-medias").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(ServerMediaListResponse.class);
     }
 
     public SubnetSingleResponse getSubnet(String id) {
@@ -469,7 +469,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public PleskLicenseListResponse getPleskLicenses(int page, int pageSize, String search, boolean withLabels) {
-        return get("/licenses/plesk").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(PleskLicenseListResponse.class);
+        return get("/licenses/plesk").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(PleskLicenseListResponse.class);
     }
 
     public S3AccessKeySingleResponse getS3AccessKey(String id) {
@@ -489,7 +489,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public S3AccessKeyListResponse getS3AccessKeys(int page, int pageSize, String search, boolean withLabels) {
-        return get("/storage/s3/access-keys").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(S3AccessKeyListResponse.class);
+        return get("/storage/s3/access-keys").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(S3AccessKeyListResponse.class);
     }
 
     public DNSZoneSingleResponse getDNSZone(String name) {
@@ -509,7 +509,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public DomainHandleListResponse getDomainHandles(int page, int pageSize, String search, boolean withLabels) {
-        return get("/domain-handles").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(DomainHandleListResponse.class);
+        return get("/domain-handles").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(DomainHandleListResponse.class);
     }
 
     public AddressSingleResponse getAddress(String id) {
@@ -525,7 +525,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public SSLCertificateListResponse getSSLCertificates(int page, int pageSize, String search, boolean withLabels) {
-        return get("/ssl/certificates").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(SSLCertificateListResponse.class);
+        return get("/ssl/certificates").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SSLCertificateListResponse.class);
     }
 
     public DomainSingleResponse scheduleDomainDelete(String name, DomainScheduleDeleteRequest body) {
@@ -545,7 +545,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public DomainPriceListResponse getDomainPricingList(String projectId) {
-        return get("/pricing/domains").query("project_id", projectId).object(DomainPriceListResponse.class);
+        return get("/pricing/domains").query("project_id", String.valueOf(projectId)).object(DomainPriceListResponse.class);
     }
 
     public SSLCertificateSingleResponse getSSLCertificate(String id) {
@@ -565,7 +565,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public NetworkListResponse getNetworks(int page, int pageSize, String search, boolean withLabels) {
-        return get("/networks").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(NetworkListResponse.class);
+        return get("/networks").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(NetworkListResponse.class);
     }
 
     public DomainAuthinfoResponse getDomainAuthinfo(String name) {
@@ -601,7 +601,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public SSLContactListResponse getSSLContacts(int page, int pageSize, String search, boolean withLabels) {
-        return get("/ssl/contacts").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(SSLContactListResponse.class);
+        return get("/ssl/contacts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SSLContactListResponse.class);
     }
 
     public ServerMediaSingleResponse getServerMedia(String id) {
@@ -621,7 +621,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public S3AccessGrantListResponse getS3AccessKeyGrants(String access_key_id, int page, int pageSize, String search, boolean withLabels) {
-        return get("/storage/s3/access-keys/"+access_key_id+"/grants").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(S3AccessGrantListResponse.class);
+        return get("/storage/s3/access-keys/"+access_key_id+"/grants").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(S3AccessGrantListResponse.class);
     }
 
     public ServerVNCResponse getServerVNC(String id) {
@@ -637,7 +637,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public LabelListResponse getLabels(int page, int pageSize, String search) {
-        return get("/labels").query("page", page).query("page_size", pageSize).query("search", search).object(LabelListResponse.class);
+        return get("/labels").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(LabelListResponse.class);
     }
 
     public S3BucketSingleResponse getS3Bucket(String id) {
@@ -657,7 +657,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public DomainListResponse getDomains(int page, int pageSize, String search, boolean withLabels) {
-        return get("/domains").query("page", page).query("page_size", pageSize).query("search", search).query("with_labels", withLabels).object(DomainListResponse.class);
+        return get("/domains").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(DomainListResponse.class);
     }
 
     public ServerVolumeSingleResponse detachServerVolume(String id) {

@@ -25,7 +25,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public InvoicePositionListResponse getInvoicePositions(String id, int page, int pageSize, String search) {
-        return get("/invoices/"+id+"/positions").query("page", page).query("page_size", pageSize).query("search", search).object(InvoicePositionListResponse.class);
+        return get("/invoices/"+id+"/positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(InvoicePositionListResponse.class);
     }
 
     public BillingPositionSingleResponse getBillingPosition(String id) {
@@ -49,7 +49,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public ServiceContractPositionListResponse getServiceContractPositions(int page, int pageSize, String search) {
-        return get("/service-contract-positions").query("page", page).query("page_size", pageSize).query("search", search).object(ServiceContractPositionListResponse.class);
+        return get("/service-contract-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServiceContractPositionListResponse.class);
     }
 
     public BillingPositionSingleResponse createBillingPosition(BillingPositionCreateRequest body) {
@@ -61,7 +61,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public BillingPositionListResponse getBillingPositions(int page, int pageSize, String search) {
-        return get("/billing-positions").query("page", page).query("page_size", pageSize).query("search", search).object(BillingPositionListResponse.class);
+        return get("/billing-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(BillingPositionListResponse.class);
     }
 
     public CustomerSingleResponse createCustomer(CustomerCreateRequest body) {
@@ -73,7 +73,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public CustomerListResponse getCustomers(int page, int pageSize, String search) {
-        return get("/customers").query("page", page).query("page_size", pageSize).query("search", search).object(CustomerListResponse.class);
+        return get("/customers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(CustomerListResponse.class);
     }
 
     public DebitListResponse getDebits() {
@@ -81,7 +81,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public DebitListResponse getDebits(int page, int pageSize, String search) {
-        return get("/debits").query("page", page).query("page_size", pageSize).query("search", search).object(DebitListResponse.class);
+        return get("/debits").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(DebitListResponse.class);
     }
 
     public CustomerSingleResponse getCustomer(int id) {
@@ -97,7 +97,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public OnlinePaymentListResponse getOnlinePayments(int page, int pageSize, String search) {
-        return get("/online-payments").query("page", page).query("page_size", pageSize).query("search", search).object(OnlinePaymentListResponse.class);
+        return get("/online-payments").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(OnlinePaymentListResponse.class);
     }
 
     public InvoiceSingleResponse createInvoice(InvoiceCreateRequest body) {
@@ -109,7 +109,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public InvoiceListResponse getInvoices(int page, int pageSize, String search) {
-        return get("/invoices").query("page", page).query("page_size", pageSize).query("search", search).object(InvoiceListResponse.class);
+        return get("/invoices").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(InvoiceListResponse.class);
     }
 
     public OfferPositionSingleResponse getOfferPosition(String id) {
@@ -153,7 +153,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public DebitMandateListResponse getDebitMandates(int page, int pageSize, String search) {
-        return get("/debit-mandates").query("page", page).query("page_size", pageSize).query("search", search).object(DebitMandateListResponse.class);
+        return get("/debit-mandates").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(DebitMandateListResponse.class);
     }
 
     public BankTransactionListResponse getBankTransactions() {
@@ -161,7 +161,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public BankTransactionListResponse getBankTransactions(int page, int pageSize, String search) {
-        return get("/bank-transactions").query("page", page).query("page_size", pageSize).query("search", search).object(BankTransactionListResponse.class);
+        return get("/bank-transactions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(BankTransactionListResponse.class);
     }
 
     public DebitMandateSingleResponse getDebitMandate(String id) {
@@ -201,7 +201,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public ServiceContractListResponse getServiceContracts(int page, int pageSize, String search) {
-        return get("/service-contracts").query("page", page).query("page_size", pageSize).query("search", search).object(ServiceContractListResponse.class);
+        return get("/service-contracts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServiceContractListResponse.class);
     }
 
     public InvoiceSingleResponse getInvoice(String id) {
@@ -233,7 +233,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public OfferListResponse getOffers(int page, int pageSize, String search) {
-        return get("/offers").query("page", page).query("page_size", pageSize).query("search", search).object(OfferListResponse.class);
+        return get("/offers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(OfferListResponse.class);
     }
 
     public ServiceContractSingleResponse getServiceContract(String id) {
@@ -257,7 +257,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public OfferPositionListResponse getOfferPositions(int page, int pageSize, String search) {
-        return get("/offer-positions").query("page", page).query("page_size", pageSize).query("search", search).object(OfferPositionListResponse.class);
+        return get("/offer-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(OfferPositionListResponse.class);
     }
 
     public PaymentReminderSingleResponse createPaymentReminder(PaymentReminderCreateRequest body) {
@@ -269,7 +269,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public PaymentReminderListResponse getPaymentReminders(int page, int pageSize, String search) {
-        return get("/payment-reminders").query("page", page).query("page_size", pageSize).query("search", search).object(PaymentReminderListResponse.class);
+        return get("/payment-reminders").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(PaymentReminderListResponse.class);
     }
 
 
