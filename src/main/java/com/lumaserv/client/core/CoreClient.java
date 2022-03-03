@@ -2,7 +2,7 @@ package com.lumaserv.client.core;
 
 import org.javawebstack.httpclient.HTTPClient;
 
-public class CoreClient extends HttpClient {
+public class CoreClient extends HTTPClient {
     public CoreClient(String apiKey, String baseUrl) {
         bearer(apiKey);
         setBaseUrl(baseUrl);

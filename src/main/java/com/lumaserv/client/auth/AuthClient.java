@@ -2,7 +2,7 @@ package com.lumaserv.client.auth;
 
 import org.javawebstack.httpclient.HTTPClient;
 
-public class AuthClient extends HttpClient {
+public class AuthClient extends HTTPClient {
     public AuthClient(String apiKey, String baseUrl) {
         bearer(apiKey);
         setBaseUrl(baseUrl);

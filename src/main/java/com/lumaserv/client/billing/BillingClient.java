@@ -2,7 +2,7 @@ package com.lumaserv.client.billing;
 
 import org.javawebstack.httpclient.HTTPClient;
 
-public class BillingClient extends HttpClient {
+public class BillingClient extends HTTPClient {
     public BillingClient(String apiKey, String baseUrl) {
         bearer(apiKey);
         setBaseUrl(baseUrl);
