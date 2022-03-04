@@ -15,7 +15,7 @@ public class User {
     @MapperOptions(name = "state")
     private UserState state;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private String customerId;
     @MapperOptions(name = "type")
     private UserType type;
     @MapperOptions(name = "first_name")
