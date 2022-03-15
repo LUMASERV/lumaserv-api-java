@@ -52,6 +52,14 @@ public class CoreClient extends HTTPClient {
         return post("/servers/"+id+"/shutdown").query("force", String.valueOf(force)).object(EmptyResponse.class);
     }
 
+    public ServerFirewallSingleResponse getServerFirewall(String id) {
+        return get("/server-firewalls/"+id).object(ServerFirewallSingleResponse.class);
+    }
+
+    public EmptyResponse deleteServerFirewall(String id) {
+        return delete("/server-firewalls/"+id).object(EmptyResponse.class);
+    }
+
     public ServerSingleResponse getServer(String id) {
         return get("/servers/"+id).object(ServerSingleResponse.class);
     }
@@ -110,6 +118,26 @@ public class CoreClient extends HTTPClient {
 
     public EmptyResponse recreateServer(String id) {
         return post("/servers/"+id+"/recreate").object(EmptyResponse.class);
+    }
+
+    public ServerFirewallSingleResponse createServerFirewall(ServerFirewallCreateRequest body) {
+        return post("/server-firewalls", body).object(ServerFirewallSingleResponse.class);
+    }
+
+    public ServerFirewallListResponse getServerFirewalls() {
+        return get("/server-firewalls").object(ServerFirewallListResponse.class);
+    }
+
+    public ServerFirewallListResponse getServerFirewalls(String search, int page, int pageSize) {
+        return get("/server-firewalls").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(ServerFirewallListResponse.class);
+    }
+
+    public ServerFirewallRuleSingleResponse getServerFirewallRule(String id, String rule_id) {
+        return get("/server-firewalls/"+id+"/rules/"+rule_id).object(ServerFirewallRuleSingleResponse.class);
+    }
+
+    public EmptyResponse deleteServerFirewallRule(String id, String rule_id) {
+        return delete("/server-firewalls/"+id+"/rules/"+rule_id).object(EmptyResponse.class);
     }
 
     public EmptyResponse sendDomainVerification(String name) {
@@ -236,6 +264,14 @@ public class CoreClient extends HTTPClient {
         return get("/server-storage-classes").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerStorageClassListResponse.class);
     }
 
+    public ServerFirewallMemberSingleResponse getServerFirewallMember(String id, String member_id) {
+        return get("/server-firewalls/"+id+"/members/"+member_id).object(ServerFirewallMemberSingleResponse.class);
+    }
+
+    public EmptyResponse deleteServerFirewallMember(String id, String member_id) {
+        return delete("/server-firewalls/"+id+"/members/"+member_id).object(EmptyResponse.class);
+    }
+
     public SearchResponse search() {
         return get("/search").object(SearchResponse.class);
     }
@@ -282,6 +318,18 @@ public class CoreClient extends HTTPClient {
 
     public ServerStatusResponse getServerStatus(String id) {
         return get("/servers/"+id+"/status").object(ServerStatusResponse.class);
+    }
+
+    public ServerFirewallMemberSingleResponse createServerFirewallMember(String id, ServerFIrewallMemberCreateRequest body) {
+        return post("/server-firewalls/"+id+"/members", body).object(ServerFirewallMemberSingleResponse.class);
+    }
+
+    public ServerFirewallMemberListResponse getServerFirewallMembers(String id) {
+        return get("/server-firewalls/"+id+"/members").object(ServerFirewallMemberListResponse.class);
+    }
+
+    public ServerFirewallMemberListResponse getServerFirewallMembers(String id, String search, int page, int pageSize) {
+        return get("/server-firewalls/"+id+"/members").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(ServerFirewallMemberListResponse.class);
     }
 
     public SSLOrganisationSingleResponse createSSLOrganisation(SSLOrganisationCreateRequest body) {
@@ -340,6 +388,18 @@ public class CoreClient extends HTTPClient {
         return get("/server-hosts/"+id).object(ServerHostSingleResponse.class);
     }
 
+    public ServerFirewallRuleSingleResponse createServerFirewallRule(String id, ServerFirewallRuleCreateRequest body) {
+        return post("/server-firewalls/"+id+"/rules", body).object(ServerFirewallRuleSingleResponse.class);
+    }
+
+    public ServerFirewallRuleListResponse getServerFirewallRules(String id) {
+        return get("/server-firewalls/"+id+"/rules").object(ServerFirewallRuleListResponse.class);
+    }
+
+    public ServerFirewallRuleListResponse getServerFirewallRules(String id, String search, int page, int pageSize) {
+        return get("/server-firewalls/"+id+"/rules").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(ServerFirewallRuleListResponse.class);
+    }
+
     public ScheduledServerActionSingleResponse createScheduledServerAction(String id, ScheduledServerActionCreateRequest body) {
         return post("/servers/"+id+"/scheduled-actions", body).object(ScheduledServerActionSingleResponse.class);
     }
@@ -378,6 +438,10 @@ public class CoreClient extends HTTPClient {
 
     public ServerVolumeSingleResponse getServerVolume(String id) {
         return get("/server-volumes/"+id).object(ServerVolumeSingleResponse.class);
+    }
+
+    public EmptyResponse deleteServerVolume(String id) {
+        return delete("/server-volumes/"+id).object(EmptyResponse.class);
     }
 
     public ServerNetworkSingleResponse createServerNetwork(String id, ServerNetworkCreateRequest body) {

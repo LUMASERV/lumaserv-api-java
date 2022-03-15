@@ -14,8 +14,6 @@ public class BillingPositionUpdateRequest {
     private float price;
     @MapperOptions(name = "description")
     private String description;
-    @MapperOptions(name = "customer_id")
-    private int customerId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "available_at")

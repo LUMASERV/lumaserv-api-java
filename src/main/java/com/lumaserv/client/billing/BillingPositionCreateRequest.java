@@ -15,7 +15,7 @@ public class BillingPositionCreateRequest {
     @MapperOptions(name = "description")
     private String description;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private String customerId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "available_at")
