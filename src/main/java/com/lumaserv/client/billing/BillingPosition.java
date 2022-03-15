@@ -17,7 +17,7 @@ public class BillingPosition {
     @MapperOptions(name = "id")
     private String id;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private String customerId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "available_at")
