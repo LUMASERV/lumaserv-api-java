@@ -10,6 +10,8 @@ public class BillingPositionUpdateRequest {
     private String invoicePositionId;
     @MapperOptions(name = "amount")
     private float amount;
+    @MapperOptions(name = "unit")
+    private String unit;
     @MapperOptions(name = "price")
     private float price;
     @MapperOptions(name = "description")
