@@ -17,6 +17,6 @@ public class Invoice {
     @MapperOptions(name = "state")
     private InvoiceState state;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private java.util.UUID customerId;
 }
 

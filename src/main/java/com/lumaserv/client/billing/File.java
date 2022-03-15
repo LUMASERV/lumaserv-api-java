@@ -9,12 +9,12 @@ public class File {
     @MapperOptions(name = "name")
     private String name;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "state")
     private String state;
     @MapperOptions(name = "type")
     private String type;
     @MapperOptions(name = "object_id")
-    private String objectId;
+    private java.util.UUID objectId;
 }
 

@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class S3AccessGrantCreateRequest {
     @MapperOptions(name = "bucket_id")
-    private String bucketId;
+    private java.util.UUID bucketId;
     @MapperOptions(name = "path")
     private String path;
     @MapperOptions(name = "role")

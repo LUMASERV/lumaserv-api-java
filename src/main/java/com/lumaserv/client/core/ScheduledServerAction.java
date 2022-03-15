@@ -7,17 +7,17 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ScheduledServerAction {
     @MapperOptions(name = "backup_id")
-    private String backupId;
+    private java.util.UUID backupId;
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "interval")
     private ScheduledServerActionInterval interval;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "execute_at")
     private String executeAt;
     @MapperOptions(name = "server_id")
-    private String serverId;
+    private java.util.UUID serverId;
     @MapperOptions(name = "type")
     private ServerActionType type;
 }

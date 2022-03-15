@@ -9,7 +9,7 @@ public class DNSZone {
     @MapperOptions(name = "hostmaster")
     private String hostmaster;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "name")
     private String name;
     @MapperOptions(name = "created_at")

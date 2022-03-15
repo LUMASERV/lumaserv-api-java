@@ -15,7 +15,7 @@ public class ServiceContractCreateRequest {
     @MapperOptions(name = "positions")
     private ServiceContractCreateRequestPosition[] positions;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private java.util.UUID customerId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "accounting_period")

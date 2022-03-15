@@ -29,9 +29,9 @@ public class DebitMandate {
     @MapperOptions(name = "depositor")
     private String depositor;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private java.util.UUID customerId;
     @MapperOptions(name = "postal_code")
     private String postalCode;
 }

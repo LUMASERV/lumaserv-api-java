@@ -29,7 +29,7 @@ public class SSLContact {
     @MapperOptions(name = "phone")
     private String phone;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "fax")
     private String fax;
     @MapperOptions(name = "postal_code")

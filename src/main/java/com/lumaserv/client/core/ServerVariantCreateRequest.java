@@ -17,7 +17,7 @@ public class ServerVariantCreateRequest {
     @MapperOptions(name = "legacy")
     private boolean legacy;
     @MapperOptions(name = "storage_class_id")
-    private String storageClassId;
+    private java.util.UUID storageClassId;
     @MapperOptions(name = "title")
     private String title;
 }

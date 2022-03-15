@@ -11,7 +11,7 @@ public class AvailabilityZone {
     @MapperOptions(name = "city")
     private String city;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "title")
     private String title;
 }

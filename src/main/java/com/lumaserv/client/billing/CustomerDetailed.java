@@ -19,7 +19,7 @@ public class CustomerDetailed {
     @MapperOptions(name = "balance")
     private float balance;
     @MapperOptions(name = "user_id")
-    private String userId;
+    private java.util.UUID userId;
     @MapperOptions(name = "street")
     private String street;
     @MapperOptions(name = "tax_number")

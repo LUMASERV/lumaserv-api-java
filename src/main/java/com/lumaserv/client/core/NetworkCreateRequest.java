@@ -7,9 +7,9 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class NetworkCreateRequest {
     @MapperOptions(name = "zone_id")
-    private String zoneId;
+    private java.util.UUID zoneId;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "tag")
     private int tag;
     @MapperOptions(name = "title")

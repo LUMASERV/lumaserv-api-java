@@ -29,7 +29,7 @@ public class DomainHandle {
     @MapperOptions(name = "birth_country_code")
     private String birthCountryCode;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "street")
     private String street;
     @MapperOptions(name = "tax_number")

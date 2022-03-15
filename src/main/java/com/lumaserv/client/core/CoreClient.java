@@ -24,7 +24,7 @@ public class CoreClient extends HTTPClient {
         return get("/ssh-keys").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SSHKeyListResponse.class);
     }
 
-    public EmptyResponse startServer(String id) {
+    public EmptyResponse startServer(java.util.UUID id) {
         return post("/servers/"+id+"/start").object(EmptyResponse.class);
     }
 
@@ -40,39 +40,39 @@ public class CoreClient extends HTTPClient {
         return get("/availability-zones").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(AvailabilityZoneListResponse.class);
     }
 
-    public ServerTemplateSingleResponse getServerTemplate(String id) {
+    public ServerTemplateSingleResponse getServerTemplate(java.util.UUID id) {
         return get("/server-templates/"+id).object(ServerTemplateSingleResponse.class);
     }
 
-    public EmptyResponse shutdownServer(String id) {
+    public EmptyResponse shutdownServer(java.util.UUID id) {
         return post("/servers/"+id+"/shutdown").object(EmptyResponse.class);
     }
 
-    public EmptyResponse shutdownServer(String id, boolean force) {
+    public EmptyResponse shutdownServer(java.util.UUID id, boolean force) {
         return post("/servers/"+id+"/shutdown").query("force", String.valueOf(force)).object(EmptyResponse.class);
     }
 
-    public ServerFirewallSingleResponse getServerFirewall(String id) {
+    public ServerFirewallSingleResponse getServerFirewall(java.util.UUID id) {
         return get("/server-firewalls/"+id).object(ServerFirewallSingleResponse.class);
     }
 
-    public EmptyResponse deleteServerFirewall(String id) {
+    public EmptyResponse deleteServerFirewall(java.util.UUID id) {
         return delete("/server-firewalls/"+id).object(EmptyResponse.class);
     }
 
-    public ServerSingleResponse getServer(String id) {
+    public ServerSingleResponse getServer(java.util.UUID id) {
         return get("/servers/"+id).object(ServerSingleResponse.class);
     }
 
-    public EmptyResponse deleteServer(String id) {
+    public EmptyResponse deleteServer(java.util.UUID id) {
         return delete("/servers/"+id).object(EmptyResponse.class);
     }
 
-    public ServerSingleResponse updateServer(String id, ServerUpdateRequest body) {
+    public ServerSingleResponse updateServer(java.util.UUID id, ServerUpdateRequest body) {
         return put("/servers/"+id, body).object(ServerSingleResponse.class);
     }
 
-    public ServerStorageClassSingleResponse getServerStorageClass(String id) {
+    public ServerStorageClassSingleResponse getServerStorageClass(java.util.UUID id) {
         return get("/server-storage-classes/"+id).object(ServerStorageClassSingleResponse.class);
     }
 
@@ -80,15 +80,15 @@ public class CoreClient extends HTTPClient {
         return post("/servers/"+id+"/restore", body).object(ScheduledServerActionSingleResponse.class);
     }
 
-    public SSLOrganisationSingleResponse getSSLOrganisation(String id) {
+    public SSLOrganisationSingleResponse getSSLOrganisation(java.util.UUID id) {
         return get("/ssl/organisations/"+id).object(SSLOrganisationSingleResponse.class);
     }
 
-    public EmptyResponse deleteSSLOrganisation(String id) {
+    public EmptyResponse deleteSSLOrganisation(java.util.UUID id) {
         return delete("/ssl/organisations/"+id).object(EmptyResponse.class);
     }
 
-    public ServerActionSingleResponse getServerAction(String id, String action_id) {
+    public ServerActionSingleResponse getServerAction(java.util.UUID id, java.util.UUID action_id) {
         return get("/servers/"+id+"/actions/"+action_id).object(ServerActionSingleResponse.class);
     }
 
@@ -100,11 +100,11 @@ public class CoreClient extends HTTPClient {
         return get("/servers/"+id+"/graph").query("timeframe", String.valueOf(timeframe)).object(ServerGraphResponse.class);
     }
 
-    public SSLContactSingleResponse getSSLContact(String id) {
+    public SSLContactSingleResponse getSSLContact(java.util.UUID id) {
         return get("/ssl/contacts/"+id).object(SSLContactSingleResponse.class);
     }
 
-    public EmptyResponse deleteSSLContact(String id) {
+    public EmptyResponse deleteSSLContact(java.util.UUID id) {
         return delete("/ssl/contacts/"+id).object(EmptyResponse.class);
     }
 
@@ -116,7 +116,7 @@ public class CoreClient extends HTTPClient {
         return get("/dns/zones").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(DNSZoneListResponse.class);
     }
 
-    public EmptyResponse recreateServer(String id) {
+    public EmptyResponse recreateServer(java.util.UUID id) {
         return post("/servers/"+id+"/recreate").object(EmptyResponse.class);
     }
 
@@ -132,11 +132,11 @@ public class CoreClient extends HTTPClient {
         return get("/server-firewalls").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(ServerFirewallListResponse.class);
     }
 
-    public ServerFirewallRuleSingleResponse getServerFirewallRule(String id, String rule_id) {
+    public ServerFirewallRuleSingleResponse getServerFirewallRule(java.util.UUID id, java.util.UUID rule_id) {
         return get("/server-firewalls/"+id+"/rules/"+rule_id).object(ServerFirewallRuleSingleResponse.class);
     }
 
-    public EmptyResponse deleteServerFirewallRule(String id, String rule_id) {
+    public EmptyResponse deleteServerFirewallRule(java.util.UUID id, java.util.UUID rule_id) {
         return delete("/server-firewalls/"+id+"/rules/"+rule_id).object(EmptyResponse.class);
     }
 
@@ -172,7 +172,7 @@ public class CoreClient extends HTTPClient {
         return get("/servers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(ServerListResponse.class);
     }
 
-    public EmptyResponse deleteServerNetwork(String id, String network_id) {
+    public EmptyResponse deleteServerNetwork(java.util.UUID id, java.util.UUID network_id) {
         return delete("/servers/"+id+"/networks/"+network_id).object(EmptyResponse.class);
     }
 
@@ -204,11 +204,11 @@ public class CoreClient extends HTTPClient {
         return put("/domain-handles/"+code, body).object(DomainHandleSingleResponse.class);
     }
 
-    public AvailabilityZoneSingleResponse getAvailabilityZone(String id) {
+    public AvailabilityZoneSingleResponse getAvailabilityZone(java.util.UUID id) {
         return get("/availability-zones/"+id).object(AvailabilityZoneSingleResponse.class);
     }
 
-    public AvailabilityZoneSingleResponse updateAvailabilityZone(String id, AvailabilityZoneUpdateRequest body) {
+    public AvailabilityZoneSingleResponse updateAvailabilityZone(java.util.UUID id, AvailabilityZoneUpdateRequest body) {
         return put("/availability-zones/"+id, body).object(AvailabilityZoneSingleResponse.class);
     }
 
@@ -248,7 +248,7 @@ public class CoreClient extends HTTPClient {
         return get("/server-volumes").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(ServerVolumeListResponse.class);
     }
 
-    public PleskLicenseTypeSingleResponse getPleskLicenseType(String id) {
+    public PleskLicenseTypeSingleResponse getPleskLicenseType(java.util.UUID id) {
         return get("/licenses/plesk-types/"+id).object(PleskLicenseTypeSingleResponse.class);
     }
 
@@ -264,11 +264,11 @@ public class CoreClient extends HTTPClient {
         return get("/server-storage-classes").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerStorageClassListResponse.class);
     }
 
-    public ServerFirewallMemberSingleResponse getServerFirewallMember(String id, String member_id) {
+    public ServerFirewallMemberSingleResponse getServerFirewallMember(java.util.UUID id, java.util.UUID member_id) {
         return get("/server-firewalls/"+id+"/members/"+member_id).object(ServerFirewallMemberSingleResponse.class);
     }
 
-    public EmptyResponse deleteServerFirewallMember(String id, String member_id) {
+    public EmptyResponse deleteServerFirewallMember(java.util.UUID id, java.util.UUID member_id) {
         return delete("/server-firewalls/"+id+"/members/"+member_id).object(EmptyResponse.class);
     }
 
@@ -276,15 +276,15 @@ public class CoreClient extends HTTPClient {
         return get("/search").object(SearchResponse.class);
     }
 
-    public SearchResponse search(boolean withLabels, String resources, String search, int limit, String projectId) {
+    public SearchResponse search(boolean withLabels, String resources, String search, int limit, java.util.UUID projectId) {
         return get("/search").query("with_labels", String.valueOf(withLabels)).query("resources", String.valueOf(resources)).query("search", String.valueOf(search)).query("limit", String.valueOf(limit)).query("project_id", String.valueOf(projectId)).object(SearchResponse.class);
     }
 
-    public ScheduledServerActionSingleResponse getScheduledServerAction(String id, String action_id) {
+    public ScheduledServerActionSingleResponse getScheduledServerAction(java.util.UUID id, java.util.UUID action_id) {
         return get("/servers/"+id+"/scheduled-actions/"+action_id).object(ScheduledServerActionSingleResponse.class);
     }
 
-    public EmptyResponse deleteScheduledServerAction(String id, String action_id) {
+    public EmptyResponse deleteScheduledServerAction(java.util.UUID id, java.util.UUID action_id) {
         return delete("/servers/"+id+"/scheduled-actions/"+action_id).object(EmptyResponse.class);
     }
 
@@ -308,27 +308,27 @@ public class CoreClient extends HTTPClient {
         return get("/licenses/plesk-types").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(PleskLicenseTypeListResponse.class);
     }
 
-    public ServerActionListResponse getServerActions(String id) {
+    public ServerActionListResponse getServerActions(java.util.UUID id) {
         return get("/servers/"+id+"/actions").object(ServerActionListResponse.class);
     }
 
-    public ServerActionListResponse getServerActions(String id, int page, int pageSize, String search) {
+    public ServerActionListResponse getServerActions(java.util.UUID id, int page, int pageSize, String search) {
         return get("/servers/"+id+"/actions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerActionListResponse.class);
     }
 
-    public ServerStatusResponse getServerStatus(String id) {
+    public ServerStatusResponse getServerStatus(java.util.UUID id) {
         return get("/servers/"+id+"/status").object(ServerStatusResponse.class);
     }
 
-    public ServerFirewallMemberSingleResponse createServerFirewallMember(String id, ServerFIrewallMemberCreateRequest body) {
+    public ServerFirewallMemberSingleResponse createServerFirewallMember(java.util.UUID id, ServerFIrewallMemberCreateRequest body) {
         return post("/server-firewalls/"+id+"/members", body).object(ServerFirewallMemberSingleResponse.class);
     }
 
-    public ServerFirewallMemberListResponse getServerFirewallMembers(String id) {
+    public ServerFirewallMemberListResponse getServerFirewallMembers(java.util.UUID id) {
         return get("/server-firewalls/"+id+"/members").object(ServerFirewallMemberListResponse.class);
     }
 
-    public ServerFirewallMemberListResponse getServerFirewallMembers(String id, String search, int page, int pageSize) {
+    public ServerFirewallMemberListResponse getServerFirewallMembers(java.util.UUID id, String search, int page, int pageSize) {
         return get("/server-firewalls/"+id+"/members").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(ServerFirewallMemberListResponse.class);
     }
 
@@ -344,7 +344,7 @@ public class CoreClient extends HTTPClient {
         return get("/ssl/organisations").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SSLOrganisationListResponse.class);
     }
 
-    public SSLTypeSingleResponse getSSLType(String id) {
+    public SSLTypeSingleResponse getSSLType(java.util.UUID id) {
         return get("/ssl/types/"+id).object(SSLTypeSingleResponse.class);
     }
 
@@ -356,19 +356,19 @@ public class CoreClient extends HTTPClient {
         return get("/ssl/types").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(SSLTypeListResponse.class);
     }
 
-    public EmptyResponse deleteDNSRecord(String name, String id) {
+    public EmptyResponse deleteDNSRecord(String name, java.util.UUID id) {
         return delete("/dns/zones/"+name+"/records/"+id).object(EmptyResponse.class);
     }
 
-    public DNSRecordSingleResponse updateDNSRecord(String name, String id, DNSRecordUpdateRequest body) {
+    public DNSRecordSingleResponse updateDNSRecord(String name, java.util.UUID id, DNSRecordUpdateRequest body) {
         return put("/dns/zones/"+name+"/records/"+id, body).object(DNSRecordSingleResponse.class);
     }
 
-    public PleskLicenseSingleResponse getPleskLicense(String id) {
+    public PleskLicenseSingleResponse getPleskLicense(java.util.UUID id) {
         return get("/licenses/plesk/"+id).object(PleskLicenseSingleResponse.class);
     }
 
-    public PleskLicenseSingleResponse updatePleskLicense(String id, PleskLicenseUpdateRequest body) {
+    public PleskLicenseSingleResponse updatePleskLicense(java.util.UUID id, PleskLicenseUpdateRequest body) {
         return put("/licenses/plesk/"+id, body).object(PleskLicenseSingleResponse.class);
     }
 
@@ -384,31 +384,31 @@ public class CoreClient extends HTTPClient {
         return get("/server-templates").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerTemplateListResponse.class);
     }
 
-    public ServerHostSingleResponse getServerHost(String id) {
+    public ServerHostSingleResponse getServerHost(java.util.UUID id) {
         return get("/server-hosts/"+id).object(ServerHostSingleResponse.class);
     }
 
-    public ServerFirewallRuleSingleResponse createServerFirewallRule(String id, ServerFirewallRuleCreateRequest body) {
+    public ServerFirewallRuleSingleResponse createServerFirewallRule(java.util.UUID id, ServerFirewallRuleCreateRequest body) {
         return post("/server-firewalls/"+id+"/rules", body).object(ServerFirewallRuleSingleResponse.class);
     }
 
-    public ServerFirewallRuleListResponse getServerFirewallRules(String id) {
+    public ServerFirewallRuleListResponse getServerFirewallRules(java.util.UUID id) {
         return get("/server-firewalls/"+id+"/rules").object(ServerFirewallRuleListResponse.class);
     }
 
-    public ServerFirewallRuleListResponse getServerFirewallRules(String id, String search, int page, int pageSize) {
+    public ServerFirewallRuleListResponse getServerFirewallRules(java.util.UUID id, String search, int page, int pageSize) {
         return get("/server-firewalls/"+id+"/rules").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(ServerFirewallRuleListResponse.class);
     }
 
-    public ScheduledServerActionSingleResponse createScheduledServerAction(String id, ScheduledServerActionCreateRequest body) {
+    public ScheduledServerActionSingleResponse createScheduledServerAction(java.util.UUID id, ScheduledServerActionCreateRequest body) {
         return post("/servers/"+id+"/scheduled-actions", body).object(ScheduledServerActionSingleResponse.class);
     }
 
-    public ScheduledServerActionListResponse getScheduledServerActions(String id) {
+    public ScheduledServerActionListResponse getScheduledServerActions(java.util.UUID id) {
         return get("/servers/"+id+"/scheduled-actions").object(ScheduledServerActionListResponse.class);
     }
 
-    public ScheduledServerActionListResponse getScheduledServerActions(String id, int page, int pageSize, String search) {
+    public ScheduledServerActionListResponse getScheduledServerActions(java.util.UUID id, int page, int pageSize, String search) {
         return get("/servers/"+id+"/scheduled-actions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ScheduledServerActionListResponse.class);
     }
 
@@ -416,7 +416,7 @@ public class CoreClient extends HTTPClient {
         return post("/domains/"+name+"/unschedule-delete").object(DomainSingleResponse.class);
     }
 
-    public EmptyResponse stopServer(String id) {
+    public EmptyResponse stopServer(java.util.UUID id) {
         return post("/servers/"+id+"/stop").object(EmptyResponse.class);
     }
 
@@ -436,23 +436,23 @@ public class CoreClient extends HTTPClient {
         return put("/dns/zones/"+name+"/records", body).object(DNSRecordListResponse.class);
     }
 
-    public ServerVolumeSingleResponse getServerVolume(String id) {
+    public ServerVolumeSingleResponse getServerVolume(java.util.UUID id) {
         return get("/server-volumes/"+id).object(ServerVolumeSingleResponse.class);
     }
 
-    public EmptyResponse deleteServerVolume(String id) {
+    public EmptyResponse deleteServerVolume(java.util.UUID id) {
         return delete("/server-volumes/"+id).object(EmptyResponse.class);
     }
 
-    public ServerNetworkSingleResponse createServerNetwork(String id, ServerNetworkCreateRequest body) {
+    public ServerNetworkSingleResponse createServerNetwork(java.util.UUID id, ServerNetworkCreateRequest body) {
         return post("/servers/"+id+"/networks", body).object(ServerNetworkSingleResponse.class);
     }
 
-    public ServerNetworkListResponse getServerNetworks(String id) {
+    public ServerNetworkListResponse getServerNetworks(java.util.UUID id) {
         return get("/servers/"+id+"/networks").object(ServerNetworkListResponse.class);
     }
 
-    public ServerNetworkListResponse getServerNetworks(String id, int page, int pageSize, String search) {
+    public ServerNetworkListResponse getServerNetworks(java.util.UUID id, int page, int pageSize, String search) {
         return get("/servers/"+id+"/networks").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerNetworkListResponse.class);
     }
 
@@ -468,15 +468,15 @@ public class CoreClient extends HTTPClient {
         return get("/server-variants").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServerVariantListResponse.class);
     }
 
-    public ServerStorageSingleResponse getServerStorage(String id) {
+    public ServerStorageSingleResponse getServerStorage(java.util.UUID id) {
         return get("/server-storages/"+id).object(ServerStorageSingleResponse.class);
     }
 
-    public SSHKeySingleResponse getSSHKey(String id) {
+    public SSHKeySingleResponse getSSHKey(java.util.UUID id) {
         return get("/ssh-keys/"+id).object(SSHKeySingleResponse.class);
     }
 
-    public EmptyResponse deleteSSHKey(String id) {
+    public EmptyResponse deleteSSHKey(java.util.UUID id) {
         return delete("/ssh-keys/"+id).object(EmptyResponse.class);
     }
 
@@ -488,15 +488,15 @@ public class CoreClient extends HTTPClient {
         return get("/addresses").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(AddressListResponse.class);
     }
 
-    public ServerVariantSingleResponse getServerVariant(String id) {
+    public ServerVariantSingleResponse getServerVariant(java.util.UUID id) {
         return get("/server-variants/"+id).object(ServerVariantSingleResponse.class);
     }
 
-    public EmptyResponse deleteServerVariant(String id) {
+    public EmptyResponse deleteServerVariant(java.util.UUID id) {
         return delete("/server-variants/"+id).object(EmptyResponse.class);
     }
 
-    public EmptyResponse deleteS3AccessKeyGrant(String access_key_id, String id) {
+    public EmptyResponse deleteS3AccessKeyGrant(java.util.UUID access_key_id, java.util.UUID id) {
         return delete("/storage/s3/access-keys/"+access_key_id+"/grants/"+id).object(EmptyResponse.class);
     }
 
@@ -512,15 +512,15 @@ public class CoreClient extends HTTPClient {
         return get("/server-medias").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(ServerMediaListResponse.class);
     }
 
-    public SubnetSingleResponse getSubnet(String id) {
+    public SubnetSingleResponse getSubnet(java.util.UUID id) {
         return get("/subnets/"+id).object(SubnetSingleResponse.class);
     }
 
-    public EmptyResponse deleteSubnet(String id) {
+    public EmptyResponse deleteSubnet(java.util.UUID id) {
         return delete("/subnets/"+id).object(EmptyResponse.class);
     }
 
-    public ServerVolumeSingleResponse attachServerVolume(String id, ServerVolumeAttachRequest body) {
+    public ServerVolumeSingleResponse attachServerVolume(java.util.UUID id, ServerVolumeAttachRequest body) {
         return post("/server-volumes/"+id+"/attach", body).object(ServerVolumeSingleResponse.class);
     }
 
@@ -536,11 +536,11 @@ public class CoreClient extends HTTPClient {
         return get("/licenses/plesk").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(PleskLicenseListResponse.class);
     }
 
-    public S3AccessKeySingleResponse getS3AccessKey(String id) {
+    public S3AccessKeySingleResponse getS3AccessKey(java.util.UUID id) {
         return get("/storage/s3/access-keys/"+id).object(S3AccessKeySingleResponse.class);
     }
 
-    public EmptyResponse deleteS3AccessKey(String id) {
+    public EmptyResponse deleteS3AccessKey(java.util.UUID id) {
         return delete("/storage/s3/access-keys/"+id).object(EmptyResponse.class);
     }
 
@@ -596,11 +596,11 @@ public class CoreClient extends HTTPClient {
         return post("/domains/"+name+"/schedule-delete", body).object(DomainSingleResponse.class);
     }
 
-    public ServerBackupSingleResponse getServerBackup(String id) {
+    public ServerBackupSingleResponse getServerBackup(java.util.UUID id) {
         return get("/server-backups/"+id).object(ServerBackupSingleResponse.class);
     }
 
-    public EmptyResponse deleteServerBackup(String id) {
+    public EmptyResponse deleteServerBackup(java.util.UUID id) {
         return delete("/server-backups/"+id).object(EmptyResponse.class);
     }
 
@@ -608,15 +608,15 @@ public class CoreClient extends HTTPClient {
         return get("/pricing/domains").object(DomainPriceListResponse.class);
     }
 
-    public DomainPriceListResponse getDomainPricingList(String projectId) {
+    public DomainPriceListResponse getDomainPricingList(java.util.UUID projectId) {
         return get("/pricing/domains").query("project_id", String.valueOf(projectId)).object(DomainPriceListResponse.class);
     }
 
-    public SSLCertificateSingleResponse getSSLCertificate(String id) {
+    public SSLCertificateSingleResponse getSSLCertificate(java.util.UUID id) {
         return get("/ssl/certificates/"+id).object(SSLCertificateSingleResponse.class);
     }
 
-    public AddressSingleResponse createSubnetAddress(String id, SubnetAddressCreateRequest body) {
+    public AddressSingleResponse createSubnetAddress(java.util.UUID id, SubnetAddressCreateRequest body) {
         return post("/subnets/"+id+"/addresses", body).object(AddressSingleResponse.class);
     }
 
@@ -668,31 +668,31 @@ public class CoreClient extends HTTPClient {
         return get("/ssl/contacts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SSLContactListResponse.class);
     }
 
-    public ServerMediaSingleResponse getServerMedia(String id) {
+    public ServerMediaSingleResponse getServerMedia(java.util.UUID id) {
         return get("/server-medias/"+id).object(ServerMediaSingleResponse.class);
     }
 
-    public EmptyResponse deleteServerMedia(String id) {
+    public EmptyResponse deleteServerMedia(java.util.UUID id) {
         return delete("/server-medias/"+id).object(EmptyResponse.class);
     }
 
-    public S3AccessGrantSingleResponse createS3AccessKeyGrant(String access_key_id, S3AccessGrantCreateRequest body) {
+    public S3AccessGrantSingleResponse createS3AccessKeyGrant(java.util.UUID access_key_id, S3AccessGrantCreateRequest body) {
         return post("/storage/s3/access-keys/"+access_key_id+"/grants", body).object(S3AccessGrantSingleResponse.class);
     }
 
-    public S3AccessGrantListResponse getS3AccessKeyGrants(String access_key_id) {
+    public S3AccessGrantListResponse getS3AccessKeyGrants(java.util.UUID access_key_id) {
         return get("/storage/s3/access-keys/"+access_key_id+"/grants").object(S3AccessGrantListResponse.class);
     }
 
-    public S3AccessGrantListResponse getS3AccessKeyGrants(String access_key_id, int page, int pageSize, String search, boolean withLabels) {
+    public S3AccessGrantListResponse getS3AccessKeyGrants(java.util.UUID access_key_id, int page, int pageSize, String search, boolean withLabels) {
         return get("/storage/s3/access-keys/"+access_key_id+"/grants").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(S3AccessGrantListResponse.class);
     }
 
-    public ServerVNCResponse getServerVNC(String id) {
+    public ServerVNCResponse getServerVNC(java.util.UUID id) {
         return get("/servers/"+id+"/vnc").object(ServerVNCResponse.class);
     }
 
-    public NetworkSingleResponse getNetwork(String id) {
+    public NetworkSingleResponse getNetwork(java.util.UUID id) {
         return get("/networks/"+id).object(NetworkSingleResponse.class);
     }
 
@@ -704,11 +704,11 @@ public class CoreClient extends HTTPClient {
         return get("/labels").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(LabelListResponse.class);
     }
 
-    public S3BucketSingleResponse getS3Bucket(String id) {
+    public S3BucketSingleResponse getS3Bucket(java.util.UUID id) {
         return get("/storage/s3/buckets/"+id).object(S3BucketSingleResponse.class);
     }
 
-    public EmptyResponse deleteS3Bucket(String id) {
+    public EmptyResponse deleteS3Bucket(java.util.UUID id) {
         return delete("/storage/s3/buckets/"+id).object(EmptyResponse.class);
     }
 
@@ -724,7 +724,7 @@ public class CoreClient extends HTTPClient {
         return get("/domains").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(DomainListResponse.class);
     }
 
-    public ServerVolumeSingleResponse detachServerVolume(String id) {
+    public ServerVolumeSingleResponse detachServerVolume(java.util.UUID id) {
         return post("/server-volumes/"+id+"/detach").object(ServerVolumeSingleResponse.class);
     }
 

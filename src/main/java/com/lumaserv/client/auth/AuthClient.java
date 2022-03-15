@@ -24,19 +24,19 @@ public class AuthClient extends HTTPClient {
         return get("/projects").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("detail", String.valueOf(detail)).object(ProjectListResponse.class);
     }
 
-    public ProjectSingleResponse getProject(String id) {
+    public ProjectSingleResponse getProject(java.util.UUID id) {
         return get("/projects/"+id).object(ProjectSingleResponse.class);
     }
 
-    public ProjectSingleResponse getProject(String id, boolean detail) {
+    public ProjectSingleResponse getProject(java.util.UUID id, boolean detail) {
         return get("/projects/"+id).query("detail", String.valueOf(detail)).object(ProjectSingleResponse.class);
     }
 
-    public EmptyResponse deleteProject(String id) {
+    public EmptyResponse deleteProject(java.util.UUID id) {
         return delete("/projects/"+id).object(EmptyResponse.class);
     }
 
-    public ProjectSingleResponse updateProject(String id, ProjectUpdateRequest body) {
+    public ProjectSingleResponse updateProject(java.util.UUID id, ProjectUpdateRequest body) {
         return put("/projects/"+id, body).object(ProjectSingleResponse.class);
     }
 
@@ -56,11 +56,11 @@ public class AuthClient extends HTTPClient {
         return get("/users").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(UserListResponse.class);
     }
 
-    public UserSingleResponse getUser(String id) {
+    public UserSingleResponse getUser(java.util.UUID id) {
         return get("/users/"+id).object(UserSingleResponse.class);
     }
 
-    public UserSingleResponse updateUser(String id, UserUpdateRequest body) {
+    public UserSingleResponse updateUser(java.util.UUID id, UserUpdateRequest body) {
         return put("/users/"+id, body).object(UserSingleResponse.class);
     }
 
@@ -92,11 +92,11 @@ public class AuthClient extends HTTPClient {
         return get("/countries/"+code).object(CountrySingleResponse.class);
     }
 
-    public TokenSingleResponse getToken(String id) {
+    public TokenSingleResponse getToken(java.util.UUID id) {
         return get("/tokens/"+id).object(TokenSingleResponse.class);
     }
 
-    public EmptyResponse deleteToken(String id) {
+    public EmptyResponse deleteToken(java.util.UUID id) {
         return delete("/tokens/"+id).object(EmptyResponse.class);
     }
 
@@ -104,11 +104,11 @@ public class AuthClient extends HTTPClient {
         return get("/validate/"+token).object(TokenValidationResponse.class);
     }
 
-    public ProjectMemberListResponse getProjectMembers(String id) {
+    public ProjectMemberListResponse getProjectMembers(java.util.UUID id) {
         return get("/projects/"+id+"/members").object(ProjectMemberListResponse.class);
     }
 
-    public ProjectMemberListResponse getProjectMembers(String id, int page, int pageSize, String search) {
+    public ProjectMemberListResponse getProjectMembers(java.util.UUID id, int page, int pageSize, String search) {
         return get("/projects/"+id+"/members").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ProjectMemberListResponse.class);
     }
 
@@ -116,11 +116,11 @@ public class AuthClient extends HTTPClient {
         return get("/validate/self").object(TokenValidationResponse.class);
     }
 
-    public EmptyResponse removeProjectMember(String id, String user_id) {
+    public EmptyResponse removeProjectMember(java.util.UUID id, java.util.UUID user_id) {
         return delete("/projects/"+id+"/members/"+user_id).object(EmptyResponse.class);
     }
 
-    public ProjectMemberListResponse getUserProjectMemberships(String id) {
+    public ProjectMemberListResponse getUserProjectMemberships(java.util.UUID id) {
         return get("/users/"+id+"/project_memberships").object(ProjectMemberListResponse.class);
     }
 

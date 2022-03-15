@@ -9,8 +9,8 @@ public class ProjectMember {
     @MapperOptions(name = "role")
     private String role;
     @MapperOptions(name = "user_id")
-    private String userId;
+    private java.util.UUID userId;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
 }
 

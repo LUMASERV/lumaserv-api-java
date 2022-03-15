@@ -19,7 +19,7 @@ public class UserUpdateRequest {
     @MapperOptions(name = "type")
     private UserType type;
     @MapperOptions(name = "customer_id")
-    private String customerId;
+    private java.util.UUID customerId;
     @MapperOptions(name = "first_name")
     private String firstName;
     @MapperOptions(name = "email")

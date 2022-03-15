@@ -9,7 +9,7 @@ public class ServerStorageClassCreateRequest {
     @MapperOptions(name = "replication")
     private int replication;
     @MapperOptions(name = "storage_ids")
-    private String[] storageIds;
+    private java.util.UUID[] storageIds;
     @MapperOptions(name = "title")
     private String title;
 }

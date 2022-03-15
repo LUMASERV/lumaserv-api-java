@@ -13,9 +13,9 @@ public class ServerVariant {
     @MapperOptions(name = "memory")
     private int memory;
     @MapperOptions(name = "storage_class_id")
-    private String storageClassId;
+    private java.util.UUID storageClassId;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "title")
     private String title;
 }

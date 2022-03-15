@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class BankTransaction {
     @MapperOptions(name = "bank_account_id")
-    private String bankAccountId;
+    private java.util.UUID bankAccountId;
     @MapperOptions(name = "bank_code")
     private String bankCode;
     @MapperOptions(name = "account_number")
@@ -21,13 +21,13 @@ public class BankTransaction {
     @MapperOptions(name = "type")
     private String type;
     @MapperOptions(name = "debit_id")
-    private String debitId;
+    private java.util.UUID debitId;
     @MapperOptions(name = "reference")
     private String reference;
     @MapperOptions(name = "depositor")
     private String depositor;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "extended_reference")
     private String extendedReference;
     @MapperOptions(name = "value_date")

@@ -11,7 +11,7 @@ public class DNSRecord {
     @MapperOptions(name = "name")
     private String name;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "type")
     private String type;
     @MapperOptions(name = "ttl")

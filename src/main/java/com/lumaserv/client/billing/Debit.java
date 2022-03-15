@@ -11,7 +11,7 @@ public class Debit {
     @MapperOptions(name = "due_date")
     private String dueDate;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "title")
     private String title;
 }

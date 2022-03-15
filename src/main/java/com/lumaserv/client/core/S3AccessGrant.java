@@ -7,13 +7,13 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class S3AccessGrant {
     @MapperOptions(name = "bucket_id")
-    private String bucketId;
+    private java.util.UUID bucketId;
     @MapperOptions(name = "path")
     private String path;
     @MapperOptions(name = "role")
     private String role;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "labels")
     private AbstractObject labels;
 }

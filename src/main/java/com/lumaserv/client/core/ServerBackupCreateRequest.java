@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerBackupCreateRequest {
     @MapperOptions(name = "server_id")
-    private String serverId;
+    private java.util.UUID serverId;
     @MapperOptions(name = "title")
     private String title;
 }

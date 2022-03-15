@@ -11,7 +11,7 @@ public class Offer {
     @MapperOptions(name = "amount")
     private float amount;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "net_amount")
     private float netAmount;
     @MapperOptions(name = "state")

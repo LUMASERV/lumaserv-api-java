@@ -9,7 +9,7 @@ public class ServerStorageClass {
     @MapperOptions(name = "replication")
     private int replication;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "title")
     private String title;
 }

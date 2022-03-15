@@ -7,13 +7,13 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class SubnetCreateRequest {
     @MapperOptions(name = "network_id")
-    private String networkId;
+    private java.util.UUID networkId;
     @MapperOptions(name = "address")
     private String address;
     @MapperOptions(name = "public")
     private boolean isPublic;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "prefix")
     private int prefix;
 }

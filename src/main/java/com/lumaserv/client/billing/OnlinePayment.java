@@ -13,10 +13,10 @@ public class OnlinePayment {
     @MapperOptions(name = "external_id")
     private String externalId;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "state")
     private String state;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private String customerId;
 }
 

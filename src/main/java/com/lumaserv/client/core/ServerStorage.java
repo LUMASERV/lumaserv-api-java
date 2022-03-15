@@ -7,10 +7,10 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerStorage {
     @MapperOptions(name = "zone_id")
-    private String zoneId;
+    private java.util.UUID zoneId;
     @MapperOptions(name = "external_id")
     private String externalId;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
 }
 

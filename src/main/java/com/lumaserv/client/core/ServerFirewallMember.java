@@ -15,11 +15,11 @@ public class ServerFirewallMember {
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "type")
     private ServerFirewallMemberType type;
     @MapperOptions(name = "server_id")
-    private String serverId;
+    private java.util.UUID serverId;
     @MapperOptions(name = "label_name")
     private String labelName;
 }

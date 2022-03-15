@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class S3BucketCreateRequest {
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "labels")

@@ -9,7 +9,7 @@ public class ServerAction {
     @MapperOptions(name = "started_at")
     private String startedAt;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "state")
     private ServerActionState state;
     @MapperOptions(name = "type")

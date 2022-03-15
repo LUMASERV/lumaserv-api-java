@@ -9,7 +9,7 @@ public class Customer {
     @MapperOptions(name = "balance")
     private float balance;
     @MapperOptions(name = "user_id")
-    private String userId;
+    private java.util.UUID userId;
     @MapperOptions(name = "company_name")
     private String companyName;
     @MapperOptions(name = "credit_limit")

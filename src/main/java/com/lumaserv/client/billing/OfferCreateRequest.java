@@ -17,6 +17,6 @@ public class OfferCreateRequest {
     @MapperOptions(name = "state")
     private OfferState state;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private java.util.UUID customerId;
 }
 

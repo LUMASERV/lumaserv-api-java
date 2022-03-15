@@ -9,12 +9,12 @@ public class Address {
     @MapperOptions(name = "address")
     private String address;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "subnet_id")
-    private String subnetId;
+    private java.util.UUID subnetId;
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
 }
 

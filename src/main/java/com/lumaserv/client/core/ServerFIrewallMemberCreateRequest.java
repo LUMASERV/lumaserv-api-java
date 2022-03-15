@@ -11,7 +11,7 @@ public class ServerFIrewallMemberCreateRequest {
     @MapperOptions(name = "type")
     private ServerFirewallMemberType type;
     @MapperOptions(name = "server_id")
-    private String serverId;
+    private java.util.UUID serverId;
     @MapperOptions(name = "label_name")
     private String labelName;
 }

@@ -23,7 +23,7 @@ public class SSLOrganisation {
     @MapperOptions(name = "country_code")
     private String countryCode;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "phone")
     private String phone;
     @MapperOptions(name = "name")
@@ -31,7 +31,7 @@ public class SSLOrganisation {
     @MapperOptions(name = "duns")
     private String duns;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "postal_code")
     private String postalCode;
     @MapperOptions(name = "region")

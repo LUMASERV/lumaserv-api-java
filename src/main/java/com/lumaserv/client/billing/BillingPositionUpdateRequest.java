@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class BillingPositionUpdateRequest {
     @MapperOptions(name = "invoice_position_id")
-    private String invoicePositionId;
+    private java.util.UUID invoicePositionId;
     @MapperOptions(name = "amount")
     private float amount;
     @MapperOptions(name = "unit")

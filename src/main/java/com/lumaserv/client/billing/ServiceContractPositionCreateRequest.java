@@ -11,7 +11,7 @@ public class ServiceContractPositionCreateRequest {
     @MapperOptions(name = "price")
     private float price;
     @MapperOptions(name = "service_contract_id")
-    private String serviceContractId;
+    private java.util.UUID serviceContractId;
     @MapperOptions(name = "description")
     private String description;
     @MapperOptions(name = "title")

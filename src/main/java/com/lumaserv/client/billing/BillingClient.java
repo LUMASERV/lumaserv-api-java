@@ -12,7 +12,7 @@ public class BillingClient extends HTTPClient {
         this(apiKey, "https://billing.lumaserv.com");
     }
 
-    public FileSingleResponse getInvoiceFile(String id) {
+    public FileSingleResponse getInvoiceFile(java.util.UUID id) {
         return get("/invoices/"+id+"/file").object(FileSingleResponse.class);
     }
 
@@ -28,15 +28,15 @@ public class BillingClient extends HTTPClient {
         return get("/invoices/"+id+"/positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(InvoicePositionListResponse.class);
     }
 
-    public BillingPositionSingleResponse getBillingPosition(String id) {
+    public BillingPositionSingleResponse getBillingPosition(java.util.UUID id) {
         return get("/billing-positions/"+id).object(BillingPositionSingleResponse.class);
     }
 
-    public EmptyResponse deleteBillingPosition(String id) {
+    public EmptyResponse deleteBillingPosition(java.util.UUID id) {
         return delete("/billing-positions/"+id).object(EmptyResponse.class);
     }
 
-    public BillingPositionSingleResponse updateBillingPosition(String id, BillingPositionUpdateRequest body) {
+    public BillingPositionSingleResponse updateBillingPosition(java.util.UUID id, BillingPositionUpdateRequest body) {
         return put("/billing-positions/"+id, body).object(BillingPositionSingleResponse.class);
     }
 
@@ -112,35 +112,35 @@ public class BillingClient extends HTTPClient {
         return get("/invoices").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(InvoiceListResponse.class);
     }
 
-    public OfferPositionSingleResponse getOfferPosition(String id) {
+    public OfferPositionSingleResponse getOfferPosition(java.util.UUID id) {
         return get("/offer-positions/"+id).object(OfferPositionSingleResponse.class);
     }
 
-    public EmptyResponse deleteOfferPosition(String id) {
+    public EmptyResponse deleteOfferPosition(java.util.UUID id) {
         return delete("/offer-positions/"+id).object(EmptyResponse.class);
     }
 
-    public OfferPositionSingleResponse updateOfferPosition(String id, OfferPositionUpdateRequest body) {
+    public OfferPositionSingleResponse updateOfferPosition(java.util.UUID id, OfferPositionUpdateRequest body) {
         return put("/offer-positions/"+id, body).object(OfferPositionSingleResponse.class);
     }
 
-    public ServiceContractPositionSingleResponse getServiceContractPosition(String id) {
+    public ServiceContractPositionSingleResponse getServiceContractPosition(java.util.UUID id) {
         return get("/service-contract-positions/"+id).object(ServiceContractPositionSingleResponse.class);
     }
 
-    public EmptyResponse deleteServiceContractPosition(String id) {
+    public EmptyResponse deleteServiceContractPosition(java.util.UUID id) {
         return delete("/service-contract-positions/"+id).object(EmptyResponse.class);
     }
 
-    public ServiceContractPositionSingleResponse updateServiceContractPosition(String id, ServiceContractPositionUpdateRequest body) {
+    public ServiceContractPositionSingleResponse updateServiceContractPosition(java.util.UUID id, ServiceContractPositionUpdateRequest body) {
         return put("/service-contract-positions/"+id, body).object(ServiceContractPositionSingleResponse.class);
     }
 
-    public PaymentReminderSingleResponse getPaymentReminder(String id) {
+    public PaymentReminderSingleResponse getPaymentReminder(java.util.UUID id) {
         return get("/payment-reminders/"+id).object(PaymentReminderSingleResponse.class);
     }
 
-    public PaymentReminderSingleResponse updatePaymentReminder(String id, PaymentReminderUpdateRequest body) {
+    public PaymentReminderSingleResponse updatePaymentReminder(java.util.UUID id, PaymentReminderUpdateRequest body) {
         return put("/payment-reminders/"+id, body).object(PaymentReminderSingleResponse.class);
     }
 
@@ -164,19 +164,19 @@ public class BillingClient extends HTTPClient {
         return get("/bank-transactions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(BankTransactionListResponse.class);
     }
 
-    public DebitMandateSingleResponse getDebitMandate(String id) {
+    public DebitMandateSingleResponse getDebitMandate(java.util.UUID id) {
         return get("/debit-mandates/"+id).object(DebitMandateSingleResponse.class);
     }
 
-    public BankTransactionSingleResponse getBankTransaction(String id) {
+    public BankTransactionSingleResponse getBankTransaction(java.util.UUID id) {
         return get("/bank-transactions/"+id).object(BankTransactionSingleResponse.class);
     }
 
-    public OfferSingleResponse getOffer(String id) {
+    public OfferSingleResponse getOffer(java.util.UUID id) {
         return get("/offers/"+id).object(OfferSingleResponse.class);
     }
 
-    public OfferSingleResponse updateOffer(String id, OfferUpdateRequest body) {
+    public OfferSingleResponse updateOffer(java.util.UUID id, OfferUpdateRequest body) {
         return put("/offers/"+id, body).object(OfferSingleResponse.class);
     }
 
@@ -204,23 +204,23 @@ public class BillingClient extends HTTPClient {
         return get("/service-contracts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServiceContractListResponse.class);
     }
 
-    public InvoiceSingleResponse getInvoice(String id) {
+    public InvoiceSingleResponse getInvoice(java.util.UUID id) {
         return get("/invoices/"+id).object(InvoiceSingleResponse.class);
     }
 
-    public EmptyResponse deleteInvoice(String id) {
+    public EmptyResponse deleteInvoice(java.util.UUID id) {
         return delete("/invoices/"+id).object(EmptyResponse.class);
     }
 
-    public InvoiceSingleResponse updateInvoice(String id, InvoiceUpdateRequest body) {
+    public InvoiceSingleResponse updateInvoice(java.util.UUID id, InvoiceUpdateRequest body) {
         return put("/invoices/"+id, body).object(InvoiceSingleResponse.class);
     }
 
-    public OnlinePaymentSingleResponse getOnlinePayment(String id) {
+    public OnlinePaymentSingleResponse getOnlinePayment(java.util.UUID id) {
         return get("/online-payments/"+id).object(OnlinePaymentSingleResponse.class);
     }
 
-    public DebitSingleResponse getDebit(String id) {
+    public DebitSingleResponse getDebit(java.util.UUID id) {
         return get("/debits/"+id).object(DebitSingleResponse.class);
     }
 
@@ -236,15 +236,15 @@ public class BillingClient extends HTTPClient {
         return get("/offers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(OfferListResponse.class);
     }
 
-    public ServiceContractSingleResponse getServiceContract(String id) {
+    public ServiceContractSingleResponse getServiceContract(java.util.UUID id) {
         return get("/service-contracts/"+id).object(ServiceContractSingleResponse.class);
     }
 
-    public EmptyResponse deleteServiceContract(String id) {
+    public EmptyResponse deleteServiceContract(java.util.UUID id) {
         return delete("/service-contracts/"+id).object(EmptyResponse.class);
     }
 
-    public ServiceContractSingleResponse updateServiceContract(String id, ServiceContractUpdateRequest body) {
+    public ServiceContractSingleResponse updateServiceContract(java.util.UUID id, ServiceContractUpdateRequest body) {
         return put("/service-contracts/"+id, body).object(ServiceContractSingleResponse.class);
     }
 

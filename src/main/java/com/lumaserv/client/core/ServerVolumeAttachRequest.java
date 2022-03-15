@@ -7,6 +7,6 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerVolumeAttachRequest {
     @MapperOptions(name = "server_id")
-    private String serverId;
+    private java.util.UUID serverId;
 }
 

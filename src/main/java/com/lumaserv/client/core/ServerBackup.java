@@ -9,15 +9,15 @@ public class ServerBackup {
     @MapperOptions(name = "size")
     private float size;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "action_id")
-    private String actionId;
+    private java.util.UUID actionId;
     @MapperOptions(name = "scheduled")
     private boolean scheduled;
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "state")
     private ServerBackupState state;
     @MapperOptions(name = "title")

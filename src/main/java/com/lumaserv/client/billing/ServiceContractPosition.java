@@ -11,11 +11,11 @@ public class ServiceContractPosition {
     @MapperOptions(name = "price")
     private float price;
     @MapperOptions(name = "service_contract_id")
-    private String serviceContractId;
+    private java.util.UUID serviceContractId;
     @MapperOptions(name = "description")
     private String description;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "vat_rate")

@@ -9,11 +9,11 @@ public class SSHKey {
     @MapperOptions(name = "public_key")
     private String publicKey;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "labels")

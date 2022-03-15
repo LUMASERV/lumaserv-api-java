@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class BillingPosition {
     @MapperOptions(name = "invoice_position_id")
-    private String invoicePositionId;
+    private java.util.UUID invoicePositionId;
     @MapperOptions(name = "amount")
     private float amount;
     @MapperOptions(name = "price")
@@ -15,9 +15,9 @@ public class BillingPosition {
     @MapperOptions(name = "description")
     private String description;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "customer_id")
-    private String customerId;
+    private java.util.UUID customerId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "available_at")

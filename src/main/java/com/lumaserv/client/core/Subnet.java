@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Subnet {
     @MapperOptions(name = "network_id")
-    private String networkId;
+    private java.util.UUID networkId;
     @MapperOptions(name = "address")
     private String address;
     @MapperOptions(name = "prefix")
@@ -15,6 +15,6 @@ public class Subnet {
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
 }
 

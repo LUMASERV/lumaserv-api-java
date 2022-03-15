@@ -21,7 +21,7 @@ public class ServerFirewallRule {
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "id")
-    private String id;
+    private java.util.UUID id;
     @MapperOptions(name = "source_ports")
     private String[] sourcePorts;
     @MapperOptions(name = "type")

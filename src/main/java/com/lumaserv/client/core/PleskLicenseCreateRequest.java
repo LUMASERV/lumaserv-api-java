@@ -9,9 +9,9 @@ public class PleskLicenseCreateRequest {
     @MapperOptions(name = "address")
     private String address;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "type_id")
-    private String typeId;
+    private java.util.UUID typeId;
     @MapperOptions(name = "labels")
     private AbstractObject labels;
 }

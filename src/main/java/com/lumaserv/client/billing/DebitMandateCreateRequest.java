@@ -29,7 +29,7 @@ public class DebitMandateCreateRequest {
     @MapperOptions(name = "depositor")
     private String depositor;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private java.util.UUID customerId;
     @MapperOptions(name = "postal_code")
     private String postalCode;
 }

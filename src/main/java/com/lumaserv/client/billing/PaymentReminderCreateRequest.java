@@ -13,10 +13,10 @@ public class PaymentReminderCreateRequest {
     @MapperOptions(name = "due_date")
     private String dueDate;
     @MapperOptions(name = "invoice_id")
-    private String invoiceId;
+    private java.util.UUID invoiceId;
     @MapperOptions(name = "state")
     private String state;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private java.util.UUID customerId;
 }
 

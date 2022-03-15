@@ -9,7 +9,7 @@ public class DomainCreateRequest {
     @MapperOptions(name = "duration")
     private int duration;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "admin_handle_code")
     private String adminHandleCode;
     @MapperOptions(name = "name")

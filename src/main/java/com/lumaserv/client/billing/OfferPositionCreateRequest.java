@@ -21,7 +21,7 @@ public class OfferPositionCreateRequest {
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "offer_id")
-    private String offerId;
+    private java.util.UUID offerId;
     @MapperOptions(name = "vat_rate")
     private float vatRate;
 }

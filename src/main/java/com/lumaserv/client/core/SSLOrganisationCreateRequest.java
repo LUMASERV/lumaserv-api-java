@@ -21,7 +21,7 @@ public class SSLOrganisationCreateRequest {
     @MapperOptions(name = "country_code")
     private String countryCode;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "phone")
     private String phone;
     @MapperOptions(name = "name")

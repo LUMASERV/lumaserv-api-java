@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class FileDownload {
     @MapperOptions(name = "file_id")
-    private String fileId;
+    private java.util.UUID fileId;
     @MapperOptions(name = "url")
     private String url;
 }

@@ -11,9 +11,9 @@ public class ServerVolumeCreateRequest {
     @MapperOptions(name = "size")
     private int size;
     @MapperOptions(name = "project_id")
-    private String projectId;
+    private java.util.UUID projectId;
     @MapperOptions(name = "class_id")
-    private String classId;
+    private java.util.UUID classId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "labels")

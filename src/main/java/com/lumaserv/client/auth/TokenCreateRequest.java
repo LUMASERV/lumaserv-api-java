@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class TokenCreateRequest {
     @MapperOptions(name = "user_id")
-    private String userId;
+    private java.util.UUID userId;
     @MapperOptions(name = "scope")
     private TokenScope scope;
     @MapperOptions(name = "title")

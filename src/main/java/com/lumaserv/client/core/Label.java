@@ -13,6 +13,6 @@ public class Label {
     @MapperOptions(name = "value")
     private String value;
     @MapperOptions(name = "object_id")
-    private String objectId;
+    private java.util.UUID objectId;
 }
 

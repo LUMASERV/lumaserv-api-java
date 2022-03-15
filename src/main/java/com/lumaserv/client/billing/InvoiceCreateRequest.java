@@ -11,6 +11,6 @@ public class InvoiceCreateRequest {
     @MapperOptions(name = "positions")
     private InvoiceCreateRequestPosition[] positions;
     @MapperOptions(name = "customer_id")
-    private int customerId;
+    private java.util.UUID customerId;
 }
 
