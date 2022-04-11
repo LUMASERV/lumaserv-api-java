@@ -20,8 +20,6 @@ public class CustomerCreateRequest {
     private float customVatRate;
     @MapperOptions(name = "country_code")
     private String countryCode;
-    @MapperOptions(name = "invoice_shipping_type")
-    private InvoiceShippingType invoiceShippingType;
     @MapperOptions(name = "balance")
     private float balance;
     @MapperOptions(name = "user_id")

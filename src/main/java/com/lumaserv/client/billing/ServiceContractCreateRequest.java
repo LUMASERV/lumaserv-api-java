@@ -13,7 +13,7 @@ public class ServiceContractCreateRequest {
     @MapperOptions(name = "runtime")
     private ServiceContractInterval runtime;
     @MapperOptions(name = "positions")
-    private ServiceContractCreateRequestPosition[] positions;
+    private CreateRequestPosition[] positions;
     @MapperOptions(name = "customer_id")
     private java.util.UUID customerId;
     @MapperOptions(name = "title")

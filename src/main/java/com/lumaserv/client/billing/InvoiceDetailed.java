@@ -13,7 +13,7 @@ public class InvoiceDetailed {
     @MapperOptions(name = "due_at")
     private String dueAt;
     @MapperOptions(name = "positions")
-    private InvoicePosition[] positions;
+    private Position[] positions;
     @MapperOptions(name = "id")
     private String id;
     @MapperOptions(name = "state")

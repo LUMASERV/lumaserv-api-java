@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerPriceRangeSingleResponse {
     @MapperOptions(name = "metadata")
-    private  metadata;
+    private ResponseMetadata metadata;
     @MapperOptions(name = "data")
     private ServerPriceRange data;
     @MapperOptions(name = "success")
