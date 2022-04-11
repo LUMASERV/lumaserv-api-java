@@ -16,7 +16,7 @@ public class BillingClient extends HTTPClient {
         return get("/invoices/"+id+"/file").object(FileSingleResponse.class);
     }
 
-    public InvoicePositionSingleResponse createInvoicePosition(String id, InvoicePositionCreateRequest body) {
+    public InvoicePositionSingleResponse createInvoicePosition(String id, PositionCreateRequest body) {
         return post("/invoices/"+id+"/positions", body).object(InvoicePositionSingleResponse.class);
     }
 
@@ -38,18 +38,6 @@ public class BillingClient extends HTTPClient {
 
     public BillingPositionSingleResponse updateBillingPosition(java.util.UUID id, BillingPositionUpdateRequest body) {
         return put("/billing-positions/"+id, body).object(BillingPositionSingleResponse.class);
-    }
-
-    public ServiceContractPositionSingleResponse createServiceContractPosition(ServiceContractPositionCreateRequest body) {
-        return post("/service-contract-positions", body).object(ServiceContractPositionSingleResponse.class);
-    }
-
-    public ServiceContractPositionListResponse getServiceContractPositions() {
-        return get("/service-contract-positions").object(ServiceContractPositionListResponse.class);
-    }
-
-    public ServiceContractPositionListResponse getServiceContractPositions(int page, int pageSize, String search) {
-        return get("/service-contract-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ServiceContractPositionListResponse.class);
     }
 
     public BillingPositionSingleResponse createBillingPosition(BillingPositionCreateRequest body) {
@@ -100,6 +88,18 @@ public class BillingClient extends HTTPClient {
         return get("/online-payments").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(OnlinePaymentListResponse.class);
     }
 
+    public ServiceContractPositionSingleResponse getServiceContractPosition(String contract_id, String id) {
+        return get("/service-contracts/"+contract_id+"/positions/"+id).object(ServiceContractPositionSingleResponse.class);
+    }
+
+    public EmptyResponse deleteServiceContractPosition(String contract_id, String id) {
+        return delete("/service-contracts/"+contract_id+"/positions/"+id).object(EmptyResponse.class);
+    }
+
+    public ServiceContractPositionSingleResponse updateServiceContractPosition(String contract_id, String id, PositionUpdateRequest body) {
+        return put("/service-contracts/"+contract_id+"/positions/"+id, body).object(ServiceContractPositionSingleResponse.class);
+    }
+
     public InvoiceSingleResponse createInvoice(InvoiceCreateRequest body) {
         return post("/invoices", body).object(InvoiceSingleResponse.class);
     }
@@ -112,6 +112,14 @@ public class BillingClient extends HTTPClient {
         return get("/invoices").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(InvoiceListResponse.class);
     }
 
+    public ServiceContractPositionSingleResponse createServiceContractPosition(String contract_id, PositionCreateRequest body) {
+        return post("/service-contracts/"+contract_id+"/positions", body).object(ServiceContractPositionSingleResponse.class);
+    }
+
+    public ServiceContractPositionListResponse getServiceContractPositions(String contract_id) {
+        return get("/service-contracts/"+contract_id+"/positions").object(ServiceContractPositionListResponse.class);
+    }
+
     public OfferPositionSingleResponse getOfferPosition(java.util.UUID id) {
         return get("/offer-positions/"+id).object(OfferPositionSingleResponse.class);
     }
@@ -122,18 +130,6 @@ public class BillingClient extends HTTPClient {
 
     public OfferPositionSingleResponse updateOfferPosition(java.util.UUID id, OfferPositionUpdateRequest body) {
         return put("/offer-positions/"+id, body).object(OfferPositionSingleResponse.class);
-    }
-
-    public ServiceContractPositionSingleResponse getServiceContractPosition(java.util.UUID id) {
-        return get("/service-contract-positions/"+id).object(ServiceContractPositionSingleResponse.class);
-    }
-
-    public EmptyResponse deleteServiceContractPosition(java.util.UUID id) {
-        return delete("/service-contract-positions/"+id).object(EmptyResponse.class);
-    }
-
-    public ServiceContractPositionSingleResponse updateServiceContractPosition(java.util.UUID id, ServiceContractPositionUpdateRequest body) {
-        return put("/service-contract-positions/"+id, body).object(ServiceContractPositionSingleResponse.class);
     }
 
     public PaymentReminderSingleResponse getPaymentReminder(java.util.UUID id) {
@@ -188,7 +184,7 @@ public class BillingClient extends HTTPClient {
         return delete("/invoices/"+invoice_id+"/positions/"+id).object(EmptyResponse.class);
     }
 
-    public InvoicePositionSingleResponse updateInvoicePosition(String invoice_id, String id, InvoicePositionUpdateRequest body) {
+    public InvoicePositionSingleResponse updateInvoicePosition(String invoice_id, String id, PositionUpdateRequest body) {
         return put("/invoices/"+invoice_id+"/positions/"+id, body).object(InvoicePositionSingleResponse.class);
     }
 

@@ -8,6 +8,8 @@ import org.javawebstack.abstractdata.AbstractObject;
 public class ServerCreateRequest {
     @MapperOptions(name = "zone_id")
     private java.util.UUID zoneId;
+    @MapperOptions(name = "backup_id")
+    private java.util.UUID backupId;
     @MapperOptions(name = "variant_id")
     private java.util.UUID variantId;
     @MapperOptions(name = "ssh_keys")

@@ -9,7 +9,7 @@ public class AuthClient extends HTTPClient {
     }
 
     public AuthClient(String apiKey) {
-        this(apiKey, "https://auth.lumaserv.cloud");
+        this(apiKey, "https://auth.lumaserv.com");
     }
 
     public ProjectSingleResponse createProject(ProjectCreateRequest body) {
@@ -72,8 +72,16 @@ public class AuthClient extends HTTPClient {
         return put("/password-reset", body).object(EmptyResponse.class);
     }
 
-    public AuditLogResponse searchAuditLog(AuditLogRequest body) {
-        return post("/audit-log", body).object(AuditLogResponse.class);
+    public EmptyResponse insertAuditLogEntry(AuditLogRequest body) {
+        return post("/audit-log", body).object(EmptyResponse.class);
+    }
+
+    public AuditLogEntryListResponse searchAuditLog() {
+        return get("/audit-log").object(AuditLogEntryListResponse.class);
+    }
+
+    public AuditLogEntryListResponse searchAuditLog(String userId, String projectId, String objectType, java.util.UUID objectId) {
+        return get("/audit-log").query("user_id", String.valueOf(userId)).query("project_id", String.valueOf(projectId)).query("object_type", String.valueOf(objectType)).query("object_id", String.valueOf(objectId)).object(AuditLogEntryListResponse.class);
     }
 
     public TokenSingleResponse createToken(TokenCreateRequest body) {
@@ -110,6 +118,10 @@ public class AuthClient extends HTTPClient {
 
     public ProjectMemberListResponse getProjectMembers(java.util.UUID id, int page, int pageSize, String search) {
         return get("/projects/"+id+"/members").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(ProjectMemberListResponse.class);
+    }
+
+    public TransactionLogResponse searchTransactionLog(TransactionLogRequest body) {
+        return post("/transaction-log", body).object(TransactionLogResponse.class);
     }
 
     public TokenValidationResponse validateSelf() {

@@ -25,7 +25,7 @@ public class Server {
     @MapperOptions(name = "id")
     private java.util.UUID id;
     @MapperOptions(name = "state")
-    private String state;
+    private ServerState state;
     @MapperOptions(name = "labels")
     private AbstractObject labels;
 }

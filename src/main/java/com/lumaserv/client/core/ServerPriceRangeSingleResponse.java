@@ -1,15 +1,15 @@
-package com.lumaserv.client.billing;
+package com.lumaserv.client.core;
 
 import lombok.*;
 import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
-public class InvoicePositionSingleResponse {
+public class ServerPriceRangeSingleResponse {
     @MapperOptions(name = "metadata")
-    private ResponseMetadata metadata;
+    private  metadata;
     @MapperOptions(name = "data")
-    private Position data;
+    private ServerPriceRange data;
     @MapperOptions(name = "success")
     private boolean success;
     @MapperOptions(name = "messages")

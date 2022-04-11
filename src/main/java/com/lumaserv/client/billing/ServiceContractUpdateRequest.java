@@ -12,6 +12,8 @@ public class ServiceContractUpdateRequest {
     private String description;
     @MapperOptions(name = "runtime")
     private ServiceContractInterval runtime;
+    @MapperOptions(name = "customer_id")
+    private java.util.UUID customerId;
     @MapperOptions(name = "title")
     private String title;
     @MapperOptions(name = "accounting_period")

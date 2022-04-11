@@ -11,7 +11,7 @@ public class InvoicePositionListResponse {
     @MapperOptions(name = "pagination")
     private ResponsePagination pagination;
     @MapperOptions(name = "data")
-    private InvoicePosition[] data;
+    private Position[] data;
     @MapperOptions(name = "success")
     private boolean success;
     @MapperOptions(name = "messages")

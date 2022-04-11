@@ -9,7 +9,7 @@ public class CoreClient extends HTTPClient {
     }
 
     public CoreClient(String apiKey) {
-        this(apiKey, "https://api.lumaserv.cloud");
+        this(apiKey, "https://api.lumaserv.com");
     }
 
     public SSHKeySingleResponse createSSHKey(SSHKeyCreateRequest body) {
@@ -22,6 +22,14 @@ public class CoreClient extends HTTPClient {
 
     public SSHKeyListResponse getSSHKeys(int page, int pageSize, String search, boolean withLabels) {
         return get("/ssh-keys").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(SSHKeyListResponse.class);
+    }
+
+    public ServerPriceRangeSingleResponse createServerPriceRange(ServerPriceRangeCreateRequest body) {
+        return post("/server-price-ranges", body).object(ServerPriceRangeSingleResponse.class);
+    }
+
+    public ServerPriceRangeListResponse getServerPriceRanges() {
+        return get("/server-price-ranges").object(ServerPriceRangeListResponse.class);
     }
 
     public EmptyResponse startServer(java.util.UUID id) {
@@ -74,6 +82,10 @@ public class CoreClient extends HTTPClient {
 
     public ServerStorageClassSingleResponse getServerStorageClass(java.util.UUID id) {
         return get("/server-storage-classes/"+id).object(ServerStorageClassSingleResponse.class);
+    }
+
+    public ServerActionSingleResponse restartServer(String id) {
+        return post("/servers/"+id+"/restart").object(ServerActionSingleResponse.class);
     }
 
     public ScheduledServerActionSingleResponse restoreServer(String id, ServerRestoreRequest body) {
@@ -320,7 +332,7 @@ public class CoreClient extends HTTPClient {
         return get("/servers/"+id+"/status").object(ServerStatusResponse.class);
     }
 
-    public ServerFirewallMemberSingleResponse createServerFirewallMember(java.util.UUID id, ServerFIrewallMemberCreateRequest body) {
+    public ServerFirewallMemberSingleResponse createServerFirewallMember(java.util.UUID id, ServerFirewallMemberCreateRequest body) {
         return post("/server-firewalls/"+id+"/members", body).object(ServerFirewallMemberSingleResponse.class);
     }
 
@@ -330,6 +342,10 @@ public class CoreClient extends HTTPClient {
 
     public ServerFirewallMemberListResponse getServerFirewallMembers(java.util.UUID id, String search, int page, int pageSize) {
         return get("/server-firewalls/"+id+"/members").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).object(ServerFirewallMemberListResponse.class);
+    }
+
+    public ServerPriceRangeSingleResponse getServerPriceRange(java.util.UUID id) {
+        return get("/server-price-ranges/"+id).object(ServerPriceRangeSingleResponse.class);
     }
 
     public SSLOrganisationSingleResponse createSSLOrganisation(SSLOrganisationCreateRequest body) {
@@ -354,6 +370,18 @@ public class CoreClient extends HTTPClient {
 
     public SSLTypeListResponse getSSLTypes(int page, int pageSize, String search) {
         return get("/ssl/types").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).object(SSLTypeListResponse.class);
+    }
+
+    public ServerVariantPriceSingleResponse getServerVariantPrice(java.util.UUID id, java.util.UUID variant_id) {
+        return get("/server-price-ranges/"+id+"/variant-prices/"+variant_id).object(ServerVariantPriceSingleResponse.class);
+    }
+
+    public EmptyResponse deleteServerVariantPrice(java.util.UUID id, java.util.UUID variant_id) {
+        return delete("/server-price-ranges/"+id+"/variant-prices/"+variant_id).object(EmptyResponse.class);
+    }
+
+    public ServerVariantPriceSingleResponse updateServerVariantPrice(java.util.UUID id, java.util.UUID variant_id, ServerVariantPriceUpdateRequest body) {
+        return put("/server-price-ranges/"+id+"/variant-prices/"+variant_id, body).object(ServerVariantPriceSingleResponse.class);
     }
 
     public EmptyResponse deleteDNSRecord(String name, java.util.UUID id) {
@@ -444,6 +472,10 @@ public class CoreClient extends HTTPClient {
         return delete("/server-volumes/"+id).object(EmptyResponse.class);
     }
 
+    public ServerVolumeSingleResponse updateServerVolume(java.util.UUID id, ServerVolumeUpdateRequest body) {
+        return put("/server-volumes/"+id, body).object(ServerVolumeSingleResponse.class);
+    }
+
     public ServerNetworkSingleResponse createServerNetwork(java.util.UUID id, ServerNetworkCreateRequest body) {
         return post("/servers/"+id+"/networks", body).object(ServerNetworkSingleResponse.class);
     }
@@ -478,6 +510,14 @@ public class CoreClient extends HTTPClient {
 
     public EmptyResponse deleteSSHKey(java.util.UUID id) {
         return delete("/ssh-keys/"+id).object(EmptyResponse.class);
+    }
+
+    public ServerPriceRangeAssignmentSingleResponse createServerPriceRangeAssignment(ServerPriceRangeAssignmentCreateRequest body) {
+        return post("/server-price-range-assignments", body).object(ServerPriceRangeAssignmentSingleResponse.class);
+    }
+
+    public ServerPriceRangeAssignmentListResponse getServerPriceRangeAssignments() {
+        return get("/server-price-range-assignments").object(ServerPriceRangeAssignmentListResponse.class);
     }
 
     public AddressListResponse getAddresses() {
@@ -688,6 +728,18 @@ public class CoreClient extends HTTPClient {
         return get("/storage/s3/access-keys/"+access_key_id+"/grants").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels)).object(S3AccessGrantListResponse.class);
     }
 
+    public ServerPriceRangeAssignmentSingleResponse getServerPriceRangeAssignment(String id) {
+        return get("/server-price-range-assignments/"+id).object(ServerPriceRangeAssignmentSingleResponse.class);
+    }
+
+    public EmptyResponse deleteServerPriceRangeAssignment(String id) {
+        return delete("/server-price-range-assignments/"+id).object(EmptyResponse.class);
+    }
+
+    public ServerPriceRangeAssignmentSingleResponse updateServerPriceRangeAssignment(String id, ServerPriceRangeAssignmentUpdateRequest body) {
+        return put("/server-price-range-assignments/"+id, body).object(ServerPriceRangeAssignmentSingleResponse.class);
+    }
+
     public ServerVNCResponse getServerVNC(java.util.UUID id) {
         return get("/servers/"+id+"/vnc").object(ServerVNCResponse.class);
     }
@@ -726,6 +778,14 @@ public class CoreClient extends HTTPClient {
 
     public ServerVolumeSingleResponse detachServerVolume(java.util.UUID id) {
         return post("/server-volumes/"+id+"/detach").object(ServerVolumeSingleResponse.class);
+    }
+
+    public ServerVariantPriceSingleResponse createServerVariantPrice(java.util.UUID id, ServerVariantPriceCreateRequest body) {
+        return post("/server-price-ranges/"+id+"/variant-prices", body).object(ServerVariantPriceSingleResponse.class);
+    }
+
+    public ServerVariantPriceListResponse getServerVariantPrices(java.util.UUID id) {
+        return get("/server-price-ranges/"+id+"/variant-prices").object(ServerVariantPriceListResponse.class);
     }
 
 

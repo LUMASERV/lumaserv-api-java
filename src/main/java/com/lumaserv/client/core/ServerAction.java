@@ -6,6 +6,8 @@ import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerAction {
+    @MapperOptions(name = "progress")
+    private float progress;
     @MapperOptions(name = "started_at")
     private String startedAt;
     @MapperOptions(name = "id")

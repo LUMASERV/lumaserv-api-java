@@ -10,6 +10,8 @@ public class ScheduledServerActionCreateRequest {
     private java.util.UUID backupId;
     @MapperOptions(name = "interval")
     private ScheduledServerActionInterval interval;
+    @MapperOptions(name = "force")
+    private boolean force;
     @MapperOptions(name = "execute_at")
     private String executeAt;
     @MapperOptions(name = "type")

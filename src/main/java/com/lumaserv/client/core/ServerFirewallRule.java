@@ -10,8 +10,6 @@ public class ServerFirewallRule {
     private String[] sourceAddresses;
     @MapperOptions(name = "protocol")
     private ServerFirewallRuleProtocol protocol;
-    @MapperOptions(name = "destination_ports")
-    private String[] destinationPorts;
     @MapperOptions(name = "destination_addresses")
     private String[] destinationAddresses;
     @MapperOptions(name = "applied")
@@ -22,9 +20,9 @@ public class ServerFirewallRule {
     private String createdAt;
     @MapperOptions(name = "id")
     private java.util.UUID id;
-    @MapperOptions(name = "source_ports")
-    private String[] sourcePorts;
     @MapperOptions(name = "type")
     private ServerFirewallRuleType type;
+    @MapperOptions(name = "ports")
+    private String[] ports;
 }
 
