@@ -6,12 +6,10 @@ import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerFirewallRule {
-    @MapperOptions(name = "source_addresses")
-    private String[] sourceAddresses;
+    @MapperOptions(name = "addresses")
+    private String[] addresses;
     @MapperOptions(name = "protocol")
     private ServerFirewallRuleProtocol protocol;
-    @MapperOptions(name = "destination_addresses")
-    private String[] destinationAddresses;
     @MapperOptions(name = "applied")
     private boolean applied;
     @MapperOptions(name = "description")

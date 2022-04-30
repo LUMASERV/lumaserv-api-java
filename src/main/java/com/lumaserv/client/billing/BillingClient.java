@@ -31,8 +31,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/invoices/"+id+"/positions")).object(InvoicePositionListResponse.class);
     }
 
-    public InvoicePositionListResponse getInvoicePositions(String id, int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/invoices/"+id+"/positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(InvoicePositionListResponse.class);
+    public InvoicePositionListResponse getInvoicePositions(String id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/invoices/"+id+"/positions").query(params)).object(InvoicePositionListResponse.class);
     }
 
     public BillingPositionSingleResponse getBillingPosition(java.util.UUID id) throws ClientException {
@@ -55,8 +55,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/billing-positions")).object(BillingPositionListResponse.class);
     }
 
-    public BillingPositionListResponse getBillingPositions(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/billing-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(BillingPositionListResponse.class);
+    public BillingPositionListResponse getBillingPositions(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/billing-positions").query(params)).object(BillingPositionListResponse.class);
     }
 
     public CustomerSingleResponse createCustomer(CustomerCreateRequest body) throws ClientException {
@@ -67,16 +67,16 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/customers")).object(CustomerListResponse.class);
     }
 
-    public CustomerListResponse getCustomers(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/customers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(CustomerListResponse.class);
+    public CustomerListResponse getCustomers(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/customers").query(params)).object(CustomerListResponse.class);
     }
 
     public DebitListResponse getDebits() throws ClientException {
         return wrapRequest(get("/debits")).object(DebitListResponse.class);
     }
 
-    public DebitListResponse getDebits(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/debits").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(DebitListResponse.class);
+    public DebitListResponse getDebits(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/debits").query(params)).object(DebitListResponse.class);
     }
 
     public CustomerSingleResponse getCustomer(int id) throws ClientException {
@@ -91,8 +91,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/online-payments")).object(OnlinePaymentListResponse.class);
     }
 
-    public OnlinePaymentListResponse getOnlinePayments(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/online-payments").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(OnlinePaymentListResponse.class);
+    public OnlinePaymentListResponse getOnlinePayments(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/online-payments").query(params)).object(OnlinePaymentListResponse.class);
     }
 
     public ServiceContractPositionSingleResponse getServiceContractPosition(String contract_id, String id) throws ClientException {
@@ -115,8 +115,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/invoices")).object(InvoiceListResponse.class);
     }
 
-    public InvoiceListResponse getInvoices(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/invoices").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(InvoiceListResponse.class);
+    public InvoiceListResponse getInvoices(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/invoices").query(params)).object(InvoiceListResponse.class);
     }
 
     public ServiceContractPositionSingleResponse createServiceContractPosition(String contract_id, PositionCreateRequest body) throws ClientException {
@@ -155,16 +155,16 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/debit-mandates")).object(DebitMandateListResponse.class);
     }
 
-    public DebitMandateListResponse getDebitMandates(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/debit-mandates").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(DebitMandateListResponse.class);
+    public DebitMandateListResponse getDebitMandates(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/debit-mandates").query(params)).object(DebitMandateListResponse.class);
     }
 
     public BankTransactionListResponse getBankTransactions() throws ClientException {
         return wrapRequest(get("/bank-transactions")).object(BankTransactionListResponse.class);
     }
 
-    public BankTransactionListResponse getBankTransactions(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/bank-transactions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(BankTransactionListResponse.class);
+    public BankTransactionListResponse getBankTransactions(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/bank-transactions").query(params)).object(BankTransactionListResponse.class);
     }
 
     public DebitMandateSingleResponse getDebitMandate(java.util.UUID id) throws ClientException {
@@ -203,8 +203,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/service-contracts")).object(ServiceContractListResponse.class);
     }
 
-    public ServiceContractListResponse getServiceContracts(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/service-contracts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ServiceContractListResponse.class);
+    public ServiceContractListResponse getServiceContracts(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/service-contracts").query(params)).object(ServiceContractListResponse.class);
     }
 
     public InvoiceSingleResponse getInvoice(java.util.UUID id) throws ClientException {
@@ -235,8 +235,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/offers")).object(OfferListResponse.class);
     }
 
-    public OfferListResponse getOffers(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/offers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(OfferListResponse.class);
+    public OfferListResponse getOffers(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/offers").query(params)).object(OfferListResponse.class);
     }
 
     public ServiceContractSingleResponse getServiceContract(java.util.UUID id) throws ClientException {
@@ -259,8 +259,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/offer-positions")).object(OfferPositionListResponse.class);
     }
 
-    public OfferPositionListResponse getOfferPositions(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/offer-positions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(OfferPositionListResponse.class);
+    public OfferPositionListResponse getOfferPositions(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/offer-positions").query(params)).object(OfferPositionListResponse.class);
     }
 
     public PaymentReminderSingleResponse createPaymentReminder(PaymentReminderCreateRequest body) throws ClientException {
@@ -271,8 +271,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/payment-reminders")).object(PaymentReminderListResponse.class);
     }
 
-    public PaymentReminderListResponse getPaymentReminders(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/payment-reminders").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(PaymentReminderListResponse.class);
+    public PaymentReminderListResponse getPaymentReminders(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/payment-reminders").query(params)).object(PaymentReminderListResponse.class);
     }
 
 

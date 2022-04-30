@@ -27,8 +27,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssh-keys")).object(SSHKeyListResponse.class);
     }
 
-    public SSHKeyListResponse getSSHKeys(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/ssh-keys").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(SSHKeyListResponse.class);
+    public SSHKeyListResponse getSSHKeys(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/ssh-keys").query(params)).object(SSHKeyListResponse.class);
     }
 
     public ServerPriceRangeSingleResponse createServerPriceRange(ServerPriceRangeCreateRequest body) throws ClientException {
@@ -51,8 +51,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/availability-zones")).object(AvailabilityZoneListResponse.class);
     }
 
-    public AvailabilityZoneListResponse getAvailabilityZones(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/availability-zones").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(AvailabilityZoneListResponse.class);
+    public AvailabilityZoneListResponse getAvailabilityZones(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/availability-zones").query(params)).object(AvailabilityZoneListResponse.class);
     }
 
     public ServerTemplateSingleResponse getServerTemplate(java.util.UUID id) throws ClientException {
@@ -63,8 +63,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(post("/servers/"+id+"/shutdown")).object(EmptyResponse.class);
     }
 
-    public EmptyResponse shutdownServer(java.util.UUID id, boolean force) throws ClientException {
-        return wrapRequest(post("/servers/"+id+"/shutdown").query("force", String.valueOf(force))).object(EmptyResponse.class);
+    public EmptyResponse shutdownServer(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(post("/servers/"+id+"/shutdown").query(params)).object(EmptyResponse.class);
     }
 
     public ServerFirewallSingleResponse getServerFirewall(java.util.UUID id) throws ClientException {
@@ -115,8 +115,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/servers/"+id+"/graph")).object(ServerGraphResponse.class);
     }
 
-    public ServerGraphResponse getServerGraph(String id, String timeframe) throws ClientException {
-        return wrapRequest(get("/servers/"+id+"/graph").query("timeframe", String.valueOf(timeframe))).object(ServerGraphResponse.class);
+    public ServerGraphResponse getServerGraph(String id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/servers/"+id+"/graph").query(params)).object(ServerGraphResponse.class);
     }
 
     public SSLContactSingleResponse getSSLContact(java.util.UUID id) throws ClientException {
@@ -131,8 +131,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/dns/zones")).object(DNSZoneListResponse.class);
     }
 
-    public DNSZoneListResponse getDNSZones(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/dns/zones").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(DNSZoneListResponse.class);
+    public DNSZoneListResponse getDNSZones(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/dns/zones").query(params)).object(DNSZoneListResponse.class);
     }
 
     public EmptyResponse recreateServer(java.util.UUID id) throws ClientException {
@@ -147,8 +147,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-firewalls")).object(ServerFirewallListResponse.class);
     }
 
-    public ServerFirewallListResponse getServerFirewalls(String search, int page, int pageSize) throws ClientException {
-        return wrapRequest(get("/server-firewalls").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize))).object(ServerFirewallListResponse.class);
+    public ServerFirewallListResponse getServerFirewalls(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-firewalls").query(params)).object(ServerFirewallListResponse.class);
     }
 
     public ServerFirewallRuleSingleResponse getServerFirewallRule(java.util.UUID id, java.util.UUID rule_id) throws ClientException {
@@ -175,8 +175,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-hosts")).object(ServerHostListResponse.class);
     }
 
-    public ServerHostListResponse getServerHosts(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/server-hosts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ServerHostListResponse.class);
+    public ServerHostListResponse getServerHosts(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-hosts").query(params)).object(ServerHostListResponse.class);
     }
 
     public ServerSingleResponse createServer(ServerCreateRequest body) throws ClientException {
@@ -187,8 +187,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/servers")).object(ServerListResponse.class);
     }
 
-    public ServerListResponse getServers(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/servers").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(ServerListResponse.class);
+    public ServerListResponse getServers(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/servers").query(params)).object(ServerListResponse.class);
     }
 
     public EmptyResponse deleteServerNetwork(java.util.UUID id, java.util.UUID network_id) throws ClientException {
@@ -239,8 +239,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-backups")).object(ServerBackupListResponse.class);
     }
 
-    public ServerBackupListResponse getServerBackups(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/server-backups").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ServerBackupListResponse.class);
+    public ServerBackupListResponse getServerBackups(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-backups").query(params)).object(ServerBackupListResponse.class);
     }
 
     public SubnetSingleResponse createSubnet(SubnetCreateRequest body) throws ClientException {
@@ -251,8 +251,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/subnets")).object(SubnetListResponse.class);
     }
 
-    public SubnetListResponse getSubnets(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/subnets").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(SubnetListResponse.class);
+    public SubnetListResponse getSubnets(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/subnets").query(params)).object(SubnetListResponse.class);
     }
 
     public ServerVolumeSingleResponse createServerVolume(ServerVolumeCreateRequest body) throws ClientException {
@@ -263,8 +263,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-volumes")).object(ServerVolumeListResponse.class);
     }
 
-    public ServerVolumeListResponse getServerVolumes(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/server-volumes").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(ServerVolumeListResponse.class);
+    public ServerVolumeListResponse getServerVolumes(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-volumes").query(params)).object(ServerVolumeListResponse.class);
     }
 
     public PleskLicenseTypeSingleResponse getPleskLicenseType(java.util.UUID id) throws ClientException {
@@ -279,8 +279,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-storage-classes")).object(ServerStorageClassListResponse.class);
     }
 
-    public ServerStorageClassListResponse getServerStorageClasses(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/server-storage-classes").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ServerStorageClassListResponse.class);
+    public ServerStorageClassListResponse getServerStorageClasses(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-storage-classes").query(params)).object(ServerStorageClassListResponse.class);
     }
 
     public ServerFirewallMemberSingleResponse getServerFirewallMember(java.util.UUID id, java.util.UUID member_id) throws ClientException {
@@ -295,8 +295,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/search")).object(SearchResponse.class);
     }
 
-    public SearchResponse search(boolean withLabels, String resources, String search, int limit, java.util.UUID projectId) throws ClientException {
-        return wrapRequest(get("/search").query("with_labels", String.valueOf(withLabels)).query("resources", String.valueOf(resources)).query("search", String.valueOf(search)).query("limit", String.valueOf(limit)).query("project_id", String.valueOf(projectId))).object(SearchResponse.class);
+    public SearchResponse search(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/search").query(params)).object(SearchResponse.class);
     }
 
     public ScheduledServerActionSingleResponse getScheduledServerAction(java.util.UUID id, java.util.UUID action_id) throws ClientException {
@@ -315,24 +315,24 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/storage/s3/buckets")).object(S3BucketListResponse.class);
     }
 
-    public S3BucketListResponse getS3Buckets(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/storage/s3/buckets").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(S3BucketListResponse.class);
+    public S3BucketListResponse getS3Buckets(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/storage/s3/buckets").query(params)).object(S3BucketListResponse.class);
     }
 
     public PleskLicenseTypeListResponse getPleskLicenseTypes() throws ClientException {
         return wrapRequest(get("/licenses/plesk-types")).object(PleskLicenseTypeListResponse.class);
     }
 
-    public PleskLicenseTypeListResponse getPleskLicenseTypes(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/licenses/plesk-types").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(PleskLicenseTypeListResponse.class);
+    public PleskLicenseTypeListResponse getPleskLicenseTypes(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/licenses/plesk-types").query(params)).object(PleskLicenseTypeListResponse.class);
     }
 
     public ServerActionListResponse getServerActions(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/servers/"+id+"/actions")).object(ServerActionListResponse.class);
     }
 
-    public ServerActionListResponse getServerActions(java.util.UUID id, int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/servers/"+id+"/actions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ServerActionListResponse.class);
+    public ServerActionListResponse getServerActions(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/servers/"+id+"/actions").query(params)).object(ServerActionListResponse.class);
     }
 
     public ServerStatusResponse getServerStatus(java.util.UUID id) throws ClientException {
@@ -347,8 +347,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-firewalls/"+id+"/members")).object(ServerFirewallMemberListResponse.class);
     }
 
-    public ServerFirewallMemberListResponse getServerFirewallMembers(java.util.UUID id, String search, int page, int pageSize) throws ClientException {
-        return wrapRequest(get("/server-firewalls/"+id+"/members").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize))).object(ServerFirewallMemberListResponse.class);
+    public ServerFirewallMemberListResponse getServerFirewallMembers(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-firewalls/"+id+"/members").query(params)).object(ServerFirewallMemberListResponse.class);
     }
 
     public ServerPriceRangeSingleResponse getServerPriceRange(java.util.UUID id) throws ClientException {
@@ -363,8 +363,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssl/organisations")).object(SSLOrganisationListResponse.class);
     }
 
-    public SSLOrganisationListResponse getSSLOrganisations(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/ssl/organisations").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(SSLOrganisationListResponse.class);
+    public SSLOrganisationListResponse getSSLOrganisations(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/ssl/organisations").query(params)).object(SSLOrganisationListResponse.class);
     }
 
     public SSLTypeSingleResponse getSSLType(java.util.UUID id) throws ClientException {
@@ -375,8 +375,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssl/types")).object(SSLTypeListResponse.class);
     }
 
-    public SSLTypeListResponse getSSLTypes(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/ssl/types").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(SSLTypeListResponse.class);
+    public SSLTypeListResponse getSSLTypes(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/ssl/types").query(params)).object(SSLTypeListResponse.class);
     }
 
     public ServerVariantPriceSingleResponse getServerVariantPrice(java.util.UUID id, java.util.UUID variant_id) throws ClientException {
@@ -415,8 +415,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-templates")).object(ServerTemplateListResponse.class);
     }
 
-    public ServerTemplateListResponse getServerTemplates(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/server-templates").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ServerTemplateListResponse.class);
+    public ServerTemplateListResponse getServerTemplates(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-templates").query(params)).object(ServerTemplateListResponse.class);
     }
 
     public ServerHostSingleResponse getServerHost(java.util.UUID id) throws ClientException {
@@ -431,8 +431,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-firewalls/"+id+"/rules")).object(ServerFirewallRuleListResponse.class);
     }
 
-    public ServerFirewallRuleListResponse getServerFirewallRules(java.util.UUID id, String search, int page, int pageSize) throws ClientException {
-        return wrapRequest(get("/server-firewalls/"+id+"/rules").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize))).object(ServerFirewallRuleListResponse.class);
+    public ServerFirewallRuleListResponse getServerFirewallRules(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-firewalls/"+id+"/rules").query(params)).object(ServerFirewallRuleListResponse.class);
     }
 
     public ScheduledServerActionSingleResponse createScheduledServerAction(java.util.UUID id, ScheduledServerActionCreateRequest body) throws ClientException {
@@ -443,8 +443,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/servers/"+id+"/scheduled-actions")).object(ScheduledServerActionListResponse.class);
     }
 
-    public ScheduledServerActionListResponse getScheduledServerActions(java.util.UUID id, int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/servers/"+id+"/scheduled-actions").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ScheduledServerActionListResponse.class);
+    public ScheduledServerActionListResponse getScheduledServerActions(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/servers/"+id+"/scheduled-actions").query(params)).object(ScheduledServerActionListResponse.class);
     }
 
     public DomainSingleResponse unscheduleDomainDelete(String name) throws ClientException {
@@ -463,8 +463,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/dns/zones/"+name+"/records")).object(DNSRecordListResponse.class);
     }
 
-    public DNSRecordListResponse getDNSZoneRecords(String name, int page, int pageSize) throws ClientException {
-        return wrapRequest(get("/dns/zones/"+name+"/records").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize))).object(DNSRecordListResponse.class);
+    public DNSRecordListResponse getDNSZoneRecords(String name, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/dns/zones/"+name+"/records").query(params)).object(DNSRecordListResponse.class);
     }
 
     public DNSRecordListResponse updateDNSZoneRecords(String name, DNSRecordsUpdateRequest[] body) throws ClientException {
@@ -491,8 +491,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/servers/"+id+"/networks")).object(ServerNetworkListResponse.class);
     }
 
-    public ServerNetworkListResponse getServerNetworks(java.util.UUID id, int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/servers/"+id+"/networks").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ServerNetworkListResponse.class);
+    public ServerNetworkListResponse getServerNetworks(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/servers/"+id+"/networks").query(params)).object(ServerNetworkListResponse.class);
     }
 
     public ServerVariantSingleResponse createServerVariant(ServerVariantCreateRequest body) throws ClientException {
@@ -503,8 +503,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-variants")).object(ServerVariantListResponse.class);
     }
 
-    public ServerVariantListResponse getServerVariants(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/server-variants").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ServerVariantListResponse.class);
+    public ServerVariantListResponse getServerVariants(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-variants").query(params)).object(ServerVariantListResponse.class);
     }
 
     public ServerStorageSingleResponse getServerStorage(java.util.UUID id) throws ClientException {
@@ -531,8 +531,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/addresses")).object(AddressListResponse.class);
     }
 
-    public AddressListResponse getAddresses(String search, int page, int pageSize) throws ClientException {
-        return wrapRequest(get("/addresses").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize))).object(AddressListResponse.class);
+    public AddressListResponse getAddresses(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/addresses").query(params)).object(AddressListResponse.class);
     }
 
     public ServerVariantSingleResponse getServerVariant(java.util.UUID id) throws ClientException {
@@ -555,8 +555,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-medias")).object(ServerMediaListResponse.class);
     }
 
-    public ServerMediaListResponse getServerMedias(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/server-medias").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(ServerMediaListResponse.class);
+    public ServerMediaListResponse getServerMedias(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-medias").query(params)).object(ServerMediaListResponse.class);
     }
 
     public SubnetSingleResponse getSubnet(java.util.UUID id) throws ClientException {
@@ -579,8 +579,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/licenses/plesk")).object(PleskLicenseListResponse.class);
     }
 
-    public PleskLicenseListResponse getPleskLicenses(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/licenses/plesk").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(PleskLicenseListResponse.class);
+    public PleskLicenseListResponse getPleskLicenses(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/licenses/plesk").query(params)).object(PleskLicenseListResponse.class);
     }
 
     public S3AccessKeySingleResponse getS3AccessKey(java.util.UUID id) throws ClientException {
@@ -599,8 +599,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/storage/s3/access-keys")).object(S3AccessKeyListResponse.class);
     }
 
-    public S3AccessKeyListResponse getS3AccessKeys(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/storage/s3/access-keys").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(S3AccessKeyListResponse.class);
+    public S3AccessKeyListResponse getS3AccessKeys(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/storage/s3/access-keys").query(params)).object(S3AccessKeyListResponse.class);
     }
 
     public DNSZoneSingleResponse getDNSZone(String name) throws ClientException {
@@ -619,8 +619,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/domain-handles")).object(DomainHandleListResponse.class);
     }
 
-    public DomainHandleListResponse getDomainHandles(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/domain-handles").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(DomainHandleListResponse.class);
+    public DomainHandleListResponse getDomainHandles(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/domain-handles").query(params)).object(DomainHandleListResponse.class);
     }
 
     public AddressSingleResponse getAddress(String id) throws ClientException {
@@ -635,8 +635,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssl/certificates")).object(SSLCertificateListResponse.class);
     }
 
-    public SSLCertificateListResponse getSSLCertificates(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/ssl/certificates").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(SSLCertificateListResponse.class);
+    public SSLCertificateListResponse getSSLCertificates(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/ssl/certificates").query(params)).object(SSLCertificateListResponse.class);
     }
 
     public DomainSingleResponse scheduleDomainDelete(String name, DomainScheduleDeleteRequest body) throws ClientException {
@@ -655,8 +655,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/pricing/domains")).object(DomainPriceListResponse.class);
     }
 
-    public DomainPriceListResponse getDomainPricingList(java.util.UUID projectId) throws ClientException {
-        return wrapRequest(get("/pricing/domains").query("project_id", String.valueOf(projectId))).object(DomainPriceListResponse.class);
+    public DomainPriceListResponse getDomainPricingList(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/pricing/domains").query(params)).object(DomainPriceListResponse.class);
     }
 
     public SSLCertificateSingleResponse getSSLCertificate(java.util.UUID id) throws ClientException {
@@ -675,8 +675,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/networks")).object(NetworkListResponse.class);
     }
 
-    public NetworkListResponse getNetworks(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/networks").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(NetworkListResponse.class);
+    public NetworkListResponse getNetworks(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/networks").query(params)).object(NetworkListResponse.class);
     }
 
     public DomainAuthinfoResponse getDomainAuthinfo(String name) throws ClientException {
@@ -711,8 +711,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssl/contacts")).object(SSLContactListResponse.class);
     }
 
-    public SSLContactListResponse getSSLContacts(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/ssl/contacts").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(SSLContactListResponse.class);
+    public SSLContactListResponse getSSLContacts(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/ssl/contacts").query(params)).object(SSLContactListResponse.class);
     }
 
     public ServerMediaSingleResponse getServerMedia(java.util.UUID id) throws ClientException {
@@ -731,8 +731,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/storage/s3/access-keys/"+access_key_id+"/grants")).object(S3AccessGrantListResponse.class);
     }
 
-    public S3AccessGrantListResponse getS3AccessKeyGrants(java.util.UUID access_key_id, int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/storage/s3/access-keys/"+access_key_id+"/grants").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(S3AccessGrantListResponse.class);
+    public S3AccessGrantListResponse getS3AccessKeyGrants(java.util.UUID access_key_id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/storage/s3/access-keys/"+access_key_id+"/grants").query(params)).object(S3AccessGrantListResponse.class);
     }
 
     public ServerPriceRangeAssignmentSingleResponse getServerPriceRangeAssignment(String id) throws ClientException {
@@ -759,8 +759,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/labels")).object(LabelListResponse.class);
     }
 
-    public LabelListResponse getLabels(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/labels").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(LabelListResponse.class);
+    public LabelListResponse getLabels(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/labels").query(params)).object(LabelListResponse.class);
     }
 
     public S3BucketSingleResponse getS3Bucket(java.util.UUID id) throws ClientException {
@@ -779,8 +779,8 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/domains")).object(DomainListResponse.class);
     }
 
-    public DomainListResponse getDomains(int page, int pageSize, String search, boolean withLabels) throws ClientException {
-        return wrapRequest(get("/domains").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("with_labels", String.valueOf(withLabels))).object(DomainListResponse.class);
+    public DomainListResponse getDomains(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/domains").query(params)).object(DomainListResponse.class);
     }
 
     public ServerVolumeSingleResponse detachServerVolume(java.util.UUID id) throws ClientException {

@@ -27,16 +27,16 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/projects")).object(ProjectListResponse.class);
     }
 
-    public ProjectListResponse getProjects(int page, int pageSize, String search, boolean detail) throws ClientException {
-        return wrapRequest(get("/projects").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search)).query("detail", String.valueOf(detail))).object(ProjectListResponse.class);
+    public ProjectListResponse getProjects(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/projects").query(params)).object(ProjectListResponse.class);
     }
 
     public ProjectSingleResponse getProject(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/projects/"+id)).object(ProjectSingleResponse.class);
     }
 
-    public ProjectSingleResponse getProject(java.util.UUID id, boolean detail) throws ClientException {
-        return wrapRequest(get("/projects/"+id).query("detail", String.valueOf(detail))).object(ProjectSingleResponse.class);
+    public ProjectSingleResponse getProject(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/projects/"+id).query(params)).object(ProjectSingleResponse.class);
     }
 
     public EmptyResponse deleteProject(java.util.UUID id) throws ClientException {
@@ -59,8 +59,8 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/users")).object(UserListResponse.class);
     }
 
-    public UserListResponse getUsers(int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/users").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(UserListResponse.class);
+    public UserListResponse getUsers(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/users").query(params)).object(UserListResponse.class);
     }
 
     public UserSingleResponse getUser(java.util.UUID id) throws ClientException {
@@ -87,8 +87,8 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/audit-log")).object(AuditLogEntryListResponse.class);
     }
 
-    public AuditLogEntryListResponse searchAuditLog(String userId, String projectId, String objectType, java.util.UUID objectId) throws ClientException {
-        return wrapRequest(get("/audit-log").query("user_id", String.valueOf(userId)).query("project_id", String.valueOf(projectId)).query("object_type", String.valueOf(objectType)).query("object_id", String.valueOf(objectId))).object(AuditLogEntryListResponse.class);
+    public AuditLogEntryListResponse searchAuditLog(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/audit-log").query(params)).object(AuditLogEntryListResponse.class);
     }
 
     public TokenSingleResponse createToken(TokenCreateRequest body) throws ClientException {
@@ -99,8 +99,8 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/tokens")).object(TokenListResponse.class);
     }
 
-    public TokenListResponse getTokens(String search, int page, int pageSize) throws ClientException {
-        return wrapRequest(get("/tokens").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize))).object(TokenListResponse.class);
+    public TokenListResponse getTokens(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/tokens").query(params)).object(TokenListResponse.class);
     }
 
     public CountrySingleResponse getCountry(String code) throws ClientException {
@@ -119,12 +119,16 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/validate/"+token)).object(TokenValidationResponse.class);
     }
 
+    public ProjectMemberSingleResponse addProjectMember(java.util.UUID id, ProjectMemberCreateRequest body) throws ClientException {
+        return wrapRequest(post("/projects/"+id+"/members", body)).object(ProjectMemberSingleResponse.class);
+    }
+
     public ProjectMemberListResponse getProjectMembers(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/projects/"+id+"/members")).object(ProjectMemberListResponse.class);
     }
 
-    public ProjectMemberListResponse getProjectMembers(java.util.UUID id, int page, int pageSize, String search) throws ClientException {
-        return wrapRequest(get("/projects/"+id+"/members").query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize)).query("search", String.valueOf(search))).object(ProjectMemberListResponse.class);
+    public ProjectMemberListResponse getProjectMembers(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/projects/"+id+"/members").query(params)).object(ProjectMemberListResponse.class);
     }
 
     public TransactionLogResponse searchTransactionLog(TransactionLogRequest body) throws ClientException {
@@ -147,8 +151,8 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/countries")).object(CountryListResponse.class);
     }
 
-    public CountryListResponse getCountries(String search, int page, int pageSize) throws ClientException {
-        return wrapRequest(get("/countries").query("search", String.valueOf(search)).query("page", String.valueOf(page)).query("page_size", String.valueOf(pageSize))).object(CountryListResponse.class);
+    public CountryListResponse getCountries(, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/countries").query(params)).object(CountryListResponse.class);
     }
 
 
