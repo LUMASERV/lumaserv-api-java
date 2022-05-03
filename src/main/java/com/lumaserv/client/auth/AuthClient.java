@@ -27,7 +27,7 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/projects")).object(ProjectListResponse.class);
     }
 
-    public ProjectListResponse getProjects(, java.util.Map<String, String> params) throws ClientException {
+    public ProjectListResponse getProjects(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/projects").query(params)).object(ProjectListResponse.class);
     }
 
@@ -59,7 +59,7 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/users")).object(UserListResponse.class);
     }
 
-    public UserListResponse getUsers(, java.util.Map<String, String> params) throws ClientException {
+    public UserListResponse getUsers(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/users").query(params)).object(UserListResponse.class);
     }
 
@@ -87,7 +87,7 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/audit-log")).object(AuditLogEntryListResponse.class);
     }
 
-    public AuditLogEntryListResponse searchAuditLog(, java.util.Map<String, String> params) throws ClientException {
+    public AuditLogEntryListResponse searchAuditLog(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/audit-log").query(params)).object(AuditLogEntryListResponse.class);
     }
 
@@ -99,7 +99,7 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/tokens")).object(TokenListResponse.class);
     }
 
-    public TokenListResponse getTokens(, java.util.Map<String, String> params) throws ClientException {
+    public TokenListResponse getTokens(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/tokens").query(params)).object(TokenListResponse.class);
     }
 
@@ -151,7 +151,7 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/countries")).object(CountryListResponse.class);
     }
 
-    public CountryListResponse getCountries(, java.util.Map<String, String> params) throws ClientException {
+    public CountryListResponse getCountries(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/countries").query(params)).object(CountryListResponse.class);
     }
 

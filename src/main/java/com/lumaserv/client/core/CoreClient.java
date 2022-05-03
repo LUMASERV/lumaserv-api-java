@@ -27,7 +27,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssh-keys")).object(SSHKeyListResponse.class);
     }
 
-    public SSHKeyListResponse getSSHKeys(, java.util.Map<String, String> params) throws ClientException {
+    public SSHKeyListResponse getSSHKeys(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/ssh-keys").query(params)).object(SSHKeyListResponse.class);
     }
 
@@ -51,7 +51,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/availability-zones")).object(AvailabilityZoneListResponse.class);
     }
 
-    public AvailabilityZoneListResponse getAvailabilityZones(, java.util.Map<String, String> params) throws ClientException {
+    public AvailabilityZoneListResponse getAvailabilityZones(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/availability-zones").query(params)).object(AvailabilityZoneListResponse.class);
     }
 
@@ -131,7 +131,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/dns/zones")).object(DNSZoneListResponse.class);
     }
 
-    public DNSZoneListResponse getDNSZones(, java.util.Map<String, String> params) throws ClientException {
+    public DNSZoneListResponse getDNSZones(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/dns/zones").query(params)).object(DNSZoneListResponse.class);
     }
 
@@ -147,7 +147,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-firewalls")).object(ServerFirewallListResponse.class);
     }
 
-    public ServerFirewallListResponse getServerFirewalls(, java.util.Map<String, String> params) throws ClientException {
+    public ServerFirewallListResponse getServerFirewalls(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/server-firewalls").query(params)).object(ServerFirewallListResponse.class);
     }
 
@@ -175,7 +175,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-hosts")).object(ServerHostListResponse.class);
     }
 
-    public ServerHostListResponse getServerHosts(, java.util.Map<String, String> params) throws ClientException {
+    public ServerHostListResponse getServerHosts(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/server-hosts").query(params)).object(ServerHostListResponse.class);
     }
 
@@ -187,7 +187,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/servers")).object(ServerListResponse.class);
     }
 
-    public ServerListResponse getServers(, java.util.Map<String, String> params) throws ClientException {
+    public ServerListResponse getServers(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/servers").query(params)).object(ServerListResponse.class);
     }
 
@@ -239,7 +239,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-backups")).object(ServerBackupListResponse.class);
     }
 
-    public ServerBackupListResponse getServerBackups(, java.util.Map<String, String> params) throws ClientException {
+    public ServerBackupListResponse getServerBackups(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/server-backups").query(params)).object(ServerBackupListResponse.class);
     }
 
@@ -251,7 +251,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/subnets")).object(SubnetListResponse.class);
     }
 
-    public SubnetListResponse getSubnets(, java.util.Map<String, String> params) throws ClientException {
+    public SubnetListResponse getSubnets(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/subnets").query(params)).object(SubnetListResponse.class);
     }
 
@@ -263,7 +263,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-volumes")).object(ServerVolumeListResponse.class);
     }
 
-    public ServerVolumeListResponse getServerVolumes(, java.util.Map<String, String> params) throws ClientException {
+    public ServerVolumeListResponse getServerVolumes(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/server-volumes").query(params)).object(ServerVolumeListResponse.class);
     }
 
@@ -279,7 +279,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-storage-classes")).object(ServerStorageClassListResponse.class);
     }
 
-    public ServerStorageClassListResponse getServerStorageClasses(, java.util.Map<String, String> params) throws ClientException {
+    public ServerStorageClassListResponse getServerStorageClasses(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/server-storage-classes").query(params)).object(ServerStorageClassListResponse.class);
     }
 
@@ -295,7 +295,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/search")).object(SearchResponse.class);
     }
 
-    public SearchResponse search(, java.util.Map<String, String> params) throws ClientException {
+    public SearchResponse search(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/search").query(params)).object(SearchResponse.class);
     }
 
@@ -315,7 +315,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/storage/s3/buckets")).object(S3BucketListResponse.class);
     }
 
-    public S3BucketListResponse getS3Buckets(, java.util.Map<String, String> params) throws ClientException {
+    public S3BucketListResponse getS3Buckets(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/storage/s3/buckets").query(params)).object(S3BucketListResponse.class);
     }
 
@@ -323,7 +323,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/licenses/plesk-types")).object(PleskLicenseTypeListResponse.class);
     }
 
-    public PleskLicenseTypeListResponse getPleskLicenseTypes(, java.util.Map<String, String> params) throws ClientException {
+    public PleskLicenseTypeListResponse getPleskLicenseTypes(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/licenses/plesk-types").query(params)).object(PleskLicenseTypeListResponse.class);
     }
 
@@ -363,7 +363,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssl/organisations")).object(SSLOrganisationListResponse.class);
     }
 
-    public SSLOrganisationListResponse getSSLOrganisations(, java.util.Map<String, String> params) throws ClientException {
+    public SSLOrganisationListResponse getSSLOrganisations(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/ssl/organisations").query(params)).object(SSLOrganisationListResponse.class);
     }
 
@@ -375,7 +375,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssl/types")).object(SSLTypeListResponse.class);
     }
 
-    public SSLTypeListResponse getSSLTypes(, java.util.Map<String, String> params) throws ClientException {
+    public SSLTypeListResponse getSSLTypes(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/ssl/types").query(params)).object(SSLTypeListResponse.class);
     }
 
@@ -415,7 +415,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-templates")).object(ServerTemplateListResponse.class);
     }
 
-    public ServerTemplateListResponse getServerTemplates(, java.util.Map<String, String> params) throws ClientException {
+    public ServerTemplateListResponse getServerTemplates(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/server-templates").query(params)).object(ServerTemplateListResponse.class);
     }
 
@@ -503,7 +503,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-variants")).object(ServerVariantListResponse.class);
     }
 
-    public ServerVariantListResponse getServerVariants(, java.util.Map<String, String> params) throws ClientException {
+    public ServerVariantListResponse getServerVariants(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/server-variants").query(params)).object(ServerVariantListResponse.class);
     }
 
@@ -531,7 +531,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/addresses")).object(AddressListResponse.class);
     }
 
-    public AddressListResponse getAddresses(, java.util.Map<String, String> params) throws ClientException {
+    public AddressListResponse getAddresses(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/addresses").query(params)).object(AddressListResponse.class);
     }
 
@@ -555,7 +555,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-medias")).object(ServerMediaListResponse.class);
     }
 
-    public ServerMediaListResponse getServerMedias(, java.util.Map<String, String> params) throws ClientException {
+    public ServerMediaListResponse getServerMedias(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/server-medias").query(params)).object(ServerMediaListResponse.class);
     }
 
@@ -579,7 +579,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/licenses/plesk")).object(PleskLicenseListResponse.class);
     }
 
-    public PleskLicenseListResponse getPleskLicenses(, java.util.Map<String, String> params) throws ClientException {
+    public PleskLicenseListResponse getPleskLicenses(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/licenses/plesk").query(params)).object(PleskLicenseListResponse.class);
     }
 
@@ -599,7 +599,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/storage/s3/access-keys")).object(S3AccessKeyListResponse.class);
     }
 
-    public S3AccessKeyListResponse getS3AccessKeys(, java.util.Map<String, String> params) throws ClientException {
+    public S3AccessKeyListResponse getS3AccessKeys(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/storage/s3/access-keys").query(params)).object(S3AccessKeyListResponse.class);
     }
 
@@ -619,7 +619,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/domain-handles")).object(DomainHandleListResponse.class);
     }
 
-    public DomainHandleListResponse getDomainHandles(, java.util.Map<String, String> params) throws ClientException {
+    public DomainHandleListResponse getDomainHandles(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/domain-handles").query(params)).object(DomainHandleListResponse.class);
     }
 
@@ -635,7 +635,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssl/certificates")).object(SSLCertificateListResponse.class);
     }
 
-    public SSLCertificateListResponse getSSLCertificates(, java.util.Map<String, String> params) throws ClientException {
+    public SSLCertificateListResponse getSSLCertificates(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/ssl/certificates").query(params)).object(SSLCertificateListResponse.class);
     }
 
@@ -655,7 +655,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/pricing/domains")).object(DomainPriceListResponse.class);
     }
 
-    public DomainPriceListResponse getDomainPricingList(, java.util.Map<String, String> params) throws ClientException {
+    public DomainPriceListResponse getDomainPricingList(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/pricing/domains").query(params)).object(DomainPriceListResponse.class);
     }
 
@@ -675,7 +675,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/networks")).object(NetworkListResponse.class);
     }
 
-    public NetworkListResponse getNetworks(, java.util.Map<String, String> params) throws ClientException {
+    public NetworkListResponse getNetworks(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/networks").query(params)).object(NetworkListResponse.class);
     }
 
@@ -711,7 +711,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/ssl/contacts")).object(SSLContactListResponse.class);
     }
 
-    public SSLContactListResponse getSSLContacts(, java.util.Map<String, String> params) throws ClientException {
+    public SSLContactListResponse getSSLContacts(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/ssl/contacts").query(params)).object(SSLContactListResponse.class);
     }
 
@@ -759,7 +759,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/labels")).object(LabelListResponse.class);
     }
 
-    public LabelListResponse getLabels(, java.util.Map<String, String> params) throws ClientException {
+    public LabelListResponse getLabels(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/labels").query(params)).object(LabelListResponse.class);
     }
 
@@ -779,7 +779,7 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/domains")).object(DomainListResponse.class);
     }
 
-    public DomainListResponse getDomains(, java.util.Map<String, String> params) throws ClientException {
+    public DomainListResponse getDomains(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/domains").query(params)).object(DomainListResponse.class);
     }
 
