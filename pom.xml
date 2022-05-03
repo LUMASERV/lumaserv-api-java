@@ -24,6 +24,13 @@
         </license>
     </licenses>
 
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
+
     <developers>
         <developer>
             <name>Jan Bebendorf</name>
