@@ -12,6 +12,8 @@ public class BillingPosition {
     private float amount;
     @MapperOptions(name = "price")
     private float price;
+    @MapperOptions(name = "draft")
+    private boolean draft;
     @MapperOptions(name = "description")
     private String description;
     @MapperOptions(name = "id")

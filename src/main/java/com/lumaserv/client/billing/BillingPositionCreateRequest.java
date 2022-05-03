@@ -14,6 +14,8 @@ public class BillingPositionCreateRequest {
     private String unit;
     @MapperOptions(name = "price")
     private float price;
+    @MapperOptions(name = "draft")
+    private boolean draft;
     @MapperOptions(name = "description")
     private String description;
     @MapperOptions(name = "customer_id")
