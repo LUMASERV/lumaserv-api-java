@@ -127,6 +127,10 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(get("/service-contracts/"+contract_id+"/positions")).object(ServiceContractPositionListResponse.class);
     }
 
+    public ServiceContractPositionListResponse getServiceContractPositions(String contract_id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/service-contracts/"+contract_id+"/positions").query(params)).object(ServiceContractPositionListResponse.class);
+    }
+
     public OfferPositionSingleResponse getOfferPosition(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/offer-positions/"+id)).object(OfferPositionSingleResponse.class);
     }

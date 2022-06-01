@@ -11,7 +11,7 @@ public class AuditLogRequest {
     @MapperOptions(name = "project_id")
     private java.util.UUID projectId;
     @MapperOptions(name = "object_type")
-    private String objectType;
+    private ObjectType objectType;
     @MapperOptions(name = "context")
     private AbstractObject context;
     @MapperOptions(name = "action")

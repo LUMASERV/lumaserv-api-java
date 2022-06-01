@@ -8,6 +8,8 @@ import org.javawebstack.abstractdata.AbstractObject;
 public class ScheduledServerAction {
     @MapperOptions(name = "backup_id")
     private java.util.UUID backupId;
+    @MapperOptions(name = "backup_retention")
+    private int backupRetention;
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "interval")

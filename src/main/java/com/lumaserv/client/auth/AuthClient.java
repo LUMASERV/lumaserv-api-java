@@ -147,6 +147,10 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(get("/users/"+id+"/project_memberships")).object(ProjectMemberListResponse.class);
     }
 
+    public ProjectMemberListResponse getUserProjectMemberships(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/users/"+id+"/project_memberships").query(params)).object(ProjectMemberListResponse.class);
+    }
+
     public CountryListResponse getCountries() throws ClientException {
         return wrapRequest(get("/countries")).object(CountryListResponse.class);
     }

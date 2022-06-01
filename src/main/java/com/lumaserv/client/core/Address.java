@@ -8,6 +8,8 @@ import org.javawebstack.abstractdata.AbstractObject;
 public class Address {
     @MapperOptions(name = "address")
     private String address;
+    @MapperOptions(name = "assignments")
+    private AddressAssignments[] assignments;
     @MapperOptions(name = "project_id")
     private java.util.UUID projectId;
     @MapperOptions(name = "subnet_id")

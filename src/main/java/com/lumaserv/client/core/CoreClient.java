@@ -39,6 +39,10 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-price-ranges")).object(ServerPriceRangeListResponse.class);
     }
 
+    public ServerPriceRangeListResponse getServerPriceRanges(java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-price-ranges").query(params)).object(ServerPriceRangeListResponse.class);
+    }
+
     public EmptyResponse startServer(java.util.UUID id) throws ClientException {
         return wrapRequest(post("/servers/"+id+"/start")).object(EmptyResponse.class);
     }
@@ -527,6 +531,10 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(get("/server-price-range-assignments")).object(ServerPriceRangeAssignmentListResponse.class);
     }
 
+    public ServerPriceRangeAssignmentListResponse getServerPriceRangeAssignments(java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-price-range-assignments").query(params)).object(ServerPriceRangeAssignmentListResponse.class);
+    }
+
     public AddressListResponse getAddresses() throws ClientException {
         return wrapRequest(get("/addresses")).object(AddressListResponse.class);
     }
@@ -611,6 +619,10 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(put("/dns/zones/"+name, body)).object(DNSZoneSingleResponse.class);
     }
 
+    public ServerActionSingleResponse cancelServerAction(java.util.UUID id, java.util.UUID action_id) throws ClientException {
+        return wrapRequest(post("/servers/"+id+"/actions/"+action_id+"/cancel")).object(ServerActionSingleResponse.class);
+    }
+
     public DomainHandleSingleResponse createDomainHandle(DomainHandleCreateRequest body) throws ClientException {
         return wrapRequest(post("/domain-handles", body)).object(DomainHandleSingleResponse.class);
     }
@@ -651,6 +663,10 @@ public class CoreClient extends HTTPClient {
         return wrapRequest(delete("/server-backups/"+id)).object(EmptyResponse.class);
     }
 
+    public ServerBackupSingleResponse updateServerBackup(java.util.UUID id, ServerBackupUpdateRequest body) throws ClientException {
+        return wrapRequest(put("/server-backups/"+id, body)).object(ServerBackupSingleResponse.class);
+    }
+
     public DomainPriceListResponse getDomainPricingList() throws ClientException {
         return wrapRequest(get("/pricing/domains")).object(DomainPriceListResponse.class);
     }
@@ -661,10 +677,6 @@ public class CoreClient extends HTTPClient {
 
     public SSLCertificateSingleResponse getSSLCertificate(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/ssl/certificates/"+id)).object(SSLCertificateSingleResponse.class);
-    }
-
-    public AddressSingleResponse createSubnetAddress(java.util.UUID id, SubnetAddressCreateRequest body) throws ClientException {
-        return wrapRequest(post("/subnets/"+id+"/addresses", body)).object(AddressSingleResponse.class);
     }
 
     public NetworkSingleResponse createNetwork(NetworkCreateRequest body) throws ClientException {
@@ -693,6 +705,10 @@ public class CoreClient extends HTTPClient {
 
     public ServerStorageListResponse getServerStorages() throws ClientException {
         return wrapRequest(get("/server-storages")).object(ServerStorageListResponse.class);
+    }
+
+    public ServerStorageListResponse getServerStorages(java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-storages").query(params)).object(ServerStorageListResponse.class);
     }
 
     public EmptyResponse resizeServer(String id, ServerResizeRequest body) throws ClientException {
@@ -793,6 +809,10 @@ public class CoreClient extends HTTPClient {
 
     public ServerVariantPriceListResponse getServerVariantPrices(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/server-price-ranges/"+id+"/variant-prices")).object(ServerVariantPriceListResponse.class);
+    }
+
+    public ServerVariantPriceListResponse getServerVariantPrices(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-price-ranges/"+id+"/variant-prices").query(params)).object(ServerVariantPriceListResponse.class);
     }
 
 

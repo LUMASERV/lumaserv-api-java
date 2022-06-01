@@ -8,6 +8,8 @@ import org.javawebstack.abstractdata.AbstractObject;
 public class NetworkCreateRequest {
     @MapperOptions(name = "zone_id")
     private java.util.UUID zoneId;
+    @MapperOptions(name = "subnet")
+    private String subnet;
     @MapperOptions(name = "project_id")
     private java.util.UUID projectId;
     @MapperOptions(name = "tag")

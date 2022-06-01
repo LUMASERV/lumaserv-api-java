@@ -14,6 +14,8 @@ public class ServerBackup {
     private java.util.UUID actionId;
     @MapperOptions(name = "scheduled")
     private boolean scheduled;
+    @MapperOptions(name = "keep")
+    private boolean keep;
     @MapperOptions(name = "created_at")
     private String createdAt;
     @MapperOptions(name = "id")
