@@ -1,4 +1,4 @@
-package com.lumaserv.client.core;
+package com.lumaserv.client.compute;
 
 import lombok.*;
 import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;

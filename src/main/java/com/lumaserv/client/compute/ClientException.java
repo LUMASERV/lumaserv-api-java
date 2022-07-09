@@ -1,4 +1,4 @@
-package com.lumaserv.client.core;
+package com.lumaserv.client.compute;
 
 import lombok.Getter;
 import org.javawebstack.httpclient.HTTPRequest;

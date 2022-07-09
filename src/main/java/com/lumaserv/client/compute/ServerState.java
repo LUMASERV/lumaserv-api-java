@@ -1,4 +1,4 @@
-package com.lumaserv.client.core;
+package com.lumaserv.client.compute;
 
 public enum ServerState {
     INSTALLATION,
