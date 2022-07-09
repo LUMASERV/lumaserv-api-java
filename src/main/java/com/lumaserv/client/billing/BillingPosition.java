@@ -10,6 +10,8 @@ public class BillingPosition {
     private java.util.UUID invoicePositionId;
     @MapperOptions(name = "amount")
     private float amount;
+    @MapperOptions(name = "sync_key")
+    private String syncKey;
     @MapperOptions(name = "price")
     private float price;
     @MapperOptions(name = "draft")

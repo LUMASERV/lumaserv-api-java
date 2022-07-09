@@ -12,6 +12,8 @@ public class BillingPositionCreateRequest {
     private float amount;
     @MapperOptions(name = "unit")
     private String unit;
+    @MapperOptions(name = "sync_key")
+    private String syncKey;
     @MapperOptions(name = "price")
     private float price;
     @MapperOptions(name = "draft")

@@ -10,7 +10,7 @@ public class BillingClient extends HTTPClient {
     }
 
     public BillingClient(String apiKey) {
-        this(apiKey, "https://billing.lumaserv.com");
+        this(apiKey, "https://api.lumaserv.com/billing");
     }
 
     private HTTPRequest wrapRequest(HTTPRequest r) throws ClientException {

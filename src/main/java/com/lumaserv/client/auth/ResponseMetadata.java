@@ -7,7 +7,7 @@ import org.javawebstack.abstractdata.AbstractObject;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ResponseMetadata {
     @MapperOptions(name = "transaction_id")
-    private java.util.UUID transactionId;
+    private String transactionId;
     @MapperOptions(name = "build_commit")
     private String buildCommit;
     @MapperOptions(name = "build_timestamp")
