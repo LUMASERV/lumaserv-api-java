@@ -79,6 +79,10 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(put("/password-reset", body)).object(EmptyResponse.class);
     }
 
+    public EmptyResponse rejectProjectInvite(String id) throws ClientException {
+        return wrapRequest(post("/project-invites/"+id+"/reject")).object(EmptyResponse.class);
+    }
+
     public EmptyResponse insertAuditLogEntry(AuditLogRequest body) throws ClientException {
         return wrapRequest(post("/audit-log", body)).object(EmptyResponse.class);
     }
@@ -115,8 +119,24 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(delete("/tokens/"+id)).object(EmptyResponse.class);
     }
 
+    public EmptyResponse deleteProjectInvite(String id) throws ClientException {
+        return wrapRequest(delete("/project-invites/"+id)).object(EmptyResponse.class);
+    }
+
     public TokenValidationResponse validateToken(String token) throws ClientException {
         return wrapRequest(get("/validate/"+token)).object(TokenValidationResponse.class);
+    }
+
+    public ProjectInviteSingleResponse createProjectInvite(ProjectInviteCreateRequest body) throws ClientException {
+        return wrapRequest(post("/project-invites", body)).object(ProjectInviteSingleResponse.class);
+    }
+
+    public ProjectInviteListResponse getProjectInvites() throws ClientException {
+        return wrapRequest(get("/project-invites")).object(ProjectInviteListResponse.class);
+    }
+
+    public ProjectInviteListResponse getProjectInvites(java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/project-invites").query(params)).object(ProjectInviteListResponse.class);
     }
 
     public ProjectMemberSingleResponse addProjectMember(java.util.UUID id, ProjectMemberCreateRequest body) throws ClientException {
@@ -137,6 +157,10 @@ public class AuthClient extends HTTPClient {
 
     public TokenValidationResponse validateSelf() throws ClientException {
         return wrapRequest(get("/validate/self")).object(TokenValidationResponse.class);
+    }
+
+    public EmptyResponse acceptProjectInvite(String id) throws ClientException {
+        return wrapRequest(post("/project-invites/"+id+"/accept")).object(EmptyResponse.class);
     }
 
     public EmptyResponse removeProjectMember(java.util.UUID id, java.util.UUID user_id) throws ClientException {

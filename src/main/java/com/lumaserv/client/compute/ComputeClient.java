@@ -91,6 +91,14 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(put("/servers/"+id, body)).object(ServerSingleResponse.class);
     }
 
+    public ServerActionListResponse getServerActions() throws ClientException {
+        return wrapRequest(get("/server-actions")).object(ServerActionListResponse.class);
+    }
+
+    public ServerActionListResponse getServerActions(java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-actions").query(params)).object(ServerActionListResponse.class);
+    }
+
     public ServerStorageClassSingleResponse getServerStorageClass(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/server-storage-classes/"+id)).object(ServerStorageClassSingleResponse.class);
     }
@@ -99,12 +107,16 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(post("/servers/"+id+"/restart")).object(ServerActionSingleResponse.class);
     }
 
-    public ScheduledServerActionSingleResponse restoreServer(String id, ServerRestoreRequest body) throws ClientException {
-        return wrapRequest(post("/servers/"+id+"/restore", body)).object(ScheduledServerActionSingleResponse.class);
+    public ServerSingleResponse mountServerMedia(java.util.UUID id, ServerMediaMountRequest body) throws ClientException {
+        return wrapRequest(post("/servers/"+id+"/mount", body)).object(ServerSingleResponse.class);
     }
 
-    public ServerActionSingleResponse getServerAction(java.util.UUID id, java.util.UUID action_id) throws ClientException {
-        return wrapRequest(get("/servers/"+id+"/actions/"+action_id)).object(ServerActionSingleResponse.class);
+    public ServerSingleResponse unmountServerMedia(java.util.UUID id) throws ClientException {
+        return wrapRequest(delete("/servers/"+id+"/mount")).object(ServerSingleResponse.class);
+    }
+
+    public ScheduledServerActionSingleResponse restoreServer(String id, ServerRestoreRequest body) throws ClientException {
+        return wrapRequest(post("/servers/"+id+"/restore", body)).object(ScheduledServerActionSingleResponse.class);
     }
 
     public ServerGraphResponse getServerGraph(String id) throws ClientException {
@@ -137,6 +149,10 @@ public class ComputeClient extends HTTPClient {
 
     public EmptyResponse deleteServerFirewallRule(java.util.UUID id, java.util.UUID rule_id) throws ClientException {
         return wrapRequest(delete("/server-firewalls/"+id+"/rules/"+rule_id)).object(EmptyResponse.class);
+    }
+
+    public ServerFirewallRuleSingleResponse updateServerFirewallRule(java.util.UUID id, java.util.UUID rule_id, ServerFirewallRuleUpdateRequest body) throws ClientException {
+        return wrapRequest(put("/server-firewalls/"+id+"/rules/"+rule_id, body)).object(ServerFirewallRuleSingleResponse.class);
     }
 
     public ServerHostSingleResponse createServerHost(ServerHostCreateRequest body) throws ClientException {
@@ -251,6 +267,10 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(delete("/servers/"+id+"/scheduled-actions/"+action_id)).object(EmptyResponse.class);
     }
 
+    public ScheduledServerActionSingleResponse updateScheduledServerAction(java.util.UUID id, java.util.UUID action_id, ScheduledServerActionUpdateRequest body) throws ClientException {
+        return wrapRequest(put("/servers/"+id+"/scheduled-actions/"+action_id, body)).object(ScheduledServerActionSingleResponse.class);
+    }
+
     public S3BucketSingleResponse createS3Bucket(S3BucketCreateRequest body) throws ClientException {
         return wrapRequest(post("/storage/s3/buckets", body)).object(S3BucketSingleResponse.class);
     }
@@ -271,14 +291,6 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(get("/licenses/plesk-types").query(params)).object(PleskLicenseTypeListResponse.class);
     }
 
-    public ServerActionListResponse getServerActions(java.util.UUID id) throws ClientException {
-        return wrapRequest(get("/servers/"+id+"/actions")).object(ServerActionListResponse.class);
-    }
-
-    public ServerActionListResponse getServerActions(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
-        return wrapRequest(get("/servers/"+id+"/actions").query(params)).object(ServerActionListResponse.class);
-    }
-
     public ServerStatusResponse getServerStatus(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/servers/"+id+"/status")).object(ServerStatusResponse.class);
     }
@@ -297,6 +309,10 @@ public class ComputeClient extends HTTPClient {
 
     public ServerPriceRangeSingleResponse getServerPriceRange(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/server-price-ranges/"+id)).object(ServerPriceRangeSingleResponse.class);
+    }
+
+    public ServerActionSingleResponse getServerAction(java.util.UUID id) throws ClientException {
+        return wrapRequest(get("/server-actions/"+id)).object(ServerActionSingleResponse.class);
     }
 
     public ServerVariantPriceSingleResponse getServerVariantPrice(java.util.UUID id, java.util.UUID variant_id) throws ClientException {
@@ -333,6 +349,10 @@ public class ComputeClient extends HTTPClient {
 
     public ServerHostSingleResponse getServerHost(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/server-hosts/"+id)).object(ServerHostSingleResponse.class);
+    }
+
+    public ServerHostSingleResponse updateServerHost(java.util.UUID id, ServerHostUpdateRequest body) throws ClientException {
+        return wrapRequest(put("/server-hosts/"+id, body)).object(ServerHostSingleResponse.class);
     }
 
     public ServerFirewallRuleSingleResponse createServerFirewallRule(java.util.UUID id, ServerFirewallRuleCreateRequest body) throws ClientException {
@@ -499,10 +519,6 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(get("/storage/s3/access-keys").query(params)).object(S3AccessKeyListResponse.class);
     }
 
-    public ServerActionSingleResponse cancelServerAction(java.util.UUID id, java.util.UUID action_id) throws ClientException {
-        return wrapRequest(post("/servers/"+id+"/actions/"+action_id+"/cancel")).object(ServerActionSingleResponse.class);
-    }
-
     public AddressSingleResponse getAddress(String id) throws ClientException {
         return wrapRequest(get("/addresses/"+id)).object(AddressSingleResponse.class);
     }
@@ -583,8 +599,16 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(get("/servers/"+id+"/vnc")).object(ServerVNCResponse.class);
     }
 
+    public ServerActionSingleResponse cancelServerAction(java.util.UUID id) throws ClientException {
+        return wrapRequest(post("/server-actions/"+id+"/cancel")).object(ServerActionSingleResponse.class);
+    }
+
     public NetworkSingleResponse getNetwork(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/networks/"+id)).object(NetworkSingleResponse.class);
+    }
+
+    public NetworkSingleResponse updateNetwork(java.util.UUID id, NetworkUpdateRequest body) throws ClientException {
+        return wrapRequest(put("/networks/"+id, body)).object(NetworkSingleResponse.class);
     }
 
     public LabelListResponse getLabels() throws ClientException {
@@ -593,6 +617,10 @@ public class ComputeClient extends HTTPClient {
 
     public LabelListResponse getLabels(java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/labels").query(params)).object(LabelListResponse.class);
+    }
+
+    public ServerVolumeSingleResponse resizeServerVolume(String id, ServerVolumeResizeRequest body) throws ClientException {
+        return wrapRequest(post("/server-volumes/"+id+"/resize", body)).object(ServerVolumeSingleResponse.class);
     }
 
     public S3BucketSingleResponse getS3Bucket(java.util.UUID id) throws ClientException {

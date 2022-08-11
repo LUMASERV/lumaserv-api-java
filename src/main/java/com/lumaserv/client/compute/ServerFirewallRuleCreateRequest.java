@@ -12,6 +12,8 @@ public class ServerFirewallRuleCreateRequest {
     private ServerFirewallRuleProtocol protocol;
     @MapperOptions(name = "description")
     private String description;
+    @MapperOptions(name = "disabled")
+    private boolean disabled;
     @MapperOptions(name = "type")
     private ServerFirewallRuleType type;
     @MapperOptions(name = "ports")

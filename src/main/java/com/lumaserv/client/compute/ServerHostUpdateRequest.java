@@ -5,13 +5,9 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
-public class ServerHostCreateRequest {
-    @MapperOptions(name = "zone_id")
-    private java.util.UUID zoneId;
+public class ServerHostUpdateRequest {
     @MapperOptions(name = "active")
     private boolean active;
-    @MapperOptions(name = "external_id")
-    private String externalId;
     @MapperOptions(name = "title")
     private String title;
 }

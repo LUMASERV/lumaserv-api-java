@@ -5,10 +5,10 @@ import org.javawebstack.abstractdata.mapper.annotation.MapperOptions;
 import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
-public class ServerBackupUpdateRequest {
-    @MapperOptions(name = "keep")
-    private boolean keep;
-    @MapperOptions(name = "title")
-    private String title;
+public class ServerFirewallRuleUpdateRequest {
+    @MapperOptions(name = "description")
+    private String description;
+    @MapperOptions(name = "disabled")
+    private boolean disabled;
 }
 

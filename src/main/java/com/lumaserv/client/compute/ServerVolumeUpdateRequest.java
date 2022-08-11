@@ -6,6 +6,8 @@ import org.javawebstack.abstractdata.AbstractObject;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class ServerVolumeUpdateRequest {
+    @MapperOptions(name = "title")
+    private String title;
     @MapperOptions(name = "labels")
     private AbstractObject labels;
 }
