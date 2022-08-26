@@ -227,10 +227,6 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(get("/server-volumes").query(params)).object(ServerVolumeListResponse.class);
     }
 
-    public PleskLicenseTypeSingleResponse getPleskLicenseType(java.util.UUID id) throws ClientException {
-        return wrapRequest(get("/licenses/plesk-types/"+id)).object(PleskLicenseTypeSingleResponse.class);
-    }
-
     public ServerStorageClassSingleResponse createServerStorageClass(ServerStorageClassCreateRequest body) throws ClientException {
         return wrapRequest(post("/server-storage-classes", body)).object(ServerStorageClassSingleResponse.class);
     }
@@ -283,14 +279,6 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(get("/storage/s3/buckets").query(params)).object(S3BucketListResponse.class);
     }
 
-    public PleskLicenseTypeListResponse getPleskLicenseTypes() throws ClientException {
-        return wrapRequest(get("/licenses/plesk-types")).object(PleskLicenseTypeListResponse.class);
-    }
-
-    public PleskLicenseTypeListResponse getPleskLicenseTypes(java.util.Map<String, String> params) throws ClientException {
-        return wrapRequest(get("/licenses/plesk-types").query(params)).object(PleskLicenseTypeListResponse.class);
-    }
-
     public ServerStatusResponse getServerStatus(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/servers/"+id+"/status")).object(ServerStatusResponse.class);
     }
@@ -325,14 +313,6 @@ public class ComputeClient extends HTTPClient {
 
     public ServerVariantPriceSingleResponse updateServerVariantPrice(java.util.UUID id, java.util.UUID variant_id, ServerVariantPriceUpdateRequest body) throws ClientException {
         return wrapRequest(put("/server-price-ranges/"+id+"/variant-prices/"+variant_id, body)).object(ServerVariantPriceSingleResponse.class);
-    }
-
-    public PleskLicenseSingleResponse getPleskLicense(java.util.UUID id) throws ClientException {
-        return wrapRequest(get("/licenses/plesk/"+id)).object(PleskLicenseSingleResponse.class);
-    }
-
-    public PleskLicenseSingleResponse updatePleskLicense(java.util.UUID id, PleskLicenseUpdateRequest body) throws ClientException {
-        return wrapRequest(put("/licenses/plesk/"+id, body)).object(PleskLicenseSingleResponse.class);
     }
 
     public ServerTemplateSingleResponse createServerTemplate(ServerTemplateCreateRequest body) throws ClientException {
@@ -485,18 +465,6 @@ public class ComputeClient extends HTTPClient {
 
     public ServerVolumeSingleResponse attachServerVolume(java.util.UUID id, ServerVolumeAttachRequest body) throws ClientException {
         return wrapRequest(post("/server-volumes/"+id+"/attach", body)).object(ServerVolumeSingleResponse.class);
-    }
-
-    public PleskLicenseSingleResponse createPleskLicense(PleskLicenseCreateRequest body) throws ClientException {
-        return wrapRequest(post("/licenses/plesk", body)).object(PleskLicenseSingleResponse.class);
-    }
-
-    public PleskLicenseListResponse getPleskLicenses() throws ClientException {
-        return wrapRequest(get("/licenses/plesk")).object(PleskLicenseListResponse.class);
-    }
-
-    public PleskLicenseListResponse getPleskLicenses(java.util.Map<String, String> params) throws ClientException {
-        return wrapRequest(get("/licenses/plesk").query(params)).object(PleskLicenseListResponse.class);
     }
 
     public S3AccessKeySingleResponse getS3AccessKey(java.util.UUID id) throws ClientException {

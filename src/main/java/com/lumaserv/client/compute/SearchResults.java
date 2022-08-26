@@ -16,8 +16,6 @@ public class SearchResults {
     private ServerMedia[] serverMedias;
     @MapperOptions(name = "s3_buckets")
     private S3Bucket[] s3Buckets;
-    @MapperOptions(name = "plesk_licenses")
-    private PleskLicense[] pleskLicenses;
     @MapperOptions(name = "s3_access_keys")
     private S3AccessKey[] s3AccessKeys;
 }
