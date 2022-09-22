@@ -12,6 +12,10 @@ public class InvoiceDetailed {
     private String createdAt;
     @MapperOptions(name = "due_at")
     private String dueAt;
+    @MapperOptions(name = "net_price")
+    private float netPrice;
+    @MapperOptions(name = "gross_price")
+    private float grossPrice;
     @MapperOptions(name = "positions")
     private Position[] positions;
     @MapperOptions(name = "id")

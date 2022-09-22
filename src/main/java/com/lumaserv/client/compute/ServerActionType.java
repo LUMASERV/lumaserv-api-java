@@ -5,5 +5,8 @@ public enum ServerActionType {
     SHUTDOWN,
     STOP,
     RESIZE,
+    RESTART,
+    BACKUP,
+    RESTORE,
 }
 

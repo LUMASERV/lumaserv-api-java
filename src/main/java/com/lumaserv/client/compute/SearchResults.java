@@ -18,5 +18,7 @@ public class SearchResults {
     private S3Bucket[] s3Buckets;
     @MapperOptions(name = "s3_access_keys")
     private S3AccessKey[] s3AccessKeys;
+    @MapperOptions(name = "server_firewalls")
+    private ServerFirewall[] serverFirewalls;
 }
 
