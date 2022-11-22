@@ -19,14 +19,6 @@ public class BillingClient extends HTTPClient {
         return r;
     }
 
-    public PaymentReminderSingleResponse getPaymentReminder(java.util.UUID id) throws ClientException {
-        return wrapRequest(get("/payment-reminders/"+id)).object(PaymentReminderSingleResponse.class);
-    }
-
-    public PaymentReminderSingleResponse updatePaymentReminder(java.util.UUID id, PaymentReminderUpdateRequest body) throws ClientException {
-        return wrapRequest(put("/payment-reminders/"+id, body)).object(PaymentReminderSingleResponse.class);
-    }
-
     public DebitMandateSingleResponse createDebitMandate(DebitMandateCreateRequest body) throws ClientException {
         return wrapRequest(post("/debit-mandates", body)).object(DebitMandateSingleResponse.class);
     }
@@ -67,20 +59,8 @@ public class BillingClient extends HTTPClient {
         return wrapRequest(put("/billing-positions/"+id, body)).object(BillingPositionSingleResponse.class);
     }
 
-    public BankTransactionListResponse getBankTransactions() throws ClientException {
-        return wrapRequest(get("/bank-transactions")).object(BankTransactionListResponse.class);
-    }
-
-    public BankTransactionListResponse getBankTransactions(java.util.Map<String, String> params) throws ClientException {
-        return wrapRequest(get("/bank-transactions").query(params)).object(BankTransactionListResponse.class);
-    }
-
     public DebitMandateSingleResponse getDebitMandate(java.util.UUID id) throws ClientException {
         return wrapRequest(get("/debit-mandates/"+id)).object(DebitMandateSingleResponse.class);
-    }
-
-    public BankTransactionSingleResponse getBankTransaction(java.util.UUID id) throws ClientException {
-        return wrapRequest(get("/bank-transactions/"+id)).object(BankTransactionSingleResponse.class);
     }
 
     public BillingPositionSingleResponse createBillingPosition(BillingPositionCreateRequest body) throws ClientException {
@@ -209,18 +189,6 @@ public class BillingClient extends HTTPClient {
 
     public ServiceContractSingleResponse updateServiceContract(java.util.UUID id, ServiceContractUpdateRequest body) throws ClientException {
         return wrapRequest(put("/service-contracts/"+id, body)).object(ServiceContractSingleResponse.class);
-    }
-
-    public PaymentReminderSingleResponse createPaymentReminder(PaymentReminderCreateRequest body) throws ClientException {
-        return wrapRequest(post("/payment-reminders", body)).object(PaymentReminderSingleResponse.class);
-    }
-
-    public PaymentReminderListResponse getPaymentReminders() throws ClientException {
-        return wrapRequest(get("/payment-reminders")).object(PaymentReminderListResponse.class);
-    }
-
-    public PaymentReminderListResponse getPaymentReminders(java.util.Map<String, String> params) throws ClientException {
-        return wrapRequest(get("/payment-reminders").query(params)).object(PaymentReminderListResponse.class);
     }
 
 

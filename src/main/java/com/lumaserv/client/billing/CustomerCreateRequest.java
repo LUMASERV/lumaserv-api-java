@@ -20,8 +20,6 @@ public class CustomerCreateRequest {
     private float customVatRate;
     @MapperOptions(name = "country_code")
     private String countryCode;
-    @MapperOptions(name = "balance")
-    private float balance;
     @MapperOptions(name = "user_id")
     private java.util.UUID userId;
     @MapperOptions(name = "street")

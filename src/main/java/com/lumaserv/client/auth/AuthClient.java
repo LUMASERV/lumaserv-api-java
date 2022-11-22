@@ -79,6 +79,10 @@ public class AuthClient extends HTTPClient {
         return wrapRequest(put("/password-reset", body)).object(EmptyResponse.class);
     }
 
+    public EmptyResponse changeEmail(EmailChangeRequest body) throws ClientException {
+        return wrapRequest(put("/email-change", body)).object(EmptyResponse.class);
+    }
+
     public EmptyResponse rejectProjectInvite(String id) throws ClientException {
         return wrapRequest(post("/project-invites/"+id+"/reject")).object(EmptyResponse.class);
     }
@@ -109,6 +113,10 @@ public class AuthClient extends HTTPClient {
 
     public CountrySingleResponse getCountry(String code) throws ClientException {
         return wrapRequest(get("/countries/"+code)).object(CountrySingleResponse.class);
+    }
+
+    public EmptyResponse changePassword(PasswordChangeRequest body) throws ClientException {
+        return wrapRequest(put("/password-change", body)).object(EmptyResponse.class);
     }
 
     public TokenSingleResponse getToken(java.util.UUID id) throws ClientException {

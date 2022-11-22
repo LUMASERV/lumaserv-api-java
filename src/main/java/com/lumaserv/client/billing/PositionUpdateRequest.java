@@ -12,10 +12,14 @@ public class PositionUpdateRequest {
     private String unit;
     @MapperOptions(name = "price")
     private float price;
+    @MapperOptions(name = "period_from")
+    private String periodFrom;
     @MapperOptions(name = "name")
     private String name;
     @MapperOptions(name = "description")
     private String description;
+    @MapperOptions(name = "period_to")
+    private String periodTo;
     @MapperOptions(name = "vat_rate")
     private float vatRate;
     @MapperOptions(name = "group_key")
