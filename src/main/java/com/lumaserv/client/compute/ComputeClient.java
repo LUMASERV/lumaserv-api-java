@@ -411,6 +411,10 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(delete("/ssh-keys/"+id)).object(EmptyResponse.class);
     }
 
+    public SSHKeySingleResponse updateSSHKey(java.util.UUID id, SSHKeyUpdateRequest body) throws ClientException {
+        return wrapRequest(put("/ssh-keys/"+id, body)).object(SSHKeySingleResponse.class);
+    }
+
     public ServerPriceRangeAssignmentSingleResponse createServerPriceRangeAssignment(ServerPriceRangeAssignmentCreateRequest body) throws ClientException {
         return wrapRequest(post("/server-price-range-assignments", body)).object(ServerPriceRangeAssignmentSingleResponse.class);
     }
