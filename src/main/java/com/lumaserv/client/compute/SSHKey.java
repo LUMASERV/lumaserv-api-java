@@ -16,6 +16,8 @@ public class SSHKey {
     private java.util.UUID id;
     @MapperOptions(name = "title")
     private String title;
+    @MapperOptions(name = "type")
+    private String type;
     @MapperOptions(name = "labels")
     private AbstractObject labels;
 }

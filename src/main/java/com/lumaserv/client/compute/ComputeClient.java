@@ -315,6 +315,14 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(put("/server-price-ranges/"+id+"/variant-prices/"+variant_id, body)).object(ServerVariantPriceSingleResponse.class);
     }
 
+    public ServerVolumePriceListResponse getServerVolumePricing() throws ClientException {
+        return wrapRequest(get("/pricing/server-volumes")).object(ServerVolumePriceListResponse.class);
+    }
+
+    public ServerVolumePriceListResponse getServerVolumePricing(java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/pricing/server-volumes").query(params)).object(ServerVolumePriceListResponse.class);
+    }
+
     public ServerTemplateSingleResponse createServerTemplate(ServerTemplateCreateRequest body) throws ClientException {
         return wrapRequest(post("/server-templates", body)).object(ServerTemplateSingleResponse.class);
     }
@@ -347,6 +355,18 @@ public class ComputeClient extends HTTPClient {
         return wrapRequest(get("/server-firewalls/"+id+"/rules").query(params)).object(ServerFirewallRuleListResponse.class);
     }
 
+    public ServerVolumePriceSingleResponse createServerPriceRangeVolumePrice(java.util.UUID id, ServerVolumePriceCreateRequest body) throws ClientException {
+        return wrapRequest(post("/server-price-ranges/"+id+"/volume-prices", body)).object(ServerVolumePriceSingleResponse.class);
+    }
+
+    public ServerVolumePriceListResponse getServerPriceRangeVolumePrices(java.util.UUID id) throws ClientException {
+        return wrapRequest(get("/server-price-ranges/"+id+"/volume-prices")).object(ServerVolumePriceListResponse.class);
+    }
+
+    public ServerVolumePriceListResponse getServerPriceRangeVolumePrices(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/server-price-ranges/"+id+"/volume-prices").query(params)).object(ServerVolumePriceListResponse.class);
+    }
+
     public ScheduledServerActionSingleResponse createScheduledServerAction(java.util.UUID id, ScheduledServerActionCreateRequest body) throws ClientException {
         return wrapRequest(post("/servers/"+id+"/scheduled-actions", body)).object(ScheduledServerActionSingleResponse.class);
     }
@@ -357,6 +377,14 @@ public class ComputeClient extends HTTPClient {
 
     public ScheduledServerActionListResponse getScheduledServerActions(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
         return wrapRequest(get("/servers/"+id+"/scheduled-actions").query(params)).object(ScheduledServerActionListResponse.class);
+    }
+
+    public ServerVariantPriceListResponse getServerPricing() throws ClientException {
+        return wrapRequest(get("/pricing/servers")).object(ServerVariantPriceListResponse.class);
+    }
+
+    public ServerVariantPriceListResponse getServerPricing(java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(get("/pricing/servers").query(params)).object(ServerVariantPriceListResponse.class);
     }
 
     public EmptyResponse stopServer(java.util.UUID id) throws ClientException {
@@ -469,6 +497,18 @@ public class ComputeClient extends HTTPClient {
 
     public ServerVolumeSingleResponse attachServerVolume(java.util.UUID id, ServerVolumeAttachRequest body) throws ClientException {
         return wrapRequest(post("/server-volumes/"+id+"/attach", body)).object(ServerVolumeSingleResponse.class);
+    }
+
+    public ServerVolumePriceSingleResponse getServerPriceRangeVolumePrice(java.util.UUID id, java.util.UUID class_id) throws ClientException {
+        return wrapRequest(get("/server-price-ranges/"+id+"/volume-prices/"+class_id)).object(ServerVolumePriceSingleResponse.class);
+    }
+
+    public EmptyResponse deleteServerPriceRangeVolumePrice(java.util.UUID id, java.util.UUID class_id) throws ClientException {
+        return wrapRequest(delete("/server-price-ranges/"+id+"/volume-prices/"+class_id)).object(EmptyResponse.class);
+    }
+
+    public ServerVolumePriceSingleResponse updateServerPriceRangeVolumePrice(java.util.UUID id, java.util.UUID class_id, ServerVolumePriceUpdateRequest body) throws ClientException {
+        return wrapRequest(put("/server-price-ranges/"+id+"/volume-prices/"+class_id, body)).object(ServerVolumePriceSingleResponse.class);
     }
 
     public S3AccessKeySingleResponse getS3AccessKey(java.util.UUID id) throws ClientException {
@@ -605,6 +645,10 @@ public class ComputeClient extends HTTPClient {
 
     public ServerVolumeSingleResponse detachServerVolume(java.util.UUID id) throws ClientException {
         return wrapRequest(post("/server-volumes/"+id+"/detach")).object(ServerVolumeSingleResponse.class);
+    }
+
+    public ServerVolumeSingleResponse detachServerVolume(java.util.UUID id, java.util.Map<String, String> params) throws ClientException {
+        return wrapRequest(post("/server-volumes/"+id+"/detach").query(params)).object(ServerVolumeSingleResponse.class);
     }
 
     public ServerVariantPriceSingleResponse createServerVariantPrice(java.util.UUID id, ServerVariantPriceCreateRequest body) throws ClientException {
